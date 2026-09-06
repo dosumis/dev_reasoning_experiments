@@ -1,99 +1,118 @@
 # What can we actually compute? User stories and a capability matrix
 
-All counts measured against current releases of HsapDv, MmusDv, Uberon (base), GO, HP, MP.
+Which temporal reasoning is worth building depends on what is already in the ontologies. This
+document surveys that content, identifies where it falls short, and works through seven user
+stories against it — recording for each what machinery is genuinely required.
+
+Companion to [README.md](README.md), which covers the Allen interval calculus itself and its
+alignment to RO. All counts measured against the releases recorded in
+[sources/SOURCES.md](sources/SOURCES.md).
 
 ---
 
-## 0. Two corrections to earlier findings in this repo
+## 1. What we have to work with
 
-**Numeric bounds are NOT locked in prose.** Both DV ontologies carry dedicated
-machine-readable endpoint annotation properties. An earlier pass here regex-scraped 156
-intervals out of HsapDv *definitions*; the annotations are more complete and authoritative:
+### Content by ontology
 
-| | HsapDv | MmusDv |
+| Ontology | Temporal content | Numeric anchoring |
 |---|---|---|
-| terms with **both** a start and an end | **215** | **122** |
-| terms with any numeric endpoint | 248 | 156 |
-| properties used | `start_dpf`/`end_dpf`, `start_mpb`/`end_mpb`, `start_ypb`/`end_ypb` | `start_dpc`, `start_dpb`/`end_dpb`, `start_wpb`/`end_wpb`, `start_mpb`/`end_mpb` |
-
-**The reference-frame problem is largely already solved.** The frame is encoded in the
-property name — `dpf` (days post fertilization), `dpc` (post coitum), `dpb`/`wpb`/`mpb`/`ypb`
-(post birth). Converting between them needs one constant per species, not an OWL-Time `TRS`
-modelling exercise. That earlier recommendation was overbuilt.
-
----
-
-## 1. What temporal content actually exists
-
-| Ontology | Native temporal content | Numeric anchoring |
-|---|---|---|
-| **HsapDv** | 220 `immediately_preceded_by`, 237 `part_of` | **215/255 fully anchored** |
-| **MmusDv** | 122 `immediately_preceded_by`, 132 `part_of` | 122 anchored postnatally; **27 Theiler stages have `start_dpc`, ZERO have `end_dpc`** |
-| **Uberon** | 80 `existence_*` → stage; **1,434 `develops_from`**; 332 `has potential to develop into` | n/a |
-| **MP** | **36 lethality terms with explicit E-day intervals** | in prose only (`"Mus: E4.5 to less than E8"`) |
-| **HP** | 55 onset terms forming an interval hierarchy; 11 with numeric prose bounds | none machine-readable |
+| **HsapDv** | 220 `immediately_preceded_by`, 237 `part_of` | **215 of 255 stages fully anchored** |
+| **MmusDv** | 122 `immediately_preceded_by`, 132 `part_of` | 122 anchored postnatally; **27 Theiler stages have `start_dpc`, none has `end_dpc`** |
+| **Uberon** | 80 `existence_*` → stage; **1,434 `develops_from`**; 332 `has potential to develop into` | — |
+| **MP** | **36 lethality terms with explicit E-day intervals** | prose only: `"Mus: E4.5 to less than E8"` |
+| **HP** | 55 onset terms forming an interval hierarchy | 11 with numeric bounds, prose only |
 | **GO** | ~24 `happens_during`, 2 `starts_during`, 4 `ends_during` | none |
 
-**GO is essentially empty of explicit temporal relations.** Its process `part_of` hierarchy
-carries implicit temporal containment, but nothing is asserted. Do not plan around GO.
+**GO is effectively empty of asserted temporal relations.** Its process `part_of` hierarchy
+carries implicit temporal containment, but nothing is stated. Do not plan around it.
 
----
+### The stage backbones are numerically anchored
 
-## 2. The two structural gaps
+Both DV ontologies carry machine-readable endpoint annotations — `start_dpf`/`end_dpf`,
+`start_dpc`, `start_dpb`/`end_dpb`, `start_wpb`/`end_wpb`, `start_mpb`/`end_mpb`,
+`start_ypb`/`end_ypb`. This is the single most consequential fact in this document: **where both
+endpoints are known, the Allen relation between two intervals is determined by comparing four
+numbers.** No qualitative reasoning is needed at all (§6).
 
-### Gap A — `develops_from` has no temporal semantics
+The reference frame is encoded in the property name — `dpf` days post fertilization, `dpc` post
+coitum, `dpb`/`wpb`/`mpb`/`ypb` post birth. Converting between frames needs one constant per
+species, not a modelling exercise.
 
-```
-develops from → has developmental contribution from → developmentally preceded by
-              → developmentally related to → (dead end)
-```
+### Missing endpoints are often derivable
 
-There is **no path from the developmental relation hierarchy to the temporal one**. 1,434
-Uberon assertions state that one structure arises from another, and none of it is visible to
-temporal reasoning.
+MmusDv states a `start_dpc` for 27 Theiler stages and an `end_dpc` for none. But consecutive
+stages are joined by `immediately_preceded_by` — Allen `meets` — so `end(N) = start(N+1)`.
+All 27 missing values follow by propagation, with no curation. This is what makes US1 work.
 
-The correct axiom is *not* `develops_from ⊑ preceded_by`. Where X develops from Y, Y need not
-cease when X appears (X may bud from a persisting Y). The safe claim is only that Y begins
-first:
+### Cross-species bridges exist
 
-> `develops_from ⊑ starts_after`  — i.e. `start(X) > start(Y)`, Allen label **`dfOMP`**
-
-**RO cannot express this.** RO has `starts_before` (`pmoFD`, RO:0002089) but not its converse
-`starts_after` (`dfOMP`). So the single highest-value temporal axiom available — one line,
-unlocking 1,434 assertions — requires a relation the 29-relation extension supplies and
-current RO does not.
-
-### ~~Gap B — the species-stage ↔ generic-stage bridge is missing~~ — RESOLVED
-
-**This is not a gap.** The bridges exist, in
-`developmental-stage-ontologies/src/mappings/life-stages.sssom.tsv`: **269
+`developmental-stage-ontologies/src/mappings/life-stages.sssom.tsv` holds **269
 `semapv:crossSpeciesExactMatch` mappings** from 23 species DV ontologies to UBERON generic
-life-cycle stages (19 each for HsapDv and MmusDv). They are simply not present in the
-standalone `hsapdv.owl` / `mmusdv.owl` artifacts, which is why the earlier check missed them.
-The repo also ships `src/util/make-bridge-axioms.pl` and a merged `life-stages-full.owl`.
+life-cycle stages, 19 each for HsapDv and MmusDv. They are absent from the standalone
+`hsapdv.owl`/`mmusdv.owl` artifacts, so they are easy to miss. The repo also ships
+`src/util/make-bridge-axioms.pl` and a merged `life-stages-full.owl`.
 
-Coverage against the stages Uberon's `existence_*` assertions actually use: **17 of 21 (81%)**,
-12 of them with both mouse and human mappings. The four uncovered are `larval stage`,
-`pupal stage`, `2/4/8 cell stage` — irrelevant to mammals or too fine-grained.
+Coverage against the stages Uberon's `existence_*` assertions actually use is **17 of 21 (81%)**,
+12 with both mouse and human. The uncovered four — `larval stage`, `pupal stage`, `2/4/8 cell
+stage` — are irrelevant to mammals or too fine-grained.
 
-**The full chain runs end-to-end** (`tests/full_chain.py`), with no manual curation:
+This closes the chain:
 
 ```
 MP lethality (E-days) ──► Theiler stage ──► generic MmusDv stage ──► UBERON stage ──► structures
    [dpc + Allen 'meets']    [part_of closure]        [SSSOM]           [existence_*]
 ```
 
-**But precision is poor, and the reason matters.** The mappings are at gross granularity, as
-expected. Every query window pulls in `embryo stage`, so coarse structures (`embryo`,
-`conceptus`, `entire extraembryonic component`) dominate every answer. Two fixes, both cheap:
-rank results by stage specificity, and drop stages that properly contain the query window
-rather than overlapping it — an Allen `D`/`contains` filter, exactly the kind of distinction
-the relation set is for.
-
-The real bottleneck is now **volume**: only 80 `existence_*` assertions exist across all of
-Uberon. Which makes Gap A the priority — it would multiply the available structure data by 18×.
+`tests/full_chain.py` runs it end to end, with no manual curation.
 
 ---
+
+## 2. Where it falls short
+
+### `develops_from` has no temporal semantics
+
+```
+develops from → has developmental contribution from → developmentally preceded by
+              → developmentally related to → (dead end)
+```
+
+**No path connects the developmental relation hierarchy to the temporal one.** 1,434 Uberon
+assertions state that one structure arises from another; none of it is visible to temporal
+reasoning.
+
+The right axiom is *not* `develops_from ⊑ preceded_by` — where X develops from Y, Y need not
+cease when X appears, since X may bud from a persisting Y. The safe claim is only that Y begins
+first:
+
+> `develops_from ⊑ starts_after`  — `start(X) > start(Y)`, Allen label **`dfOMP`**
+
+**RO cannot express this.** It has `starts_before` (`pmoFD`, RO:0002089) but not the converse
+`starts_after` (`dfOMP`). So the highest-value temporal axiom available — one line, unlocking
+1,434 assertions and multiplying the usable structure data by 18× — requires a relation the
+29-relation extension supplies and current RO does not.
+
+This is the main bottleneck. Everything downstream of it is limited by having only 80
+`existence_*` assertions to work with.
+
+### Bridges are gross-grained, so answers are gross
+
+The SSSOM mappings are at generic life-cycle-stage level. Every query window pulls in
+`embryo stage`, so coarse structures — `embryo`, `conceptus`, `entire extraembryonic component`
+— dominate every result. Two cheap fixes: rank by stage specificity, and filter out stages that
+properly *contain* the query window rather than overlapping it. That second one is an Allen
+`D`/`contains` distinction — a small but real case of the relation set earning its keep on a
+live query.
+
+### Two alignments simply do not exist
+
+- **HP onset ↔ HsapDv.** HPO's onset hierarchy is an interval series describing the same human
+  timeline as HsapDv, unlinked to it. Blocks US3.
+- **Fine-grained Carnegie ↔ Theiler.** The SSSOM bridges relate mouse and human only through
+  generic stages. Numeric anchors do not help: `dpc` and `dpf` are not commensurable across
+  species. Limits US6 to coarse answers.
+
+---
+
 
 ## 3. User stories
 
@@ -178,9 +197,9 @@ on. The role never sees an Allen label.
 - **Query**: for each `X develops_from Y`, test whether the asserted existence intervals are
   consistent with `start(Y) < start(X)`.
 - **LLM layer**: report generation only.
-- **Machinery**: **needs AIC**, and needs Gap A closed first. Also needs composition, since
-  `develops_from` is transitive and lineage chains compound.
-- **Status**: blocked on Gap A. 1,434 assertions to check — the largest QC surface available.
+- **Machinery**: **needs AIC**, and needs the `develops_from ⊑ starts_after` axiom (§2) first.
+  Also needs composition, since `develops_from` is transitive and lineage chains compound.
+- **Status**: blocked on that axiom. 1,434 assertions to check — the largest QC surface available.
 
 ### US6 — Translating a mouse phenotype to a human window
 
@@ -225,15 +244,15 @@ on. The role never sees an Allen label.
 | US2 | ✅ | ✅ | – | – (SSSOM covers HsapDv too) |
 | US3 | partial | ✗ | ✅ **required** (disjointness) | HP↔HsapDv alignment |
 | US4 | ✅ | ✅ | – | – |
-| US5 | ✗ | partial | ✅ **required** | **Gap A — one axiom + `starts_after`** |
+| US5 | ✗ | partial | ✅ **required** | **`develops_from` axiom + `starts_after`** |
 | US6 | partial | ✗ | ✗ | SSSOM gives gross-level alignment only |
 | US7 | ✗ | ✗ | ✅ **required** | stage metadata normalisation (LLM) |
 
-**Revised headline: the bridges exist and the chain runs.** What limits US1/US2 now is not
-reasoning power and not alignment — it is the *volume and granularity* of the underlying
-assertions: 80 `existence_*` links, mapped at gross stage level. Where numeric anchors exist,
-plain comparison suffices; the reasoning layer's job is to improve precision (ranking by stage
-specificity, `contains` vs `overlaps` filtering) rather than to make the query possible.
+**What limits US1 and US2 is neither reasoning power nor alignment** — it is the volume and
+granularity of the underlying assertions: 80 `existence_*` links, mapped at gross stage level.
+Where numeric anchors exist, plain comparison suffices; the reasoning layer's job there is to
+improve precision (ranking by stage specificity, `contains` vs `overlaps` filtering) rather than
+to make the query possible at all.
 
 AIC genuinely earns its place in exactly three: **US5** (needs `starts_after`, absent from RO,
 plus composition through transitive `develops_from`), **US3** (disjointness-based contradiction
@@ -328,5 +347,6 @@ Three pieces, in dependency order, each with a theoretical basis and a measurabl
    path-consistency step to the *e* fraction. Novel, well-founded, and exactly the kind of
    engine work relation-graph is positioned for.
 
-The curation gaps (A and B) are prerequisites for 1 and 2 and should be raised with Uberon/MmusDv
-maintainers independently — they are small, and they block more than this project.
+The missing alignments in §2 — HP-onset ↔ HsapDv, and fine-grained Carnegie ↔ Theiler — should be
+raised with the HPO and MmusDv maintainers independently. They are small pieces of curation, and
+they block more than this project.

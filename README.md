@@ -6,9 +6,23 @@ with the OBO Relation Ontology.
 
 Everything here is **derived and machine-verified**, never transcribed. The composition
 table is computed by enumerating endpoint orderings; the converse function is checked
-against interval semantics. (This matters: an early transcribed converse table was wrong
-within minutes of being written, and the error was only caught because a derived count
-exceeded a theoretical bound.)
+against interval semantics rather than copied from a published table.
+
+> ### 📄 [USER_STORIES.md](USER_STORIES.md) — what this is *for*
+>
+> A survey of the temporal content actually present in HsapDv, MmusDv, Uberon, GO, HP and MP;
+> where it falls short; and seven user stories worked against it — each recording what
+> machinery it genuinely requires. Read that first if you want to know which parts of this
+> infrastructure earn their keep.
+>
+> Headline findings: **where stage endpoints are numerically anchored, no qualitative reasoning
+> is needed at all** — the Allen relation follows from comparing four numbers. AIC is
+> irreplaceable in three of the seven stories, all curation- or integration-facing. And a single
+> missing axiom, `develops_from ⊑ starts_after`, blocks an 18× increase in usable data — an axiom
+> current RO cannot express, but the extension below can.
+
+Provenance for every source ontology — version IRIs, release dates, checksums, and which
+results depend on which files — is in [sources/SOURCES.md](sources/SOURCES.md).
 
 ---
 
