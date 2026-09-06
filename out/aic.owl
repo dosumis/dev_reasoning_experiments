@@ -1,0 +1,2916 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000001 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000001">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X strictly precedes Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &lt; start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: p. Status: new.</rdfs:comment>
+        <rdfs:label>strictly precedes</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000002 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000002">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X strictly preceded by Y if and only if start(X) &gt; start(Y) and start(X) &gt; end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: P. Status: new.</rdfs:comment>
+        <rdfs:label>strictly preceded by</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000003 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000003">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts before and ends during Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: o. Status: new.</rdfs:comment>
+        <rdfs:label>starts before and ends during</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000004 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000004">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts during and ends after Y if and only if start(X) &gt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: O. Status: new.</rdfs:comment>
+        <rdfs:label>starts during and ends after</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000005 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000005">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts with and ends before Y if and only if start(X) = start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: s. Status: new.</rdfs:comment>
+        <rdfs:label>starts with and ends before</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000006 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000006">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts with and ends after Y if and only if start(X) = start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: S. Status: new.</rdfs:comment>
+        <rdfs:label>starts with and ends after</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000007 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000007">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends with and starts after Y if and only if start(X) &gt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) = end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: f. Status: new.</rdfs:comment>
+        <rdfs:label>ends with and starts after</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000008 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000008">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends with and starts before Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) = end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: F. Status: new.</rdfs:comment>
+        <rdfs:label>ends with and starts before</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000009 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000009">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X temporally coincides with Y if and only if start(X) = start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) = end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: e. Status: COLLISION-CHECK: RO:0002082 simultaneous with / RO:0002008 coincident with.</rdfs:comment>
+        <rdfs:label>temporally coincides with</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000010 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000010">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts with Y if and only if start(X) = start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: seS. Status: COLLISION-CHECK: RO:0002224 starts with may be mereological (Fe not seS).</rdfs:comment>
+        <rdfs:label>starts with</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000011 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000011">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends with Y if and only if start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) = end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: Fef. Status: COLLISION-CHECK: RO:0002230 ends with may be mereological (fe not Fef).</rdfs:comment>
+        <rdfs:label>ends with</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000012 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000012">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X earlier than Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: pmo. Status: new.</rdfs:comment>
+        <rdfs:label>earlier than</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000013 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000013">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X later than Y if and only if start(X) &gt; start(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: OMP. Status: new.</rdfs:comment>
+        <rdfs:label>later than</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000014 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000014">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002089"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts during or after Y if and only if start(X) &gt; start(Y) and end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: dfOMP. Status: new (precedent: RO:0002496 existence starts during or after).</rdfs:comment>
+        <rdfs:label>starts during or after</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000015 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000015">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002086"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends during or before Y if and only if start(X) &lt; end(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: pmosd. Status: new (precedent: RO:0002497 existence ends during or before).</rdfs:comment>
+        <rdfs:label>ends during or before</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000016 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000016">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X temporally overlaps Y if and only if start(X) &lt; end(Y) and end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: oFDseSdfO. Status: COLLISION-CHECK: RO:0002131 &apos;overlaps&apos; is mereological - do NOT reuse.</rdfs:comment>
+        <rdfs:label>temporally overlaps</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000017 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000017">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000014"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends after start of Y if and only if end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: oFDseSdfOMP. Status: new.</rdfs:comment>
+        <rdfs:label>ends after start of</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AIC_0000018 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/AIC_0000018">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000015"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts before end of Y if and only if start(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: pmoFDseSdfO. Status: new.</rdfs:comment>
+        <rdfs:label>starts before end of</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002084 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002084">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002093"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X during which ends Y if and only if start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: DSO. Status: existing.</rdfs:comment>
+        <rdfs:label>during which ends</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002085 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002085">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002092"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X encompasses Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: D. Status: existing.</rdfs:comment>
+        <rdfs:label>encompasses</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002086 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002086">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000017"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000013"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002086"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000002"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends after Y if and only if end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: DSOMP. Status: existing.</rdfs:comment>
+        <rdfs:label>ends after</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002087 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002090"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X immediately preceded by Y if and only if start(X) &gt; start(Y) and start(X) = end(Y) and end(X) &gt; start(Y) and end(X) &gt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: M. Status: existing.</rdfs:comment>
+        <rdfs:label>immediately preceded by</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002088 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002088">
+        <inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002091"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X during which starts Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: oFD. Status: existing.</rdfs:comment>
+        <rdfs:label>during which starts</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002089 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002089">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000016"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000018"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002084"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000012"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002085"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002088"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002089"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000001"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts before Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: pmoFD. Status: existing.</rdfs:comment>
+        <rdfs:label>starts before</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002090 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002090">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X immediately precedes Y if and only if start(X) &lt; start(Y) and start(X) &lt; end(Y) and end(X) = start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: m. Status: existing.</rdfs:comment>
+        <rdfs:label>immediately precedes</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002091 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002091">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000006"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000010"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X starts during Y if and only if start(X) &gt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: dfO. Status: existing.</rdfs:comment>
+        <rdfs:label>starts during</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002092 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002092">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X happens during Y if and only if start(X) &gt; start(Y) and start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: d. Status: existing.</rdfs:comment>
+        <rdfs:label>happens during</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002093 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002093">
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000008"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000003"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000011"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000004"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002090"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000005"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000007"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/AIC_0000009"/>
+        </propertyChainAxiom>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002093"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+        </propertyChainAxiom>
+        <obo:IAO_0000115>X ends during Y if and only if start(X) &lt; end(Y) and end(X) &gt; start(Y) and end(X) &lt; end(Y).</obo:IAO_0000115>
+        <rdfs:comment>Allen label: osd. Status: existing.</rdfs:comment>
+        <rdfs:label>ends during</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002222 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002222">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <obo:IAO_0000115>X temporally related to Y if and only if .</obo:IAO_0000115>
+        <rdfs:comment>Allen label: pmoFDseSdfOMP. Status: existing.</rdfs:comment>
+        <rdfs:label>temporally related to</rdfs:label>
+    </ObjectProperty>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
+

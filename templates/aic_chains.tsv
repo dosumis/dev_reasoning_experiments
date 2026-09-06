@@ -1,0 +1,842 @@
+property 1	property 2	implies	allen 1	allen 2	allen result
+encompasses	encompasses	encompasses	D	D	D
+encompasses	ends with and starts before	encompasses	D	F	D
+encompasses	immediately preceded by	during which ends	D	M	DSO
+encompasses	starts during and ends after	during which ends	D	O	DSO
+encompasses	strictly preceded by	ends after	D	P	DSOMP
+encompasses	starts with and ends after	encompasses	D	S	D
+encompasses	happens during	temporally overlaps	D	d	oFDseSdfO
+encompasses	temporally coincides with	encompasses	D	e	D
+encompasses	ends with and starts after	during which ends	D	f	DSO
+encompasses	immediately precedes	during which starts	D	m	oFD
+encompasses	starts before and ends during	during which starts	D	o	oFD
+encompasses	strictly precedes	starts before	D	p	pmoFD
+encompasses	starts with and ends before	during which starts	D	s	oFD
+encompasses	during which ends	during which ends	D	DSO	DSO
+encompasses	ends with	during which ends	D	Fef	DSO
+encompasses	later than	ends after	D	OMP	DSOMP
+encompasses	starts during	temporally overlaps	D	dfO	oFDseSdfO
+encompasses	during which starts	during which starts	D	oFD	oFD
+encompasses	ends during	temporally overlaps	D	osd	oFDseSdfO
+encompasses	earlier than	starts before	D	pmo	pmoFD
+encompasses	starts with	during which starts	D	seS	oFD
+encompasses	ends after	ends after	D	DSOMP	DSOMP
+encompasses	starts during or after	ends after start of	D	dfOMP	oFDseSdfOMP
+encompasses	starts before	starts before	D	pmoFD	pmoFD
+encompasses	ends during or before	starts before end of	D	pmosd	pmoFDseSdfO
+encompasses	temporally overlaps	temporally overlaps	D	oFDseSdfO	oFDseSdfO
+encompasses	ends after start of	ends after start of	D	oFDseSdfOMP	oFDseSdfOMP
+encompasses	starts before end of	starts before end of	D	pmoFDseSdfO	pmoFDseSdfO
+encompasses	temporally related to	temporally related to	D	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends with and starts before	encompasses	encompasses	F	D	D
+ends with and starts before	ends with and starts before	ends with and starts before	F	F	F
+ends with and starts before	immediately preceded by	during which ends	F	M	DSO
+ends with and starts before	starts during and ends after	during which ends	F	O	DSO
+ends with and starts before	strictly preceded by	ends after	F	P	DSOMP
+ends with and starts before	starts with and ends after	encompasses	F	S	D
+ends with and starts before	happens during	ends during	F	d	osd
+ends with and starts before	temporally coincides with	ends with and starts before	F	e	F
+ends with and starts before	ends with and starts after	ends with	F	f	Fef
+ends with and starts before	immediately precedes	immediately precedes	F	m	m
+ends with and starts before	starts before and ends during	starts before and ends during	F	o	o
+ends with and starts before	strictly precedes	strictly precedes	F	p	p
+ends with and starts before	starts with and ends before	starts before and ends during	F	s	o
+ends with and starts before	during which ends	during which ends	F	DSO	DSO
+ends with and starts before	ends with	ends with	F	Fef	Fef
+ends with and starts before	later than	ends after	F	OMP	DSOMP
+ends with and starts before	starts during	temporally overlaps	F	dfO	oFDseSdfO
+ends with and starts before	during which starts	during which starts	F	oFD	oFD
+ends with and starts before	ends during	ends during	F	osd	osd
+ends with and starts before	earlier than	earlier than	F	pmo	pmo
+ends with and starts before	starts with	during which starts	F	seS	oFD
+ends with and starts before	ends after	ends after	F	DSOMP	DSOMP
+ends with and starts before	starts during or after	ends after start of	F	dfOMP	oFDseSdfOMP
+ends with and starts before	starts before	starts before	F	pmoFD	pmoFD
+ends with and starts before	ends during or before	ends during or before	F	pmosd	pmosd
+ends with and starts before	temporally overlaps	temporally overlaps	F	oFDseSdfO	oFDseSdfO
+ends with and starts before	ends after start of	ends after start of	F	oFDseSdfOMP	oFDseSdfOMP
+ends with and starts before	starts before end of	starts before end of	F	pmoFDseSdfO	pmoFDseSdfO
+ends with and starts before	temporally related to	temporally related to	F	pmoFDseSdfOMP	pmoFDseSdfOMP
+immediately preceded by	encompasses	strictly preceded by	M	D	P
+immediately preceded by	ends with and starts before	immediately preceded by	M	F	M
+immediately preceded by	immediately preceded by	strictly preceded by	M	M	P
+immediately preceded by	starts during and ends after	strictly preceded by	M	O	P
+immediately preceded by	strictly preceded by	strictly preceded by	M	P	P
+immediately preceded by	starts with and ends after	strictly preceded by	M	S	P
+immediately preceded by	happens during	starts during	M	d	dfO
+immediately preceded by	temporally coincides with	immediately preceded by	M	e	M
+immediately preceded by	ends with and starts after	immediately preceded by	M	f	M
+immediately preceded by	immediately precedes	starts with	M	m	seS
+immediately preceded by	starts before and ends during	starts during	M	o	dfO
+immediately preceded by	strictly precedes	starts before	M	p	pmoFD
+immediately preceded by	starts with and ends before	starts during	M	s	dfO
+immediately preceded by	during which ends	strictly preceded by	M	DSO	P
+immediately preceded by	ends with	immediately preceded by	M	Fef	M
+immediately preceded by	later than	strictly preceded by	M	OMP	P
+immediately preceded by	starts during	starts during or after	M	dfO	dfOMP
+immediately preceded by	during which starts	starts during or after	M	oFD	dfOMP
+immediately preceded by	ends during	starts during	M	osd	dfO
+immediately preceded by	earlier than	starts before end of	M	pmo	pmoFDseSdfO
+immediately preceded by	starts with	starts during or after	M	seS	dfOMP
+immediately preceded by	ends after	strictly preceded by	M	DSOMP	P
+immediately preceded by	starts during or after	starts during or after	M	dfOMP	dfOMP
+immediately preceded by	starts before	temporally related to	M	pmoFD	pmoFDseSdfOMP
+immediately preceded by	ends during or before	starts before end of	M	pmosd	pmoFDseSdfO
+immediately preceded by	temporally overlaps	starts during or after	M	oFDseSdfO	dfOMP
+immediately preceded by	ends after start of	starts during or after	M	oFDseSdfOMP	dfOMP
+immediately preceded by	starts before end of	temporally related to	M	pmoFDseSdfO	pmoFDseSdfOMP
+immediately preceded by	temporally related to	temporally related to	M	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts during and ends after	encompasses	ends after	O	D	DSOMP
+starts during and ends after	ends with and starts before	during which ends	O	F	DSO
+starts during and ends after	immediately preceded by	strictly preceded by	O	M	P
+starts during and ends after	starts during and ends after	later than	O	O	OMP
+starts during and ends after	strictly preceded by	strictly preceded by	O	P	P
+starts during and ends after	starts with and ends after	later than	O	S	OMP
+starts during and ends after	happens during	starts during	O	d	dfO
+starts during and ends after	temporally coincides with	starts during and ends after	O	e	O
+starts during and ends after	ends with and starts after	starts during and ends after	O	f	O
+starts during and ends after	immediately precedes	during which starts	O	m	oFD
+starts during and ends after	starts before and ends during	temporally overlaps	O	o	oFDseSdfO
+starts during and ends after	strictly precedes	starts before	O	p	pmoFD
+starts during and ends after	starts with and ends before	starts during	O	s	dfO
+starts during and ends after	during which ends	ends after	O	DSO	DSOMP
+starts during and ends after	ends with	during which ends	O	Fef	DSO
+starts during and ends after	later than	later than	O	OMP	OMP
+starts during and ends after	starts during	starts during or after	O	dfO	dfOMP
+starts during and ends after	during which starts	ends after start of	O	oFD	oFDseSdfOMP
+starts during and ends after	ends during	temporally overlaps	O	osd	oFDseSdfO
+starts during and ends after	earlier than	starts before end of	O	pmo	pmoFDseSdfO
+starts during and ends after	starts with	starts during or after	O	seS	dfOMP
+starts during and ends after	ends after	ends after	O	DSOMP	DSOMP
+starts during and ends after	starts during or after	starts during or after	O	dfOMP	dfOMP
+starts during and ends after	starts before	temporally related to	O	pmoFD	pmoFDseSdfOMP
+starts during and ends after	ends during or before	starts before end of	O	pmosd	pmoFDseSdfO
+starts during and ends after	temporally overlaps	ends after start of	O	oFDseSdfO	oFDseSdfOMP
+starts during and ends after	ends after start of	ends after start of	O	oFDseSdfOMP	oFDseSdfOMP
+starts during and ends after	starts before end of	temporally related to	O	pmoFDseSdfO	pmoFDseSdfOMP
+starts during and ends after	temporally related to	temporally related to	O	pmoFDseSdfOMP	pmoFDseSdfOMP
+strictly preceded by	encompasses	strictly preceded by	P	D	P
+strictly preceded by	ends with and starts before	strictly preceded by	P	F	P
+strictly preceded by	immediately preceded by	strictly preceded by	P	M	P
+strictly preceded by	starts during and ends after	strictly preceded by	P	O	P
+strictly preceded by	strictly preceded by	strictly preceded by	P	P	P
+strictly preceded by	starts with and ends after	strictly preceded by	P	S	P
+strictly preceded by	happens during	starts during or after	P	d	dfOMP
+strictly preceded by	temporally coincides with	strictly preceded by	P	e	P
+strictly preceded by	ends with and starts after	strictly preceded by	P	f	P
+strictly preceded by	immediately precedes	starts during or after	P	m	dfOMP
+strictly preceded by	starts before and ends during	starts during or after	P	o	dfOMP
+strictly preceded by	strictly precedes	temporally related to	P	p	pmoFDseSdfOMP
+strictly preceded by	starts with and ends before	starts during or after	P	s	dfOMP
+strictly preceded by	during which ends	strictly preceded by	P	DSO	P
+strictly preceded by	ends with	strictly preceded by	P	Fef	P
+strictly preceded by	later than	strictly preceded by	P	OMP	P
+strictly preceded by	starts during	starts during or after	P	dfO	dfOMP
+strictly preceded by	during which starts	starts during or after	P	oFD	dfOMP
+strictly preceded by	ends during	starts during or after	P	osd	dfOMP
+strictly preceded by	earlier than	temporally related to	P	pmo	pmoFDseSdfOMP
+strictly preceded by	starts with	starts during or after	P	seS	dfOMP
+strictly preceded by	ends after	strictly preceded by	P	DSOMP	P
+strictly preceded by	starts during or after	starts during or after	P	dfOMP	dfOMP
+strictly preceded by	starts before	temporally related to	P	pmoFD	pmoFDseSdfOMP
+strictly preceded by	ends during or before	temporally related to	P	pmosd	pmoFDseSdfOMP
+strictly preceded by	temporally overlaps	starts during or after	P	oFDseSdfO	dfOMP
+strictly preceded by	ends after start of	starts during or after	P	oFDseSdfOMP	dfOMP
+strictly preceded by	starts before end of	temporally related to	P	pmoFDseSdfO	pmoFDseSdfOMP
+strictly preceded by	temporally related to	temporally related to	P	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts with and ends after	encompasses	encompasses	S	D	D
+starts with and ends after	ends with and starts before	encompasses	S	F	D
+starts with and ends after	immediately preceded by	immediately preceded by	S	M	M
+starts with and ends after	starts during and ends after	starts during and ends after	S	O	O
+starts with and ends after	strictly preceded by	strictly preceded by	S	P	P
+starts with and ends after	starts with and ends after	starts with and ends after	S	S	S
+starts with and ends after	happens during	starts during	S	d	dfO
+starts with and ends after	temporally coincides with	starts with and ends after	S	e	S
+starts with and ends after	ends with and starts after	starts during and ends after	S	f	O
+starts with and ends after	immediately precedes	during which starts	S	m	oFD
+starts with and ends after	starts before and ends during	during which starts	S	o	oFD
+starts with and ends after	strictly precedes	starts before	S	p	pmoFD
+starts with and ends after	starts with and ends before	starts with	S	s	seS
+starts with and ends after	during which ends	during which ends	S	DSO	DSO
+starts with and ends after	ends with	during which ends	S	Fef	DSO
+starts with and ends after	later than	later than	S	OMP	OMP
+starts with and ends after	starts during	starts during	S	dfO	dfO
+starts with and ends after	during which starts	during which starts	S	oFD	oFD
+starts with and ends after	ends during	temporally overlaps	S	osd	oFDseSdfO
+starts with and ends after	earlier than	starts before	S	pmo	pmoFD
+starts with and ends after	starts with	starts with	S	seS	seS
+starts with and ends after	ends after	ends after	S	DSOMP	DSOMP
+starts with and ends after	starts during or after	starts during or after	S	dfOMP	dfOMP
+starts with and ends after	starts before	starts before	S	pmoFD	pmoFD
+starts with and ends after	ends during or before	starts before end of	S	pmosd	pmoFDseSdfO
+starts with and ends after	temporally overlaps	temporally overlaps	S	oFDseSdfO	oFDseSdfO
+starts with and ends after	ends after start of	ends after start of	S	oFDseSdfOMP	oFDseSdfOMP
+starts with and ends after	starts before end of	starts before end of	S	pmoFDseSdfO	pmoFDseSdfO
+starts with and ends after	temporally related to	temporally related to	S	pmoFDseSdfOMP	pmoFDseSdfOMP
+happens during	encompasses	temporally related to	d	D	pmoFDseSdfOMP
+happens during	ends with and starts before	ends during or before	d	F	pmosd
+happens during	immediately preceded by	strictly preceded by	d	M	P
+happens during	starts during and ends after	starts during or after	d	O	dfOMP
+happens during	strictly preceded by	strictly preceded by	d	P	P
+happens during	starts with and ends after	starts during or after	d	S	dfOMP
+happens during	happens during	happens during	d	d	d
+happens during	temporally coincides with	happens during	d	e	d
+happens during	ends with and starts after	happens during	d	f	d
+happens during	immediately precedes	strictly precedes	d	m	p
+happens during	starts before and ends during	ends during or before	d	o	pmosd
+happens during	strictly precedes	strictly precedes	d	p	p
+happens during	starts with and ends before	happens during	d	s	d
+happens during	during which ends	temporally related to	d	DSO	pmoFDseSdfOMP
+happens during	ends with	ends during or before	d	Fef	pmosd
+happens during	later than	starts during or after	d	OMP	dfOMP
+happens during	starts during	starts during or after	d	dfO	dfOMP
+happens during	during which starts	temporally related to	d	oFD	pmoFDseSdfOMP
+happens during	ends during	ends during or before	d	osd	pmosd
+happens during	earlier than	ends during or before	d	pmo	pmosd
+happens during	starts with	starts during or after	d	seS	dfOMP
+happens during	ends after	temporally related to	d	DSOMP	pmoFDseSdfOMP
+happens during	starts during or after	starts during or after	d	dfOMP	dfOMP
+happens during	starts before	temporally related to	d	pmoFD	pmoFDseSdfOMP
+happens during	ends during or before	ends during or before	d	pmosd	pmosd
+happens during	temporally overlaps	temporally related to	d	oFDseSdfO	pmoFDseSdfOMP
+happens during	ends after start of	temporally related to	d	oFDseSdfOMP	pmoFDseSdfOMP
+happens during	starts before end of	temporally related to	d	pmoFDseSdfO	pmoFDseSdfOMP
+happens during	temporally related to	temporally related to	d	pmoFDseSdfOMP	pmoFDseSdfOMP
+temporally coincides with	encompasses	encompasses	e	D	D
+temporally coincides with	ends with and starts before	ends with and starts before	e	F	F
+temporally coincides with	immediately preceded by	immediately preceded by	e	M	M
+temporally coincides with	starts during and ends after	starts during and ends after	e	O	O
+temporally coincides with	strictly preceded by	strictly preceded by	e	P	P
+temporally coincides with	starts with and ends after	starts with and ends after	e	S	S
+temporally coincides with	happens during	happens during	e	d	d
+temporally coincides with	temporally coincides with	temporally coincides with	e	e	e
+temporally coincides with	ends with and starts after	ends with and starts after	e	f	f
+temporally coincides with	immediately precedes	immediately precedes	e	m	m
+temporally coincides with	starts before and ends during	starts before and ends during	e	o	o
+temporally coincides with	strictly precedes	strictly precedes	e	p	p
+temporally coincides with	starts with and ends before	starts with and ends before	e	s	s
+temporally coincides with	during which ends	during which ends	e	DSO	DSO
+temporally coincides with	ends with	ends with	e	Fef	Fef
+temporally coincides with	later than	later than	e	OMP	OMP
+temporally coincides with	starts during	starts during	e	dfO	dfO
+temporally coincides with	during which starts	during which starts	e	oFD	oFD
+temporally coincides with	ends during	ends during	e	osd	osd
+temporally coincides with	earlier than	earlier than	e	pmo	pmo
+temporally coincides with	starts with	starts with	e	seS	seS
+temporally coincides with	ends after	ends after	e	DSOMP	DSOMP
+temporally coincides with	starts during or after	starts during or after	e	dfOMP	dfOMP
+temporally coincides with	starts before	starts before	e	pmoFD	pmoFD
+temporally coincides with	ends during or before	ends during or before	e	pmosd	pmosd
+temporally coincides with	temporally overlaps	temporally overlaps	e	oFDseSdfO	oFDseSdfO
+temporally coincides with	ends after start of	ends after start of	e	oFDseSdfOMP	oFDseSdfOMP
+temporally coincides with	starts before end of	starts before end of	e	pmoFDseSdfO	pmoFDseSdfO
+temporally coincides with	temporally related to	temporally related to	e	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends with and starts after	encompasses	ends after	f	D	DSOMP
+ends with and starts after	ends with and starts before	ends with	f	F	Fef
+ends with and starts after	immediately preceded by	strictly preceded by	f	M	P
+ends with and starts after	starts during and ends after	later than	f	O	OMP
+ends with and starts after	strictly preceded by	strictly preceded by	f	P	P
+ends with and starts after	starts with and ends after	later than	f	S	OMP
+ends with and starts after	happens during	happens during	f	d	d
+ends with and starts after	temporally coincides with	ends with and starts after	f	e	f
+ends with and starts after	ends with and starts after	ends with and starts after	f	f	f
+ends with and starts after	immediately precedes	immediately precedes	f	m	m
+ends with and starts after	starts before and ends during	ends during	f	o	osd
+ends with and starts after	strictly precedes	strictly precedes	f	p	p
+ends with and starts after	starts with and ends before	happens during	f	s	d
+ends with and starts after	during which ends	ends after	f	DSO	DSOMP
+ends with and starts after	ends with	ends with	f	Fef	Fef
+ends with and starts after	later than	later than	f	OMP	OMP
+ends with and starts after	starts during	starts during or after	f	dfO	dfOMP
+ends with and starts after	during which starts	ends after start of	f	oFD	oFDseSdfOMP
+ends with and starts after	ends during	ends during	f	osd	osd
+ends with and starts after	earlier than	ends during or before	f	pmo	pmosd
+ends with and starts after	starts with	starts during or after	f	seS	dfOMP
+ends with and starts after	ends after	ends after	f	DSOMP	DSOMP
+ends with and starts after	starts during or after	starts during or after	f	dfOMP	dfOMP
+ends with and starts after	starts before	temporally related to	f	pmoFD	pmoFDseSdfOMP
+ends with and starts after	ends during or before	ends during or before	f	pmosd	pmosd
+ends with and starts after	temporally overlaps	ends after start of	f	oFDseSdfO	oFDseSdfOMP
+ends with and starts after	ends after start of	ends after start of	f	oFDseSdfOMP	oFDseSdfOMP
+ends with and starts after	starts before end of	temporally related to	f	pmoFDseSdfO	pmoFDseSdfOMP
+ends with and starts after	temporally related to	temporally related to	f	pmoFDseSdfOMP	pmoFDseSdfOMP
+immediately precedes	encompasses	strictly precedes	m	D	p
+immediately precedes	ends with and starts before	strictly precedes	m	F	p
+immediately precedes	immediately preceded by	ends with	m	M	Fef
+immediately precedes	starts during and ends after	ends during	m	O	osd
+immediately precedes	strictly preceded by	ends after	m	P	DSOMP
+immediately precedes	starts with and ends after	immediately precedes	m	S	m
+immediately precedes	happens during	ends during	m	d	osd
+immediately precedes	temporally coincides with	immediately precedes	m	e	m
+immediately precedes	ends with and starts after	ends during	m	f	osd
+immediately precedes	immediately precedes	strictly precedes	m	m	p
+immediately precedes	starts before and ends during	strictly precedes	m	o	p
+immediately precedes	strictly precedes	strictly precedes	m	p	p
+immediately precedes	starts with and ends before	immediately precedes	m	s	m
+immediately precedes	during which ends	ends during or before	m	DSO	pmosd
+immediately precedes	ends with	ends during or before	m	Fef	pmosd
+immediately precedes	later than	ends after start of	m	OMP	oFDseSdfOMP
+immediately precedes	starts during	ends during	m	dfO	osd
+immediately precedes	during which starts	strictly precedes	m	oFD	p
+immediately precedes	ends during	ends during or before	m	osd	pmosd
+immediately precedes	earlier than	strictly precedes	m	pmo	p
+immediately precedes	starts with	immediately precedes	m	seS	m
+immediately precedes	ends after	temporally related to	m	DSOMP	pmoFDseSdfOMP
+immediately precedes	starts during or after	ends after start of	m	dfOMP	oFDseSdfOMP
+immediately precedes	starts before	strictly precedes	m	pmoFD	p
+immediately precedes	ends during or before	ends during or before	m	pmosd	pmosd
+immediately precedes	temporally overlaps	ends during or before	m	oFDseSdfO	pmosd
+immediately precedes	ends after start of	temporally related to	m	oFDseSdfOMP	pmoFDseSdfOMP
+immediately precedes	starts before end of	ends during or before	m	pmoFDseSdfO	pmosd
+immediately precedes	temporally related to	temporally related to	m	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts before and ends during	encompasses	starts before	o	D	pmoFD
+starts before and ends during	ends with and starts before	earlier than	o	F	pmo
+starts before and ends during	immediately preceded by	during which ends	o	M	DSO
+starts before and ends during	starts during and ends after	temporally overlaps	o	O	oFDseSdfO
+starts before and ends during	strictly preceded by	ends after	o	P	DSOMP
+starts before and ends during	starts with and ends after	during which starts	o	S	oFD
+starts before and ends during	happens during	ends during	o	d	osd
+starts before and ends during	temporally coincides with	starts before and ends during	o	e	o
+starts before and ends during	ends with and starts after	ends during	o	f	osd
+starts before and ends during	immediately precedes	strictly precedes	o	m	p
+starts before and ends during	starts before and ends during	earlier than	o	o	pmo
+starts before and ends during	strictly precedes	strictly precedes	o	p	p
+starts before and ends during	starts with and ends before	starts before and ends during	o	s	o
+starts before and ends during	during which ends	starts before end of	o	DSO	pmoFDseSdfO
+starts before and ends during	ends with	ends during or before	o	Fef	pmosd
+starts before and ends during	later than	ends after start of	o	OMP	oFDseSdfOMP
+starts before and ends during	starts during	temporally overlaps	o	dfO	oFDseSdfO
+starts before and ends during	during which starts	starts before	o	oFD	pmoFD
+starts before and ends during	ends during	ends during or before	o	osd	pmosd
+starts before and ends during	earlier than	earlier than	o	pmo	pmo
+starts before and ends during	starts with	during which starts	o	seS	oFD
+starts before and ends during	ends after	temporally related to	o	DSOMP	pmoFDseSdfOMP
+starts before and ends during	starts during or after	ends after start of	o	dfOMP	oFDseSdfOMP
+starts before and ends during	starts before	starts before	o	pmoFD	pmoFD
+starts before and ends during	ends during or before	ends during or before	o	pmosd	pmosd
+starts before and ends during	temporally overlaps	starts before end of	o	oFDseSdfO	pmoFDseSdfO
+starts before and ends during	ends after start of	temporally related to	o	oFDseSdfOMP	pmoFDseSdfOMP
+starts before and ends during	starts before end of	starts before end of	o	pmoFDseSdfO	pmoFDseSdfO
+starts before and ends during	temporally related to	temporally related to	o	pmoFDseSdfOMP	pmoFDseSdfOMP
+strictly precedes	encompasses	strictly precedes	p	D	p
+strictly precedes	ends with and starts before	strictly precedes	p	F	p
+strictly precedes	immediately preceded by	ends during or before	p	M	pmosd
+strictly precedes	starts during and ends after	ends during or before	p	O	pmosd
+strictly precedes	strictly preceded by	temporally related to	p	P	pmoFDseSdfOMP
+strictly precedes	starts with and ends after	strictly precedes	p	S	p
+strictly precedes	happens during	ends during or before	p	d	pmosd
+strictly precedes	temporally coincides with	strictly precedes	p	e	p
+strictly precedes	ends with and starts after	ends during or before	p	f	pmosd
+strictly precedes	immediately precedes	strictly precedes	p	m	p
+strictly precedes	starts before and ends during	strictly precedes	p	o	p
+strictly precedes	strictly precedes	strictly precedes	p	p	p
+strictly precedes	starts with and ends before	strictly precedes	p	s	p
+strictly precedes	during which ends	ends during or before	p	DSO	pmosd
+strictly precedes	ends with	ends during or before	p	Fef	pmosd
+strictly precedes	later than	temporally related to	p	OMP	pmoFDseSdfOMP
+strictly precedes	starts during	ends during or before	p	dfO	pmosd
+strictly precedes	during which starts	strictly precedes	p	oFD	p
+strictly precedes	ends during	ends during or before	p	osd	pmosd
+strictly precedes	earlier than	strictly precedes	p	pmo	p
+strictly precedes	starts with	strictly precedes	p	seS	p
+strictly precedes	ends after	temporally related to	p	DSOMP	pmoFDseSdfOMP
+strictly precedes	starts during or after	temporally related to	p	dfOMP	pmoFDseSdfOMP
+strictly precedes	starts before	strictly precedes	p	pmoFD	p
+strictly precedes	ends during or before	ends during or before	p	pmosd	pmosd
+strictly precedes	temporally overlaps	ends during or before	p	oFDseSdfO	pmosd
+strictly precedes	ends after start of	temporally related to	p	oFDseSdfOMP	pmoFDseSdfOMP
+strictly precedes	starts before end of	ends during or before	p	pmoFDseSdfO	pmosd
+strictly precedes	temporally related to	temporally related to	p	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts with and ends before	encompasses	starts before	s	D	pmoFD
+starts with and ends before	ends with and starts before	earlier than	s	F	pmo
+starts with and ends before	immediately preceded by	immediately preceded by	s	M	M
+starts with and ends before	starts during and ends after	starts during	s	O	dfO
+starts with and ends before	strictly preceded by	strictly preceded by	s	P	P
+starts with and ends before	starts with and ends after	starts with	s	S	seS
+starts with and ends before	happens during	happens during	s	d	d
+starts with and ends before	temporally coincides with	starts with and ends before	s	e	s
+starts with and ends before	ends with and starts after	happens during	s	f	d
+starts with and ends before	immediately precedes	strictly precedes	s	m	p
+starts with and ends before	starts before and ends during	earlier than	s	o	pmo
+starts with and ends before	strictly precedes	strictly precedes	s	p	p
+starts with and ends before	starts with and ends before	starts with and ends before	s	s	s
+starts with and ends before	during which ends	starts before end of	s	DSO	pmoFDseSdfO
+starts with and ends before	ends with	ends during or before	s	Fef	pmosd
+starts with and ends before	later than	starts during or after	s	OMP	dfOMP
+starts with and ends before	starts during	starts during	s	dfO	dfO
+starts with and ends before	during which starts	starts before	s	oFD	pmoFD
+starts with and ends before	ends during	ends during or before	s	osd	pmosd
+starts with and ends before	earlier than	earlier than	s	pmo	pmo
+starts with and ends before	starts with	starts with	s	seS	seS
+starts with and ends before	ends after	temporally related to	s	DSOMP	pmoFDseSdfOMP
+starts with and ends before	starts during or after	starts during or after	s	dfOMP	dfOMP
+starts with and ends before	starts before	starts before	s	pmoFD	pmoFD
+starts with and ends before	ends during or before	ends during or before	s	pmosd	pmosd
+starts with and ends before	temporally overlaps	starts before end of	s	oFDseSdfO	pmoFDseSdfO
+starts with and ends before	ends after start of	temporally related to	s	oFDseSdfOMP	pmoFDseSdfOMP
+starts with and ends before	starts before end of	starts before end of	s	pmoFDseSdfO	pmoFDseSdfO
+starts with and ends before	temporally related to	temporally related to	s	pmoFDseSdfOMP	pmoFDseSdfOMP
+during which ends	encompasses	ends after	DSO	D	DSOMP
+during which ends	ends with and starts before	during which ends	DSO	F	DSO
+during which ends	immediately preceded by	ends after	DSO	M	DSOMP
+during which ends	starts during and ends after	ends after	DSO	O	DSOMP
+during which ends	strictly preceded by	ends after	DSO	P	DSOMP
+during which ends	starts with and ends after	ends after	DSO	S	DSOMP
+during which ends	happens during	temporally overlaps	DSO	d	oFDseSdfO
+during which ends	temporally coincides with	during which ends	DSO	e	DSO
+during which ends	ends with and starts after	during which ends	DSO	f	DSO
+during which ends	immediately precedes	during which starts	DSO	m	oFD
+during which ends	starts before and ends during	temporally overlaps	DSO	o	oFDseSdfO
+during which ends	strictly precedes	starts before	DSO	p	pmoFD
+during which ends	starts with and ends before	temporally overlaps	DSO	s	oFDseSdfO
+during which ends	during which ends	ends after	DSO	DSO	DSOMP
+during which ends	ends with	during which ends	DSO	Fef	DSO
+during which ends	later than	ends after	DSO	OMP	DSOMP
+during which ends	starts during	ends after start of	DSO	dfO	oFDseSdfOMP
+during which ends	during which starts	ends after start of	DSO	oFD	oFDseSdfOMP
+during which ends	ends during	temporally overlaps	DSO	osd	oFDseSdfO
+during which ends	earlier than	starts before end of	DSO	pmo	pmoFDseSdfO
+during which ends	starts with	ends after start of	DSO	seS	oFDseSdfOMP
+during which ends	ends after	ends after	DSO	DSOMP	DSOMP
+during which ends	starts during or after	ends after start of	DSO	dfOMP	oFDseSdfOMP
+during which ends	starts before	temporally related to	DSO	pmoFD	pmoFDseSdfOMP
+during which ends	ends during or before	starts before end of	DSO	pmosd	pmoFDseSdfO
+during which ends	temporally overlaps	ends after start of	DSO	oFDseSdfO	oFDseSdfOMP
+during which ends	ends after start of	ends after start of	DSO	oFDseSdfOMP	oFDseSdfOMP
+during which ends	starts before end of	temporally related to	DSO	pmoFDseSdfO	pmoFDseSdfOMP
+during which ends	temporally related to	temporally related to	DSO	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends with	encompasses	ends after	Fef	D	DSOMP
+ends with	ends with and starts before	ends with	Fef	F	Fef
+ends with	immediately preceded by	ends after	Fef	M	DSOMP
+ends with	starts during and ends after	ends after	Fef	O	DSOMP
+ends with	strictly preceded by	ends after	Fef	P	DSOMP
+ends with	starts with and ends after	ends after	Fef	S	DSOMP
+ends with	happens during	ends during	Fef	d	osd
+ends with	temporally coincides with	ends with	Fef	e	Fef
+ends with	ends with and starts after	ends with	Fef	f	Fef
+ends with	immediately precedes	immediately precedes	Fef	m	m
+ends with	starts before and ends during	ends during	Fef	o	osd
+ends with	strictly precedes	strictly precedes	Fef	p	p
+ends with	starts with and ends before	ends during	Fef	s	osd
+ends with	during which ends	ends after	Fef	DSO	DSOMP
+ends with	ends with	ends with	Fef	Fef	Fef
+ends with	later than	ends after	Fef	OMP	DSOMP
+ends with	starts during	ends after start of	Fef	dfO	oFDseSdfOMP
+ends with	during which starts	ends after start of	Fef	oFD	oFDseSdfOMP
+ends with	ends during	ends during	Fef	osd	osd
+ends with	earlier than	ends during or before	Fef	pmo	pmosd
+ends with	starts with	ends after start of	Fef	seS	oFDseSdfOMP
+ends with	ends after	ends after	Fef	DSOMP	DSOMP
+ends with	starts during or after	ends after start of	Fef	dfOMP	oFDseSdfOMP
+ends with	starts before	temporally related to	Fef	pmoFD	pmoFDseSdfOMP
+ends with	ends during or before	ends during or before	Fef	pmosd	pmosd
+ends with	temporally overlaps	ends after start of	Fef	oFDseSdfO	oFDseSdfOMP
+ends with	ends after start of	ends after start of	Fef	oFDseSdfOMP	oFDseSdfOMP
+ends with	starts before end of	temporally related to	Fef	pmoFDseSdfO	pmoFDseSdfOMP
+ends with	temporally related to	temporally related to	Fef	pmoFDseSdfOMP	pmoFDseSdfOMP
+later than	encompasses	ends after	OMP	D	DSOMP
+later than	ends with and starts before	ends after	OMP	F	DSOMP
+later than	immediately preceded by	strictly preceded by	OMP	M	P
+later than	starts during and ends after	later than	OMP	O	OMP
+later than	strictly preceded by	strictly preceded by	OMP	P	P
+later than	starts with and ends after	later than	OMP	S	OMP
+later than	happens during	starts during or after	OMP	d	dfOMP
+later than	temporally coincides with	later than	OMP	e	OMP
+later than	ends with and starts after	later than	OMP	f	OMP
+later than	immediately precedes	ends after start of	OMP	m	oFDseSdfOMP
+later than	starts before and ends during	ends after start of	OMP	o	oFDseSdfOMP
+later than	strictly precedes	temporally related to	OMP	p	pmoFDseSdfOMP
+later than	starts with and ends before	starts during or after	OMP	s	dfOMP
+later than	during which ends	ends after	OMP	DSO	DSOMP
+later than	ends with	ends after	OMP	Fef	DSOMP
+later than	later than	later than	OMP	OMP	OMP
+later than	starts during	starts during or after	OMP	dfO	dfOMP
+later than	during which starts	ends after start of	OMP	oFD	oFDseSdfOMP
+later than	ends during	ends after start of	OMP	osd	oFDseSdfOMP
+later than	earlier than	temporally related to	OMP	pmo	pmoFDseSdfOMP
+later than	starts with	starts during or after	OMP	seS	dfOMP
+later than	ends after	ends after	OMP	DSOMP	DSOMP
+later than	starts during or after	starts during or after	OMP	dfOMP	dfOMP
+later than	starts before	temporally related to	OMP	pmoFD	pmoFDseSdfOMP
+later than	ends during or before	temporally related to	OMP	pmosd	pmoFDseSdfOMP
+later than	temporally overlaps	ends after start of	OMP	oFDseSdfO	oFDseSdfOMP
+later than	ends after start of	ends after start of	OMP	oFDseSdfOMP	oFDseSdfOMP
+later than	starts before end of	temporally related to	OMP	pmoFDseSdfO	pmoFDseSdfOMP
+later than	temporally related to	temporally related to	OMP	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts during	encompasses	temporally related to	dfO	D	pmoFDseSdfOMP
+starts during	ends with and starts before	starts before end of	dfO	F	pmoFDseSdfO
+starts during	immediately preceded by	strictly preceded by	dfO	M	P
+starts during	starts during and ends after	starts during or after	dfO	O	dfOMP
+starts during	strictly preceded by	strictly preceded by	dfO	P	P
+starts during	starts with and ends after	starts during or after	dfO	S	dfOMP
+starts during	happens during	starts during	dfO	d	dfO
+starts during	temporally coincides with	starts during	dfO	e	dfO
+starts during	ends with and starts after	starts during	dfO	f	dfO
+starts during	immediately precedes	starts before	dfO	m	pmoFD
+starts during	starts before and ends during	starts before end of	dfO	o	pmoFDseSdfO
+starts during	strictly precedes	starts before	dfO	p	pmoFD
+starts during	starts with and ends before	starts during	dfO	s	dfO
+starts during	during which ends	temporally related to	dfO	DSO	pmoFDseSdfOMP
+starts during	ends with	starts before end of	dfO	Fef	pmoFDseSdfO
+starts during	later than	starts during or after	dfO	OMP	dfOMP
+starts during	starts during	starts during or after	dfO	dfO	dfOMP
+starts during	during which starts	temporally related to	dfO	oFD	pmoFDseSdfOMP
+starts during	ends during	starts before end of	dfO	osd	pmoFDseSdfO
+starts during	earlier than	starts before end of	dfO	pmo	pmoFDseSdfO
+starts during	starts with	starts during or after	dfO	seS	dfOMP
+starts during	ends after	temporally related to	dfO	DSOMP	pmoFDseSdfOMP
+starts during	starts during or after	starts during or after	dfO	dfOMP	dfOMP
+starts during	starts before	temporally related to	dfO	pmoFD	pmoFDseSdfOMP
+starts during	ends during or before	starts before end of	dfO	pmosd	pmoFDseSdfO
+starts during	temporally overlaps	temporally related to	dfO	oFDseSdfO	pmoFDseSdfOMP
+starts during	ends after start of	temporally related to	dfO	oFDseSdfOMP	pmoFDseSdfOMP
+starts during	starts before end of	temporally related to	dfO	pmoFDseSdfO	pmoFDseSdfOMP
+starts during	temporally related to	temporally related to	dfO	pmoFDseSdfOMP	pmoFDseSdfOMP
+during which starts	encompasses	starts before	oFD	D	pmoFD
+during which starts	ends with and starts before	starts before	oFD	F	pmoFD
+during which starts	immediately preceded by	during which ends	oFD	M	DSO
+during which starts	starts during and ends after	temporally overlaps	oFD	O	oFDseSdfO
+during which starts	strictly preceded by	ends after	oFD	P	DSOMP
+during which starts	starts with and ends after	during which starts	oFD	S	oFD
+during which starts	happens during	temporally overlaps	oFD	d	oFDseSdfO
+during which starts	temporally coincides with	during which starts	oFD	e	oFD
+during which starts	ends with and starts after	temporally overlaps	oFD	f	oFDseSdfO
+during which starts	immediately precedes	starts before	oFD	m	pmoFD
+during which starts	starts before and ends during	starts before	oFD	o	pmoFD
+during which starts	strictly precedes	starts before	oFD	p	pmoFD
+during which starts	starts with and ends before	during which starts	oFD	s	oFD
+during which starts	during which ends	starts before end of	oFD	DSO	pmoFDseSdfO
+during which starts	ends with	starts before end of	oFD	Fef	pmoFDseSdfO
+during which starts	later than	ends after start of	oFD	OMP	oFDseSdfOMP
+during which starts	starts during	temporally overlaps	oFD	dfO	oFDseSdfO
+during which starts	during which starts	starts before	oFD	oFD	pmoFD
+during which starts	ends during	starts before end of	oFD	osd	pmoFDseSdfO
+during which starts	earlier than	starts before	oFD	pmo	pmoFD
+during which starts	starts with	during which starts	oFD	seS	oFD
+during which starts	ends after	temporally related to	oFD	DSOMP	pmoFDseSdfOMP
+during which starts	starts during or after	ends after start of	oFD	dfOMP	oFDseSdfOMP
+during which starts	starts before	starts before	oFD	pmoFD	pmoFD
+during which starts	ends during or before	starts before end of	oFD	pmosd	pmoFDseSdfO
+during which starts	temporally overlaps	starts before end of	oFD	oFDseSdfO	pmoFDseSdfO
+during which starts	ends after start of	temporally related to	oFD	oFDseSdfOMP	pmoFDseSdfOMP
+during which starts	starts before end of	starts before end of	oFD	pmoFDseSdfO	pmoFDseSdfO
+during which starts	temporally related to	temporally related to	oFD	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends during	encompasses	temporally related to	osd	D	pmoFDseSdfOMP
+ends during	ends with and starts before	ends during or before	osd	F	pmosd
+ends during	immediately preceded by	ends after	osd	M	DSOMP
+ends during	starts during and ends after	ends after start of	osd	O	oFDseSdfOMP
+ends during	strictly preceded by	ends after	osd	P	DSOMP
+ends during	starts with and ends after	ends after start of	osd	S	oFDseSdfOMP
+ends during	happens during	ends during	osd	d	osd
+ends during	temporally coincides with	ends during	osd	e	osd
+ends during	ends with and starts after	ends during	osd	f	osd
+ends during	immediately precedes	strictly precedes	osd	m	p
+ends during	starts before and ends during	ends during or before	osd	o	pmosd
+ends during	strictly precedes	strictly precedes	osd	p	p
+ends during	starts with and ends before	ends during	osd	s	osd
+ends during	during which ends	temporally related to	osd	DSO	pmoFDseSdfOMP
+ends during	ends with	ends during or before	osd	Fef	pmosd
+ends during	later than	ends after start of	osd	OMP	oFDseSdfOMP
+ends during	starts during	ends after start of	osd	dfO	oFDseSdfOMP
+ends during	during which starts	temporally related to	osd	oFD	pmoFDseSdfOMP
+ends during	ends during	ends during or before	osd	osd	pmosd
+ends during	earlier than	ends during or before	osd	pmo	pmosd
+ends during	starts with	ends after start of	osd	seS	oFDseSdfOMP
+ends during	ends after	temporally related to	osd	DSOMP	pmoFDseSdfOMP
+ends during	starts during or after	ends after start of	osd	dfOMP	oFDseSdfOMP
+ends during	starts before	temporally related to	osd	pmoFD	pmoFDseSdfOMP
+ends during	ends during or before	ends during or before	osd	pmosd	pmosd
+ends during	temporally overlaps	temporally related to	osd	oFDseSdfO	pmoFDseSdfOMP
+ends during	ends after start of	temporally related to	osd	oFDseSdfOMP	pmoFDseSdfOMP
+ends during	starts before end of	temporally related to	osd	pmoFDseSdfO	pmoFDseSdfOMP
+ends during	temporally related to	temporally related to	osd	pmoFDseSdfOMP	pmoFDseSdfOMP
+earlier than	encompasses	starts before	pmo	D	pmoFD
+earlier than	ends with and starts before	earlier than	pmo	F	pmo
+earlier than	immediately preceded by	starts before end of	pmo	M	pmoFDseSdfO
+earlier than	starts during and ends after	starts before end of	pmo	O	pmoFDseSdfO
+earlier than	strictly preceded by	temporally related to	pmo	P	pmoFDseSdfOMP
+earlier than	starts with and ends after	starts before	pmo	S	pmoFD
+earlier than	happens during	ends during or before	pmo	d	pmosd
+earlier than	temporally coincides with	earlier than	pmo	e	pmo
+earlier than	ends with and starts after	ends during or before	pmo	f	pmosd
+earlier than	immediately precedes	strictly precedes	pmo	m	p
+earlier than	starts before and ends during	earlier than	pmo	o	pmo
+earlier than	strictly precedes	strictly precedes	pmo	p	p
+earlier than	starts with and ends before	earlier than	pmo	s	pmo
+earlier than	during which ends	starts before end of	pmo	DSO	pmoFDseSdfO
+earlier than	ends with	ends during or before	pmo	Fef	pmosd
+earlier than	later than	temporally related to	pmo	OMP	pmoFDseSdfOMP
+earlier than	starts during	starts before end of	pmo	dfO	pmoFDseSdfO
+earlier than	during which starts	starts before	pmo	oFD	pmoFD
+earlier than	ends during	ends during or before	pmo	osd	pmosd
+earlier than	earlier than	earlier than	pmo	pmo	pmo
+earlier than	starts with	starts before	pmo	seS	pmoFD
+earlier than	ends after	temporally related to	pmo	DSOMP	pmoFDseSdfOMP
+earlier than	starts during or after	temporally related to	pmo	dfOMP	pmoFDseSdfOMP
+earlier than	starts before	starts before	pmo	pmoFD	pmoFD
+earlier than	ends during or before	ends during or before	pmo	pmosd	pmosd
+earlier than	temporally overlaps	starts before end of	pmo	oFDseSdfO	pmoFDseSdfO
+earlier than	ends after start of	temporally related to	pmo	oFDseSdfOMP	pmoFDseSdfOMP
+earlier than	starts before end of	starts before end of	pmo	pmoFDseSdfO	pmoFDseSdfO
+earlier than	temporally related to	temporally related to	pmo	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts with	encompasses	starts before	seS	D	pmoFD
+starts with	ends with and starts before	starts before	seS	F	pmoFD
+starts with	immediately preceded by	immediately preceded by	seS	M	M
+starts with	starts during and ends after	starts during	seS	O	dfO
+starts with	strictly preceded by	strictly preceded by	seS	P	P
+starts with	starts with and ends after	starts with	seS	S	seS
+starts with	happens during	starts during	seS	d	dfO
+starts with	temporally coincides with	starts with	seS	e	seS
+starts with	ends with and starts after	starts during	seS	f	dfO
+starts with	immediately precedes	starts before	seS	m	pmoFD
+starts with	starts before and ends during	starts before	seS	o	pmoFD
+starts with	strictly precedes	starts before	seS	p	pmoFD
+starts with	starts with and ends before	starts with	seS	s	seS
+starts with	during which ends	starts before end of	seS	DSO	pmoFDseSdfO
+starts with	ends with	starts before end of	seS	Fef	pmoFDseSdfO
+starts with	later than	starts during or after	seS	OMP	dfOMP
+starts with	starts during	starts during	seS	dfO	dfO
+starts with	during which starts	starts before	seS	oFD	pmoFD
+starts with	ends during	starts before end of	seS	osd	pmoFDseSdfO
+starts with	earlier than	starts before	seS	pmo	pmoFD
+starts with	starts with	starts with	seS	seS	seS
+starts with	ends after	temporally related to	seS	DSOMP	pmoFDseSdfOMP
+starts with	starts during or after	starts during or after	seS	dfOMP	dfOMP
+starts with	starts before	starts before	seS	pmoFD	pmoFD
+starts with	ends during or before	starts before end of	seS	pmosd	pmoFDseSdfO
+starts with	temporally overlaps	starts before end of	seS	oFDseSdfO	pmoFDseSdfO
+starts with	ends after start of	temporally related to	seS	oFDseSdfOMP	pmoFDseSdfOMP
+starts with	starts before end of	starts before end of	seS	pmoFDseSdfO	pmoFDseSdfO
+starts with	temporally related to	temporally related to	seS	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends after	encompasses	ends after	DSOMP	D	DSOMP
+ends after	ends with and starts before	ends after	DSOMP	F	DSOMP
+ends after	immediately preceded by	ends after	DSOMP	M	DSOMP
+ends after	starts during and ends after	ends after	DSOMP	O	DSOMP
+ends after	strictly preceded by	ends after	DSOMP	P	DSOMP
+ends after	starts with and ends after	ends after	DSOMP	S	DSOMP
+ends after	happens during	ends after start of	DSOMP	d	oFDseSdfOMP
+ends after	temporally coincides with	ends after	DSOMP	e	DSOMP
+ends after	ends with and starts after	ends after	DSOMP	f	DSOMP
+ends after	immediately precedes	ends after start of	DSOMP	m	oFDseSdfOMP
+ends after	starts before and ends during	ends after start of	DSOMP	o	oFDseSdfOMP
+ends after	strictly precedes	temporally related to	DSOMP	p	pmoFDseSdfOMP
+ends after	starts with and ends before	ends after start of	DSOMP	s	oFDseSdfOMP
+ends after	during which ends	ends after	DSOMP	DSO	DSOMP
+ends after	ends with	ends after	DSOMP	Fef	DSOMP
+ends after	later than	ends after	DSOMP	OMP	DSOMP
+ends after	starts during	ends after start of	DSOMP	dfO	oFDseSdfOMP
+ends after	during which starts	ends after start of	DSOMP	oFD	oFDseSdfOMP
+ends after	ends during	ends after start of	DSOMP	osd	oFDseSdfOMP
+ends after	earlier than	temporally related to	DSOMP	pmo	pmoFDseSdfOMP
+ends after	starts with	ends after start of	DSOMP	seS	oFDseSdfOMP
+ends after	ends after	ends after	DSOMP	DSOMP	DSOMP
+ends after	starts during or after	ends after start of	DSOMP	dfOMP	oFDseSdfOMP
+ends after	starts before	temporally related to	DSOMP	pmoFD	pmoFDseSdfOMP
+ends after	ends during or before	temporally related to	DSOMP	pmosd	pmoFDseSdfOMP
+ends after	temporally overlaps	ends after start of	DSOMP	oFDseSdfO	oFDseSdfOMP
+ends after	ends after start of	ends after start of	DSOMP	oFDseSdfOMP	oFDseSdfOMP
+ends after	starts before end of	temporally related to	DSOMP	pmoFDseSdfO	pmoFDseSdfOMP
+ends after	temporally related to	temporally related to	DSOMP	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts during or after	encompasses	temporally related to	dfOMP	D	pmoFDseSdfOMP
+starts during or after	ends with and starts before	temporally related to	dfOMP	F	pmoFDseSdfOMP
+starts during or after	immediately preceded by	strictly preceded by	dfOMP	M	P
+starts during or after	starts during and ends after	starts during or after	dfOMP	O	dfOMP
+starts during or after	strictly preceded by	strictly preceded by	dfOMP	P	P
+starts during or after	starts with and ends after	starts during or after	dfOMP	S	dfOMP
+starts during or after	happens during	starts during or after	dfOMP	d	dfOMP
+starts during or after	temporally coincides with	starts during or after	dfOMP	e	dfOMP
+starts during or after	ends with and starts after	starts during or after	dfOMP	f	dfOMP
+starts during or after	immediately precedes	temporally related to	dfOMP	m	pmoFDseSdfOMP
+starts during or after	starts before and ends during	temporally related to	dfOMP	o	pmoFDseSdfOMP
+starts during or after	strictly precedes	temporally related to	dfOMP	p	pmoFDseSdfOMP
+starts during or after	starts with and ends before	starts during or after	dfOMP	s	dfOMP
+starts during or after	during which ends	temporally related to	dfOMP	DSO	pmoFDseSdfOMP
+starts during or after	ends with	temporally related to	dfOMP	Fef	pmoFDseSdfOMP
+starts during or after	later than	starts during or after	dfOMP	OMP	dfOMP
+starts during or after	starts during	starts during or after	dfOMP	dfO	dfOMP
+starts during or after	during which starts	temporally related to	dfOMP	oFD	pmoFDseSdfOMP
+starts during or after	ends during	temporally related to	dfOMP	osd	pmoFDseSdfOMP
+starts during or after	earlier than	temporally related to	dfOMP	pmo	pmoFDseSdfOMP
+starts during or after	starts with	starts during or after	dfOMP	seS	dfOMP
+starts during or after	ends after	temporally related to	dfOMP	DSOMP	pmoFDseSdfOMP
+starts during or after	starts during or after	starts during or after	dfOMP	dfOMP	dfOMP
+starts during or after	starts before	temporally related to	dfOMP	pmoFD	pmoFDseSdfOMP
+starts during or after	ends during or before	temporally related to	dfOMP	pmosd	pmoFDseSdfOMP
+starts during or after	temporally overlaps	temporally related to	dfOMP	oFDseSdfO	pmoFDseSdfOMP
+starts during or after	ends after start of	temporally related to	dfOMP	oFDseSdfOMP	pmoFDseSdfOMP
+starts during or after	starts before end of	temporally related to	dfOMP	pmoFDseSdfO	pmoFDseSdfOMP
+starts during or after	temporally related to	temporally related to	dfOMP	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts before	encompasses	starts before	pmoFD	D	pmoFD
+starts before	ends with and starts before	starts before	pmoFD	F	pmoFD
+starts before	immediately preceded by	starts before end of	pmoFD	M	pmoFDseSdfO
+starts before	starts during and ends after	starts before end of	pmoFD	O	pmoFDseSdfO
+starts before	strictly preceded by	temporally related to	pmoFD	P	pmoFDseSdfOMP
+starts before	starts with and ends after	starts before	pmoFD	S	pmoFD
+starts before	happens during	starts before end of	pmoFD	d	pmoFDseSdfO
+starts before	temporally coincides with	starts before	pmoFD	e	pmoFD
+starts before	ends with and starts after	starts before end of	pmoFD	f	pmoFDseSdfO
+starts before	immediately precedes	starts before	pmoFD	m	pmoFD
+starts before	starts before and ends during	starts before	pmoFD	o	pmoFD
+starts before	strictly precedes	starts before	pmoFD	p	pmoFD
+starts before	starts with and ends before	starts before	pmoFD	s	pmoFD
+starts before	during which ends	starts before end of	pmoFD	DSO	pmoFDseSdfO
+starts before	ends with	starts before end of	pmoFD	Fef	pmoFDseSdfO
+starts before	later than	temporally related to	pmoFD	OMP	pmoFDseSdfOMP
+starts before	starts during	starts before end of	pmoFD	dfO	pmoFDseSdfO
+starts before	during which starts	starts before	pmoFD	oFD	pmoFD
+starts before	ends during	starts before end of	pmoFD	osd	pmoFDseSdfO
+starts before	earlier than	starts before	pmoFD	pmo	pmoFD
+starts before	starts with	starts before	pmoFD	seS	pmoFD
+starts before	ends after	temporally related to	pmoFD	DSOMP	pmoFDseSdfOMP
+starts before	starts during or after	temporally related to	pmoFD	dfOMP	pmoFDseSdfOMP
+starts before	starts before	starts before	pmoFD	pmoFD	pmoFD
+starts before	ends during or before	starts before end of	pmoFD	pmosd	pmoFDseSdfO
+starts before	temporally overlaps	starts before end of	pmoFD	oFDseSdfO	pmoFDseSdfO
+starts before	ends after start of	temporally related to	pmoFD	oFDseSdfOMP	pmoFDseSdfOMP
+starts before	starts before end of	starts before end of	pmoFD	pmoFDseSdfO	pmoFDseSdfO
+starts before	temporally related to	temporally related to	pmoFD	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends during or before	encompasses	temporally related to	pmosd	D	pmoFDseSdfOMP
+ends during or before	ends with and starts before	ends during or before	pmosd	F	pmosd
+ends during or before	immediately preceded by	temporally related to	pmosd	M	pmoFDseSdfOMP
+ends during or before	starts during and ends after	temporally related to	pmosd	O	pmoFDseSdfOMP
+ends during or before	strictly preceded by	temporally related to	pmosd	P	pmoFDseSdfOMP
+ends during or before	starts with and ends after	temporally related to	pmosd	S	pmoFDseSdfOMP
+ends during or before	happens during	ends during or before	pmosd	d	pmosd
+ends during or before	temporally coincides with	ends during or before	pmosd	e	pmosd
+ends during or before	ends with and starts after	ends during or before	pmosd	f	pmosd
+ends during or before	immediately precedes	strictly precedes	pmosd	m	p
+ends during or before	starts before and ends during	ends during or before	pmosd	o	pmosd
+ends during or before	strictly precedes	strictly precedes	pmosd	p	p
+ends during or before	starts with and ends before	ends during or before	pmosd	s	pmosd
+ends during or before	during which ends	temporally related to	pmosd	DSO	pmoFDseSdfOMP
+ends during or before	ends with	ends during or before	pmosd	Fef	pmosd
+ends during or before	later than	temporally related to	pmosd	OMP	pmoFDseSdfOMP
+ends during or before	starts during	temporally related to	pmosd	dfO	pmoFDseSdfOMP
+ends during or before	during which starts	temporally related to	pmosd	oFD	pmoFDseSdfOMP
+ends during or before	ends during	ends during or before	pmosd	osd	pmosd
+ends during or before	earlier than	ends during or before	pmosd	pmo	pmosd
+ends during or before	starts with	temporally related to	pmosd	seS	pmoFDseSdfOMP
+ends during or before	ends after	temporally related to	pmosd	DSOMP	pmoFDseSdfOMP
+ends during or before	starts during or after	temporally related to	pmosd	dfOMP	pmoFDseSdfOMP
+ends during or before	starts before	temporally related to	pmosd	pmoFD	pmoFDseSdfOMP
+ends during or before	ends during or before	ends during or before	pmosd	pmosd	pmosd
+ends during or before	temporally overlaps	temporally related to	pmosd	oFDseSdfO	pmoFDseSdfOMP
+ends during or before	ends after start of	temporally related to	pmosd	oFDseSdfOMP	pmoFDseSdfOMP
+ends during or before	starts before end of	temporally related to	pmosd	pmoFDseSdfO	pmoFDseSdfOMP
+ends during or before	temporally related to	temporally related to	pmosd	pmoFDseSdfOMP	pmoFDseSdfOMP
+temporally overlaps	encompasses	temporally related to	oFDseSdfO	D	pmoFDseSdfOMP
+temporally overlaps	ends with and starts before	starts before end of	oFDseSdfO	F	pmoFDseSdfO
+temporally overlaps	immediately preceded by	ends after	oFDseSdfO	M	DSOMP
+temporally overlaps	starts during and ends after	ends after start of	oFDseSdfO	O	oFDseSdfOMP
+temporally overlaps	strictly preceded by	ends after	oFDseSdfO	P	DSOMP
+temporally overlaps	starts with and ends after	ends after start of	oFDseSdfO	S	oFDseSdfOMP
+temporally overlaps	happens during	temporally overlaps	oFDseSdfO	d	oFDseSdfO
+temporally overlaps	temporally coincides with	temporally overlaps	oFDseSdfO	e	oFDseSdfO
+temporally overlaps	ends with and starts after	temporally overlaps	oFDseSdfO	f	oFDseSdfO
+temporally overlaps	immediately precedes	starts before	oFDseSdfO	m	pmoFD
+temporally overlaps	starts before and ends during	starts before end of	oFDseSdfO	o	pmoFDseSdfO
+temporally overlaps	strictly precedes	starts before	oFDseSdfO	p	pmoFD
+temporally overlaps	starts with and ends before	temporally overlaps	oFDseSdfO	s	oFDseSdfO
+temporally overlaps	during which ends	temporally related to	oFDseSdfO	DSO	pmoFDseSdfOMP
+temporally overlaps	ends with	starts before end of	oFDseSdfO	Fef	pmoFDseSdfO
+temporally overlaps	later than	ends after start of	oFDseSdfO	OMP	oFDseSdfOMP
+temporally overlaps	starts during	ends after start of	oFDseSdfO	dfO	oFDseSdfOMP
+temporally overlaps	during which starts	temporally related to	oFDseSdfO	oFD	pmoFDseSdfOMP
+temporally overlaps	ends during	starts before end of	oFDseSdfO	osd	pmoFDseSdfO
+temporally overlaps	earlier than	starts before end of	oFDseSdfO	pmo	pmoFDseSdfO
+temporally overlaps	starts with	ends after start of	oFDseSdfO	seS	oFDseSdfOMP
+temporally overlaps	ends after	temporally related to	oFDseSdfO	DSOMP	pmoFDseSdfOMP
+temporally overlaps	starts during or after	ends after start of	oFDseSdfO	dfOMP	oFDseSdfOMP
+temporally overlaps	starts before	temporally related to	oFDseSdfO	pmoFD	pmoFDseSdfOMP
+temporally overlaps	ends during or before	starts before end of	oFDseSdfO	pmosd	pmoFDseSdfO
+temporally overlaps	temporally overlaps	temporally related to	oFDseSdfO	oFDseSdfO	pmoFDseSdfOMP
+temporally overlaps	ends after start of	temporally related to	oFDseSdfO	oFDseSdfOMP	pmoFDseSdfOMP
+temporally overlaps	starts before end of	temporally related to	oFDseSdfO	pmoFDseSdfO	pmoFDseSdfOMP
+temporally overlaps	temporally related to	temporally related to	oFDseSdfO	pmoFDseSdfOMP	pmoFDseSdfOMP
+ends after start of	encompasses	temporally related to	oFDseSdfOMP	D	pmoFDseSdfOMP
+ends after start of	ends with and starts before	temporally related to	oFDseSdfOMP	F	pmoFDseSdfOMP
+ends after start of	immediately preceded by	ends after	oFDseSdfOMP	M	DSOMP
+ends after start of	starts during and ends after	ends after start of	oFDseSdfOMP	O	oFDseSdfOMP
+ends after start of	strictly preceded by	ends after	oFDseSdfOMP	P	DSOMP
+ends after start of	starts with and ends after	ends after start of	oFDseSdfOMP	S	oFDseSdfOMP
+ends after start of	happens during	ends after start of	oFDseSdfOMP	d	oFDseSdfOMP
+ends after start of	temporally coincides with	ends after start of	oFDseSdfOMP	e	oFDseSdfOMP
+ends after start of	ends with and starts after	ends after start of	oFDseSdfOMP	f	oFDseSdfOMP
+ends after start of	immediately precedes	temporally related to	oFDseSdfOMP	m	pmoFDseSdfOMP
+ends after start of	starts before and ends during	temporally related to	oFDseSdfOMP	o	pmoFDseSdfOMP
+ends after start of	strictly precedes	temporally related to	oFDseSdfOMP	p	pmoFDseSdfOMP
+ends after start of	starts with and ends before	ends after start of	oFDseSdfOMP	s	oFDseSdfOMP
+ends after start of	during which ends	temporally related to	oFDseSdfOMP	DSO	pmoFDseSdfOMP
+ends after start of	ends with	temporally related to	oFDseSdfOMP	Fef	pmoFDseSdfOMP
+ends after start of	later than	ends after start of	oFDseSdfOMP	OMP	oFDseSdfOMP
+ends after start of	starts during	ends after start of	oFDseSdfOMP	dfO	oFDseSdfOMP
+ends after start of	during which starts	temporally related to	oFDseSdfOMP	oFD	pmoFDseSdfOMP
+ends after start of	ends during	temporally related to	oFDseSdfOMP	osd	pmoFDseSdfOMP
+ends after start of	earlier than	temporally related to	oFDseSdfOMP	pmo	pmoFDseSdfOMP
+ends after start of	starts with	ends after start of	oFDseSdfOMP	seS	oFDseSdfOMP
+ends after start of	ends after	temporally related to	oFDseSdfOMP	DSOMP	pmoFDseSdfOMP
+ends after start of	starts during or after	ends after start of	oFDseSdfOMP	dfOMP	oFDseSdfOMP
+ends after start of	starts before	temporally related to	oFDseSdfOMP	pmoFD	pmoFDseSdfOMP
+ends after start of	ends during or before	temporally related to	oFDseSdfOMP	pmosd	pmoFDseSdfOMP
+ends after start of	temporally overlaps	temporally related to	oFDseSdfOMP	oFDseSdfO	pmoFDseSdfOMP
+ends after start of	ends after start of	temporally related to	oFDseSdfOMP	oFDseSdfOMP	pmoFDseSdfOMP
+ends after start of	starts before end of	temporally related to	oFDseSdfOMP	pmoFDseSdfO	pmoFDseSdfOMP
+ends after start of	temporally related to	temporally related to	oFDseSdfOMP	pmoFDseSdfOMP	pmoFDseSdfOMP
+starts before end of	encompasses	temporally related to	pmoFDseSdfO	D	pmoFDseSdfOMP
+starts before end of	ends with and starts before	starts before end of	pmoFDseSdfO	F	pmoFDseSdfO
+starts before end of	immediately preceded by	temporally related to	pmoFDseSdfO	M	pmoFDseSdfOMP
+starts before end of	starts during and ends after	temporally related to	pmoFDseSdfO	O	pmoFDseSdfOMP
+starts before end of	strictly preceded by	temporally related to	pmoFDseSdfO	P	pmoFDseSdfOMP
+starts before end of	starts with and ends after	temporally related to	pmoFDseSdfO	S	pmoFDseSdfOMP
+starts before end of	happens during	starts before end of	pmoFDseSdfO	d	pmoFDseSdfO
+starts before end of	temporally coincides with	starts before end of	pmoFDseSdfO	e	pmoFDseSdfO
+starts before end of	ends with and starts after	starts before end of	pmoFDseSdfO	f	pmoFDseSdfO
+starts before end of	immediately precedes	starts before	pmoFDseSdfO	m	pmoFD
+starts before end of	starts before and ends during	starts before end of	pmoFDseSdfO	o	pmoFDseSdfO
+starts before end of	strictly precedes	starts before	pmoFDseSdfO	p	pmoFD
+starts before end of	starts with and ends before	starts before end of	pmoFDseSdfO	s	pmoFDseSdfO
+starts before end of	during which ends	temporally related to	pmoFDseSdfO	DSO	pmoFDseSdfOMP
+starts before end of	ends with	starts before end of	pmoFDseSdfO	Fef	pmoFDseSdfO
+starts before end of	later than	temporally related to	pmoFDseSdfO	OMP	pmoFDseSdfOMP
+starts before end of	starts during	temporally related to	pmoFDseSdfO	dfO	pmoFDseSdfOMP
+starts before end of	during which starts	temporally related to	pmoFDseSdfO	oFD	pmoFDseSdfOMP
+starts before end of	ends during	starts before end of	pmoFDseSdfO	osd	pmoFDseSdfO
+starts before end of	earlier than	starts before end of	pmoFDseSdfO	pmo	pmoFDseSdfO
+starts before end of	starts with	temporally related to	pmoFDseSdfO	seS	pmoFDseSdfOMP
+starts before end of	ends after	temporally related to	pmoFDseSdfO	DSOMP	pmoFDseSdfOMP
+starts before end of	starts during or after	temporally related to	pmoFDseSdfO	dfOMP	pmoFDseSdfOMP
+starts before end of	starts before	temporally related to	pmoFDseSdfO	pmoFD	pmoFDseSdfOMP
+starts before end of	ends during or before	starts before end of	pmoFDseSdfO	pmosd	pmoFDseSdfO
+starts before end of	temporally overlaps	temporally related to	pmoFDseSdfO	oFDseSdfO	pmoFDseSdfOMP
+starts before end of	ends after start of	temporally related to	pmoFDseSdfO	oFDseSdfOMP	pmoFDseSdfOMP
+starts before end of	starts before end of	temporally related to	pmoFDseSdfO	pmoFDseSdfO	pmoFDseSdfOMP
+starts before end of	temporally related to	temporally related to	pmoFDseSdfO	pmoFDseSdfOMP	pmoFDseSdfOMP
+temporally related to	encompasses	temporally related to	pmoFDseSdfOMP	D	pmoFDseSdfOMP
+temporally related to	ends with and starts before	temporally related to	pmoFDseSdfOMP	F	pmoFDseSdfOMP
+temporally related to	immediately preceded by	temporally related to	pmoFDseSdfOMP	M	pmoFDseSdfOMP
+temporally related to	starts during and ends after	temporally related to	pmoFDseSdfOMP	O	pmoFDseSdfOMP
+temporally related to	strictly preceded by	temporally related to	pmoFDseSdfOMP	P	pmoFDseSdfOMP
+temporally related to	starts with and ends after	temporally related to	pmoFDseSdfOMP	S	pmoFDseSdfOMP
+temporally related to	happens during	temporally related to	pmoFDseSdfOMP	d	pmoFDseSdfOMP
+temporally related to	temporally coincides with	temporally related to	pmoFDseSdfOMP	e	pmoFDseSdfOMP
+temporally related to	ends with and starts after	temporally related to	pmoFDseSdfOMP	f	pmoFDseSdfOMP
+temporally related to	immediately precedes	temporally related to	pmoFDseSdfOMP	m	pmoFDseSdfOMP
+temporally related to	starts before and ends during	temporally related to	pmoFDseSdfOMP	o	pmoFDseSdfOMP
+temporally related to	strictly precedes	temporally related to	pmoFDseSdfOMP	p	pmoFDseSdfOMP
+temporally related to	starts with and ends before	temporally related to	pmoFDseSdfOMP	s	pmoFDseSdfOMP
+temporally related to	during which ends	temporally related to	pmoFDseSdfOMP	DSO	pmoFDseSdfOMP
+temporally related to	ends with	temporally related to	pmoFDseSdfOMP	Fef	pmoFDseSdfOMP
+temporally related to	later than	temporally related to	pmoFDseSdfOMP	OMP	pmoFDseSdfOMP
+temporally related to	starts during	temporally related to	pmoFDseSdfOMP	dfO	pmoFDseSdfOMP
+temporally related to	during which starts	temporally related to	pmoFDseSdfOMP	oFD	pmoFDseSdfOMP
+temporally related to	ends during	temporally related to	pmoFDseSdfOMP	osd	pmoFDseSdfOMP
+temporally related to	earlier than	temporally related to	pmoFDseSdfOMP	pmo	pmoFDseSdfOMP
+temporally related to	starts with	temporally related to	pmoFDseSdfOMP	seS	pmoFDseSdfOMP
+temporally related to	ends after	temporally related to	pmoFDseSdfOMP	DSOMP	pmoFDseSdfOMP
+temporally related to	starts during or after	temporally related to	pmoFDseSdfOMP	dfOMP	pmoFDseSdfOMP
+temporally related to	starts before	temporally related to	pmoFDseSdfOMP	pmoFD	pmoFDseSdfOMP
+temporally related to	ends during or before	temporally related to	pmoFDseSdfOMP	pmosd	pmoFDseSdfOMP
+temporally related to	temporally overlaps	temporally related to	pmoFDseSdfOMP	oFDseSdfO	pmoFDseSdfOMP
+temporally related to	ends after start of	temporally related to	pmoFDseSdfOMP	oFDseSdfOMP	pmoFDseSdfOMP
+temporally related to	starts before end of	temporally related to	pmoFDseSdfOMP	pmoFDseSdfO	pmoFDseSdfOMP
+temporally related to	temporally related to	temporally related to	pmoFDseSdfOMP	pmoFDseSdfOMP	pmoFDseSdfOMP

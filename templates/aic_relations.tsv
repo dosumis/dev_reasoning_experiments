@@ -1,0 +1,31 @@
+ID	Label	Type	Definition	Comment
+ID	LABEL	TYPE	A IAO:0000115	A rdfs:comment
+RO:0002085	encompasses	owl:ObjectProperty	X encompasses Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: D. Status: existing.
+AIC:0000008	ends with and starts before	owl:ObjectProperty	X ends with and starts before Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) = end(Y).	Allen label: F. Status: new.
+RO:0002087	immediately preceded by	owl:ObjectProperty	X immediately preceded by Y if and only if start(X) > start(Y) and start(X) = end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: M. Status: existing.
+AIC:0000004	starts during and ends after	owl:ObjectProperty	X starts during and ends after Y if and only if start(X) > start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: O. Status: new.
+AIC:0000002	strictly preceded by	owl:ObjectProperty	X strictly preceded by Y if and only if start(X) > start(Y) and start(X) > end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: P. Status: new.
+AIC:0000006	starts with and ends after	owl:ObjectProperty	X starts with and ends after Y if and only if start(X) = start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: S. Status: new.
+RO:0002092	happens during	owl:ObjectProperty	X happens during Y if and only if start(X) > start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) < end(Y).	Allen label: d. Status: existing.
+AIC:0000009	temporally coincides with	owl:ObjectProperty	X temporally coincides with Y if and only if start(X) = start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) = end(Y).	Allen label: e. Status: COLLISION-CHECK: RO:0002082 simultaneous with / RO:0002008 coincident with.
+AIC:0000007	ends with and starts after	owl:ObjectProperty	X ends with and starts after Y if and only if start(X) > start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) = end(Y).	Allen label: f. Status: new.
+RO:0002090	immediately precedes	owl:ObjectProperty	X immediately precedes Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) = start(Y) and end(X) < end(Y).	Allen label: m. Status: existing.
+AIC:0000003	starts before and ends during	owl:ObjectProperty	X starts before and ends during Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) < end(Y).	Allen label: o. Status: new.
+AIC:0000001	strictly precedes	owl:ObjectProperty	X strictly precedes Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) < start(Y) and end(X) < end(Y).	Allen label: p. Status: new.
+AIC:0000005	starts with and ends before	owl:ObjectProperty	X starts with and ends before Y if and only if start(X) = start(Y) and start(X) < end(Y) and end(X) > start(Y) and end(X) < end(Y).	Allen label: s. Status: new.
+RO:0002084	during which ends	owl:ObjectProperty	X during which ends Y if and only if start(X) < end(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: DSO. Status: existing.
+AIC:0000011	ends with	owl:ObjectProperty	X ends with Y if and only if start(X) < end(Y) and end(X) > start(Y) and end(X) = end(Y).	Allen label: Fef. Status: COLLISION-CHECK: RO:0002230 ends with may be mereological (fe not Fef).
+AIC:0000013	later than	owl:ObjectProperty	X later than Y if and only if start(X) > start(Y) and end(X) > start(Y) and end(X) > end(Y).	Allen label: OMP. Status: new.
+RO:0002091	starts during	owl:ObjectProperty	X starts during Y if and only if start(X) > start(Y) and start(X) < end(Y) and end(X) > start(Y).	Allen label: dfO. Status: existing.
+RO:0002088	during which starts	owl:ObjectProperty	X during which starts Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) > start(Y).	Allen label: oFD. Status: existing.
+RO:0002093	ends during	owl:ObjectProperty	X ends during Y if and only if start(X) < end(Y) and end(X) > start(Y) and end(X) < end(Y).	Allen label: osd. Status: existing.
+AIC:0000012	earlier than	owl:ObjectProperty	X earlier than Y if and only if start(X) < start(Y) and start(X) < end(Y) and end(X) < end(Y).	Allen label: pmo. Status: new.
+AIC:0000010	starts with	owl:ObjectProperty	X starts with Y if and only if start(X) = start(Y) and start(X) < end(Y) and end(X) > start(Y).	Allen label: seS. Status: COLLISION-CHECK: RO:0002224 starts with may be mereological (Fe not seS).
+RO:0002086	ends after	owl:ObjectProperty	X ends after Y if and only if end(X) > start(Y) and end(X) > end(Y).	Allen label: DSOMP. Status: existing.
+AIC:0000014	starts during or after	owl:ObjectProperty	X starts during or after Y if and only if start(X) > start(Y) and end(X) > start(Y).	Allen label: dfOMP. Status: new (precedent: RO:0002496 existence starts during or after).
+RO:0002089	starts before	owl:ObjectProperty	X starts before Y if and only if start(X) < start(Y) and start(X) < end(Y).	Allen label: pmoFD. Status: existing.
+AIC:0000015	ends during or before	owl:ObjectProperty	X ends during or before Y if and only if start(X) < end(Y) and end(X) < end(Y).	Allen label: pmosd. Status: new (precedent: RO:0002497 existence ends during or before).
+AIC:0000016	temporally overlaps	owl:ObjectProperty	X temporally overlaps Y if and only if start(X) < end(Y) and end(X) > start(Y).	Allen label: oFDseSdfO. Status: COLLISION-CHECK: RO:0002131 'overlaps' is mereological - do NOT reuse.
+AIC:0000017	ends after start of	owl:ObjectProperty	X ends after start of Y if and only if end(X) > start(Y).	Allen label: oFDseSdfOMP. Status: new.
+AIC:0000018	starts before end of	owl:ObjectProperty	X starts before end of Y if and only if start(X) < end(Y).	Allen label: pmoFDseSdfO. Status: new.
+RO:0002222	temporally related to	owl:ObjectProperty	X temporally related to Y if and only if .	Allen label: pmoFDseSdfOMP. Status: existing.

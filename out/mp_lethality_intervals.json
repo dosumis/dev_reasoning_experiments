@@ -1,0 +1,254 @@
+[
+ {
+  "id": "MP_0002081",
+  "label": "perinatal lethality",
+  "lo": 18.5,
+  "hi": 18.5,
+  "defn": "death anytime within the perinatal period (Mus: E18.5 through postnatal day 1)"
+ },
+ {
+  "id": "MP_0006204",
+  "label": "embryonic lethality before implantation",
+  "lo": 0.0,
+  "hi": 4.5,
+  "defn": "death anytime between fertilization and implantation (Mus: E0 to less than E4.5)"
+ },
+ {
+  "id": "MP_0006205",
+  "label": "embryonic lethality between implantation and somite formation",
+  "lo": 4.5,
+  "hi": 8.0,
+  "defn": "death anytime between the point of implantation and somite formation (Mus: E4.5 to less than E8)"
+ },
+ {
+  "id": "MP_0006206",
+  "label": "embryonic lethality between somite formation and embryo turning",
+  "lo": 8.0,
+  "hi": 9.0,
+  "defn": "death anytime between somite formation and the initiation of embryo turning (Mus: E8 to less than E9)"
+ },
+ {
+  "id": "MP_0006207",
+  "label": "embryonic lethality during organogenesis",
+  "lo": 9.0,
+  "hi": 14.0,
+  "defn": "death anytime between embryo turning and the completion of organogenesis (Mus: E9-9.5 to less than E14)"
+ },
+ {
+  "id": "MP_0006208",
+  "label": "lethality throughout fetal growth and development",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "death anytime between the completion of organogenesis and birth (Mus: E14 to approximately E18.5)"
+ },
+ {
+  "id": "MP_0008527",
+  "label": "embryonic lethality at implantation",
+  "lo": 4.5,
+  "hi": 4.5,
+  "defn": "death due to failure of implantation (Mus: E4.5)"
+ },
+ {
+  "id": "MP_0009850",
+  "label": "embryonic lethality between implantation and placentation",
+  "lo": 4.5,
+  "hi": 9.0,
+  "defn": "death anytime between the point of implantation and the initiation of placentation (Mus: E4.5 to less than E9)"
+ },
+ {
+  "id": "MP_0010832",
+  "label": "lethality during fetal growth through weaning",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "death anytime between the completion of organogenesis and weaning age (Mus: E14 to approximately 3 weeks of age)"
+ },
+ {
+  "id": "MP_0011089",
+  "label": "perinatal lethality, complete penetrance",
+  "lo": 18.5,
+  "hi": 18.5,
+  "defn": "death of all organisms of a given genotype in a population within the perinatal period (Mus: E18.5 through postnatal day 1)"
+ },
+ {
+  "id": "MP_0011090",
+  "label": "perinatal lethality, incomplete penetrance",
+  "lo": 18.5,
+  "hi": 18.5,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms within the perinatal period (Mus: E18.5 through postnatal day 1)"
+ },
+ {
+  "id": "MP_0011093",
+  "label": "embryonic lethality at implantation, complete penetrance",
+  "lo": 4.5,
+  "hi": 4.5,
+  "defn": "death of all organisms of a given genotype in a population at the point of implantation (Mus: E4.5)"
+ },
+ {
+  "id": "MP_0011094",
+  "label": "embryonic lethality before implantation, complete penetrance",
+  "lo": 0.0,
+  "hi": 4.5,
+  "defn": "death of all organisms of a given genotype in a population between fertilization and implantation (Mus: E0 to less than E4.5)"
+ },
+ {
+  "id": "MP_0011095",
+  "label": "embryonic lethality between implantation and placentation, complete penetrance",
+  "lo": 4.5,
+  "hi": 9.0,
+  "defn": "death of all organisms of a given genotype in a population between the point of implantation and the initiation of placentation (Mus: E4.5 to less than E9)"
+ },
+ {
+  "id": "MP_0011096",
+  "label": "embryonic lethality between implantation and somite formation, complete penetrance",
+  "lo": 4.5,
+  "hi": 8.0,
+  "defn": "death of all organisms of a given genotype in a population between the point of implantation and somite formation (Mus: E4.5 to less than E8)"
+ },
+ {
+  "id": "MP_0011097",
+  "label": "embryonic lethality between somite formation and embryo turning, complete penetrance",
+  "lo": 8.0,
+  "hi": 9.0,
+  "defn": "death of all organisms of a given genotype in a population between somite formation and the initiation of embryo turning (Mus: E8 to less than E9)"
+ },
+ {
+  "id": "MP_0011098",
+  "label": "embryonic lethality during organogenesis, complete penetrance",
+  "lo": 9.0,
+  "hi": 14.0,
+  "defn": "death of all organisms of a given genotype in a population between embryo turning and the completion of organogenesis (Mus: E9-9.5 to less than E14)"
+ },
+ {
+  "id": "MP_0011099",
+  "label": "lethality throughout fetal growth and development, complete penetrance",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "death of all organisms of a given genotype in a population between the completion of organogenesis and birth (Mus: E14 to approximately E18.5)"
+ },
+ {
+  "id": "MP_0011103",
+  "label": "embryonic lethality at implantation, incomplete penetrance",
+  "lo": 4.5,
+  "hi": 4.5,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms at the point of implantation (Mus: E4.5)"
+ },
+ {
+  "id": "MP_0011104",
+  "label": "embryonic lethality before implantation, incomplete penetrance",
+  "lo": 0.0,
+  "hi": 4.5,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between fertilization and implantation (Mus: E0 to less than E4.5)"
+ },
+ {
+  "id": "MP_0011105",
+  "label": "embryonic lethality between implantation and placentation, incomplete penetrance",
+  "lo": 4.5,
+  "hi": 9.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between the point of implantation and the initiation of placentation (Mus: E4.5 to less than E9)"
+ },
+ {
+  "id": "MP_0011106",
+  "label": "embryonic lethality between implantation and somite formation, incomplete penetrance",
+  "lo": 4.5,
+  "hi": 8.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between the point of implantation and somite formation (Mus: E4.5 to less than E8)"
+ },
+ {
+  "id": "MP_0011107",
+  "label": "embryonic lethality between somite formation and embryo turning, incomplete penetrance",
+  "lo": 8.0,
+  "hi": 9.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between somite formation and the initiation of embryo turning (Mus: E8 to less than E9)"
+ },
+ {
+  "id": "MP_0011108",
+  "label": "embryonic lethality during organogenesis, incomplete penetrance",
+  "lo": 9.0,
+  "hi": 14.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between embryo turning and the completion of organogenesis (Mus: E9-9.5 to less than E14)"
+ },
+ {
+  "id": "MP_0011109",
+  "label": "lethality throughout fetal growth and development, incomplete penetrance",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between the completion of organogenesis and birth (Mus: E14 to approximately E18.5)"
+ },
+ {
+  "id": "MP_0011111",
+  "label": "lethality during fetal growth through weaning, complete penetrance",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "death of all organisms of a given genotype in a population between the completion of organogenesis and weaning age (Mus: E14 to approximately 3 weeks of age)"
+ },
+ {
+  "id": "MP_0011112",
+  "label": "lethality during fetal growth through weaning, incomplete penetrance",
+  "lo": 14.0,
+  "hi": 14.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms between the completion of organogenesis and weaning age (Mus: E14 to approximately 3 weeks of age)"
+ },
+ {
+  "id": "MP_0013292",
+  "label": "embryonic lethality prior to organogenesis",
+  "lo": 9.0,
+  "hi": 9.5,
+  "defn": "death prior to the completion of embryo turning (Mus: E9-9.5)"
+ },
+ {
+  "id": "MP_0013293",
+  "label": "embryonic lethality prior to tooth bud stage",
+  "lo": 12.0,
+  "hi": 12.0,
+  "defn": "death prior to the appearance of tooth buds (Mus: E12-E12.5)"
+ },
+ {
+  "id": "MP_0013294",
+  "label": "prenatal lethality prior to heart atrial septation",
+  "lo": 14.5,
+  "hi": 15.5,
+  "defn": "death prior to the completion of heart atrial septation (Mus: E14.5-15.5)"
+ },
+ {
+  "id": "MP_0014257",
+  "label": "embryonic lethality prior to tooth bud stage, complete penetrance",
+  "lo": 12.0,
+  "hi": 12.0,
+  "defn": "death of all organisms prior to the appearance of tooth buds (Mus: E12-E12.5)"
+ },
+ {
+  "id": "MP_0014258",
+  "label": "embryonic lethality prior to tooth bud stage, incomplete penetrance",
+  "lo": 12.0,
+  "hi": 12.0,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms prior to the appearance of tooth buds (Mus: E12-E12.5)"
+ },
+ {
+  "id": "MP_0014259",
+  "label": "embryonic lethality prior to organogenesis, complete penetrance",
+  "lo": 9.0,
+  "hi": 9.5,
+  "defn": "death of all organisms prior to the completion of embryo turning (Mus: E9-9.5)"
+ },
+ {
+  "id": "MP_0014260",
+  "label": "embryonic lethality prior to organogenesis, incomplete penetrance",
+  "lo": 9.0,
+  "hi": 9.5,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms prior to the completion of embryo turning (Mus: E9-9.5)"
+ },
+ {
+  "id": "MP_0031660",
+  "label": "prenatal lethality prior to heart atrial septation, incomplete penetrance",
+  "lo": 14.5,
+  "hi": 15.5,
+  "defn": "the appearance of lower than Mendelian ratios of organisms of a given genotype due to death of some, but not all of the organisms, prior to the completion of heart atrial septation (Mus: E14.5-15.5)"
+ },
+ {
+  "id": "MP_0031661",
+  "label": "prenatal lethality prior to heart atrial septation, complete penetrance",
+  "lo": 14.5,
+  "hi": 15.5,
+  "defn": "death of all organisms of a given genotype in a population prior to the completion of heart atrial septation (Mus: E14.5-15.5)"
+ }
+]

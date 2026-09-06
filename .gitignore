@@ -1,0 +1,21 @@
+# --- source ontologies: ~365 MB, go.owl alone exceeds GitHub's 100 MB hard limit ---
+# Retrieve with ./sources/fetch.sh ; provenance recorded in sources/SOURCES.md
+sources/*
+!sources/SOURCES.md
+!sources/fetch.sh
+
+# --- python ---
+.venv/
+.venv-uv/
+__pycache__/
+*.pyc
+
+# --- derived / cache ---
+src/allen_table.json
+allen_table.json
+
+# --- editor & OS cruft ---
+~$*
+.DS_Store
+.idea/
+.vscode/
