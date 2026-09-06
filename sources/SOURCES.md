@@ -25,21 +25,79 @@ This file records exactly which releases the results in [../README.md](../README
 
 `uberon.owl` here is **uberon-base**, not full Uberon.
 
-## Two caveats on reproducibility
+## Version IRI resolution: three bugs worth reporting
 
-**Version IRIs are mostly not dereferenceable.** Of the four tested, only RO's resolved:
+OBO version IRIs **are** meant to resolve permanently, via the PURL redirect system backed by
+versioned GitHub releases. Of the four tested here, three 404 — and in every case **the PURL
+layer is working correctly**; the fault is at the destination. RO demonstrates the intended path
+end to end:
 
 ```
-200  obo/ro/releases/2025-12-17/ro.owl
-404  obo/go/releases/2026-07-26/go.owl
-404  obo/uberon/releases/2026-06-19/uberon-base.owl
-404  obo/life-stages/releases/2025-01-23/components/hsapdv.owl
+obo/ro/releases/2025-12-17/ro.owl
+  → 302 raw.githubusercontent.com/oborel/obo-relations/v2025-12-17/ro.owl → 200 ✅
 ```
 
-A `versionIRI` is an identifier, not a promise of a retrievable copy. `fetch.sh` therefore
-pulls the **current** release from the unversioned PURL and verifies the checksum, warning if
-it differs. A mismatch means the ontology has been re-released, not that anything is broken —
-but the counts in the write-ups may then drift.
+The three failures are distinct and each is actionable:
+
+### 1. Uberon — versionIRI date ≠ release tag date
+
+```
+obo/uberon/releases/2026-06-19/uberon-base.owl
+  → 302 github.com/obophenotype/uberon/releases/download/v2026-06-19/uberon-base.owl → 404
+```
+
+There is no `v2026-06-19` release. The nearest actual release is **`v2026-06-23`**, published
+four days later, and it *does* carry `uberon-base.owl` (verified HTTP 200). So the artifact is
+stamped with its build date while the release is tagged with its publication date, and the
+versionIRI points at a tag that never existed.
+
+*Report to `obophenotype/uberon`*: either stamp `versionIRI` with the release tag date, or tag
+releases with the ontology build date. Everything else in the chain is fine.
+
+### 2. GO — release date missing from the archive
+
+```
+obo/go/releases/2026-07-26/go.owl
+  → 302 release.geneontology.org/2026-07-26/ontology/go.owl → 404
+```
+
+`release.geneontology.org` clearly does keep an archive — `2026-06-19` and `2026-08-05` both
+return 200 at the same path shape — but `2026-07-26` is absent, despite being the version
+stamped in the `go.owl` currently served from the unversioned PURL.
+
+*Report to `geneontology/go-ontology`*: either the `2026-07-26` release directory is missing
+from the archive, or the version stamp on the current `go.owl` does not correspond to an
+archived release.
+
+### 3. life-stages (HsapDv, MmusDv) — no PURL config for the namespace
+
+```
+obo/life-stages/releases/2025-01-23/components/hsapdv.owl
+  → 302 purl.oclc.org → 307 purl.archive.org → 302 berkeleybop.org → 404
+```
+
+That chain is the **legacy fallback for unregistered prefixes**. Confirmed:
+
+| PURL config | |
+|---|---|
+| `config/hsapdv.yml` | 200 |
+| `config/mmusdv.yml` | 200 |
+| `config/life-stages.yml` | **404** |
+
+The component ontologies are individually registered, but their version IRIs are stamped in the
+`life-stages` namespace, which has no PURL configuration at all. (`obo/hsapdv.owl` resolves
+fine; `obo/hsapdv/releases/.../hsapdv.owl` does not.)
+
+*Report to `obophenotype/developmental-stage-ontologies`, with a PR to
+`OBOFoundry/purl.obolibrary.org` adding `config/life-stages.yml`.*
+
+### What `fetch.sh` does about it
+
+Given the above, it pulls the **current** release from the unversioned PURL and verifies the
+checksum, warning on mismatch. A mismatch means the ontology has been re-released and the counts
+in the write-ups may have drifted — which is exactly the thing you would want flagged. Once the
+three bugs above are fixed, the version IRIs in the table become the better fetch targets and
+`fetch.sh` should be switched to them.
 
 **`owl-time.ttl` needs a workaround.** `w3.org` returns 403 to scripted clients (Cloudflare
 interstitial). `fetch.sh` routes it through `r.jina.ai` and strips the wrapper. If that proxy

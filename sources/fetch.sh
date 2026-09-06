@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # Fetch the source ontologies. See SOURCES.md for the versions results were computed against.
+#
+# NOTE: these are UNVERSIONED PURLs, which serve whatever the current release is. The
+# versionIRI-based URLs would be better targets, but three of them are currently broken --
+# see "Version IRI resolution: three bugs worth reporting" in SOURCES.md. Switch to the
+# versioned URLs once those are fixed. Checksums below guard against silent drift.
 #   ./sources/fetch.sh            all files
 #   ./sources/fetch.sh --minimal  skip go.owl and hp.owl (survey-only, ~207 MB)
 set -uo pipefail
