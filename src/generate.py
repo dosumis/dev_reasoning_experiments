@@ -114,7 +114,41 @@ def main():
         fh.write("Ontology(<http://purl.obolibrary.org/obo/ro/aic.owl>\n")
         fh.write("\n".join("  "+a for a in ax))
         fh.write("\n)\n")
+    with open("out/aic_axioms.ofn","a") as fh: pass
     print(f"out/aic_axioms.ofn          : {len(ax)} axioms ({nchain} property chains)")
+
+    # -------- 4. proposed RO patch: bridge developmental relations to the temporal hierarchy
+    #
+    # NOT asserted on developmentally_preceded_by (RO_0002258), even though the name invites it:
+    # developmentally_induced_by (RO_0002256) sits directly beneath it, and induction relates
+    # "interacting participants" (its own definition) -- coexisting entities, not ordered ones.
+    # Reciprocal induction is real: Uberon asserts metanephric mesenchyme and ureteric bud each
+    # developmentally_induced_by the other, which a start-order axiom would render unsatisfiable.
+    # So the axiom goes on the two branches where one entity genuinely arises from another.
+    RO="http://purl.obolibrary.org/obo/"
+    SA=IRI("dfOMP"); SB=RO+"RO_0002089"
+    FWD=[("RO_0002254","has developmental contribution from"),
+         ("RO_0002285","developmentally replaces")]
+    INV=[("RO_0002255","developmentally contributes to")]
+    with open("out/ro_temporal_patch.ofn","w") as fh:
+        fh.write("Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\n")
+        fh.write("Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n")
+        fh.write("Ontology(<http://purl.obolibrary.org/obo/ro/temporal-patch.owl>\n")
+        fh.write(f"  Declaration(ObjectProperty(<{SA}>))\n")
+        fh.write(f"  Declaration(ObjectProperty(<{SB}>))\n")
+        fh.write(f"  InverseObjectProperties(<{SA}> <{SB}>)\n")
+        for rid,rlab in FWD:
+            fh.write(f"  Declaration(ObjectProperty(<{RO}{rid}>))\n")
+            fh.write(f"  SubObjectPropertyOf(<{RO}{rid}> <{SA}>)\n")
+            fh.write(f'  AnnotationAssertion(rdfs:comment <{RO}{rid}> "Y must already exist when X '
+                     'arises, so start(X) > start(Y). Allen dfOMP (starts_after) -- NOT preceded_by, '
+                     'since Y need not cease when X appears."@en)\n')
+        for rid,rlab in INV:
+            fh.write(f"  Declaration(ObjectProperty(<{RO}{rid}>))\n")
+            fh.write(f"  SubObjectPropertyOf(<{RO}{rid}> <{SB}>)\n")
+        fh.write(")\n")
+    print(f"out/ro_temporal_patch.ofn   : {len(FWD)+len(INV)} axioms "
+          f"(deliberately NOT on developmentally_preceded_by -- see comment)")
 
     base=[l for l in labels if len(l)==1]
     bb=[(a,b) for a in base for b in base]

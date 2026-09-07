@@ -69,30 +69,70 @@ MP lethality (E-days) ──► Theiler stage ──► generic MmusDv stage ─
 
 ## 2. Where it falls short
 
-### `develops_from` has no temporal semantics
+### Developmental relations have no temporal semantics
 
 ```
 develops from → has developmental contribution from → developmentally preceded by
               → developmentally related to → (dead end)
 ```
 
-**No path connects the developmental relation hierarchy to the temporal one.** 1,434 Uberon
+**No path connects the developmental relation hierarchy to the temporal one.** Over 1,500 Uberon
 assertions state that one structure arises from another; none of it is visible to temporal
 reasoning.
 
-The right axiom is *not* `develops_from ⊑ preceded_by` — where X develops from Y, Y need not
-cease when X appears, since X may bud from a persisting Y. The safe claim is only that Y begins
-first:
+The right axiom is *not* `⊑ preceded_by` — where X arises from Y, Y need not cease when X
+appears, since X may bud from a persisting Y. The safe claim is only that Y begins first:
 
-> `develops_from ⊑ starts_after`  — `start(X) > start(Y)`, Allen label **`dfOMP`**
+> `has_developmental_contribution_from ⊑ starts_after` — `start(X) > start(Y)`, Allen **`dfOMP`**
 
 **RO cannot express this.** It has `starts_before` (`pmoFD`, RO:0002089) but not the converse
-`starts_after` (`dfOMP`). So the highest-value temporal axiom available — one line, unlocking
-1,434 assertions and multiplying the usable structure data by 18× — requires a relation the
-29-relation extension supplies and current RO does not.
+`starts_after` (`dfOMP`), which the 29-relation extension supplies.
 
-This is the main bottleneck. Everything downstream of it is limited by having only 80
-`existence_*` assertions to work with.
+`out/ro_temporal_patch.ofn` implements it in three axioms. Measured effect:
+
+| | |
+|---|---|
+| RO relations that inherit `starts_after` | **7** (`develops from`, `transformation of`, `immediate transformation of`, `develops from part of`, `directly develops from`, `developmentally replaces`, …) |
+| Uberon assertions gaining temporal semantics | **1,558** |
+| Structures drawn into the resulting DAG | 2,019 |
+| Ordered pairs after transitive closure | **3,029** (1,471 derived beyond asserted) |
+| Longest developmental chain | 9 structures |
+
+All 3,029 are currently underivable. `tests/develops_from_qc.py` runs the QC.
+
+### The axiom must NOT go on `developmentally_preceded_by`
+
+The obvious placement — the top of the branch, which would catch everything in one line — is
+wrong, and the QC caught it on first run.
+
+`developmentally_induced_by` (RO:0002256) sits directly beneath `developmentally_preceded_by`.
+Its own definition describes the two entities as "**interacting participants**" in an induction
+process — that implies coexistence, not precedence. And reciprocal induction is real biology:
+
+```
+metanephric mesenchyme  --developmentally induced by-->  ureteric bud
+ureteric bud            --developmentally induced by-->  metanephric mesenchyme
+```
+
+Both are asserted in Uberon, and both are correct — this is the classic reciprocal induction of
+kidney development. Under a start-order axiom on the parent branch it becomes
+`start(X) > start(X)`, unsatisfiable, and the graph acquires a cycle.
+
+So the axiom belongs on `has_developmental_contribution_from` and `developmentally_replaces` —
+the branches where one entity genuinely arises from another — leaving induction untouched. With
+that placement the graph is **acyclic across all 2,019 structures**.
+
+This is worth raising with RO independently: a relation named *developmentally preceded by* does
+not, in fact, entail temporal precedence, because induction sits beneath it. Either the name
+oversells the semantics or `developmentally_induced_by` is misplaced.
+
+### Almost nothing to test the new relations against
+
+Only **26 of 2,019** structures in the DAG (1.3%) carry `existence_*` assertions, so just 7
+develops-from pairs are directly testable against stage data. Those 7 pass. The axiom unlocks
+the relations; there is not yet enough existence data to validate them at scale. Generating that
+data — or propagating stage bounds down the DAG from the few anchors that exist — is the natural
+follow-on.
 
 ### Bridges are gross-grained, so answers are gross
 
@@ -199,7 +239,10 @@ on. The role never sees an Allen label.
 - **LLM layer**: report generation only.
 - **Machinery**: **needs AIC**, and needs the `develops_from ⊑ starts_after` axiom (§2) first.
   Also needs composition, since `develops_from` is transitive and lineage chains compound.
-- **Status**: blocked on that axiom. 1,434 assertions to check — the largest QC surface available.
+- **Status**: axiom implemented (`out/ro_temporal_patch.ofn`); QC runs clean over 1,558
+  assertions — acyclic, no conflicts. But only 1.3% of the DAG has existence data to test
+  against, so the QC is currently near-vacuous. Its one real catch so far was a defect in *the
+  axiom*, not the data (§2).
 
 ### US6 — Translating a mouse phenotype to a human window
 
@@ -244,7 +287,7 @@ on. The role never sees an Allen label.
 | US2 | ✅ | ✅ | – | – (SSSOM covers HsapDv too) |
 | US3 | partial | ✗ | ✅ **required** (disjointness) | HP↔HsapDv alignment |
 | US4 | ✅ | ✅ | – | – |
-| US5 | ✗ | partial | ✅ **required** | **`develops_from` axiom + `starts_after`** |
+| US5 | ✗ | partial | ✅ **required** | existence data: only 1.3% of the DAG is anchored |
 | US6 | partial | ✗ | ✗ | SSSOM gives gross-level alignment only |
 | US7 | ✗ | ✗ | ✅ **required** | stage metadata normalisation (LLM) |
 
@@ -333,9 +376,12 @@ answer, not its value at scale. Re-measuring once Gaps A and B are closed — wh
 
 Three pieces, in dependency order, each with a theoretical basis and a measurable outcome:
 
-1. **Ship `starts_after` + the `develops_from` axiom.** Smallest change, largest unlock:
-   1,434 assertions become temporally visible. Immediately testable via US5 as a QC run over
-   Uberon — real defects or a clean bill, either is a result.
+1. **Ship `starts_after` + the developmental-relation axioms.** ✅ **Done** —
+   `out/ro_temporal_patch.ofn`, three axioms, giving temporal semantics to 1,558 Uberon
+   assertions and 3,029 ordered pairs after closure. The QC (`tests/develops_from_qc.py`) finds
+   the graph acyclic and consistent with all 7 testable existence pairs. It also caught the
+   `developmentally_preceded_by` placement error on first run (§2), which is itself a finding to
+   take to RO. Remaining: propose the patch upstream, and resolve the `starts_after` naming.
 
 2. **Measure the escalation rate *e*.** Over HsapDv + MmusDv + Uberon existence + `develops_from`.
    This single number determines whether the whole enterprise is affordable, and it is cheap to
