@@ -17,9 +17,14 @@ against interval semantics rather than copied from a published table.
 >
 > Headline findings: **where stage endpoints are numerically anchored, no qualitative reasoning
 > is needed at all** — the Allen relation follows from comparing four numbers. AIC is
-> irreplaceable in three of the seven stories, all curation- or integration-facing. And a single
-> missing axiom, `develops_from ⊑ starts_after`, blocks an 18× increase in usable data — an axiom
-> current RO cannot express, but the extension below can.
+> irreplaceable in three of the seven stories, all curation- or integration-facing. And three
+> axioms turning on `starts_after` — a relation current RO cannot express, but the extension
+> below supplies — give **1,558 Uberon assertions** temporal semantics they currently lack.
+
+**[RO_REPORT.md](RO_REPORT.md)** collects the findings that are actionable for RO maintainers:
+a missing converse relation, three axioms that would give 1,558 Uberon assertions temporal
+semantics, a misplaced relation in the developmental branch, and two chains referencing
+obsolete properties.
 
 Provenance for every source ontology — version IRIs, release dates, checksums, and which
 results depend on which files — is in [sources/SOURCES.md](sources/SOURCES.md).

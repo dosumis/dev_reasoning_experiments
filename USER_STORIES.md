@@ -124,7 +124,8 @@ that placement the graph is **acyclic across all 2,019 structures**.
 
 This is worth raising with RO independently: a relation named *developmentally preceded by* does
 not, in fact, entail temporal precedence, because induction sits beneath it. Either the name
-oversells the semantics or `developmentally_induced_by` is misplaced.
+oversells the semantics or `developmentally_induced_by` is misplaced. Written up with the other
+RO findings and proposed changes in **[RO_REPORT.md](RO_REPORT.md)**.
 
 ### Almost nothing to test the new relations against
 
@@ -243,6 +244,8 @@ on. The role never sees an Allen label.
   assertions — acyclic, no conflicts. But only 1.3% of the DAG has existence data to test
   against, so the QC is currently near-vacuous. Its one real catch so far was a defect in *the
   axiom*, not the data (§2).
+- **→ [RO_REPORT.md](RO_REPORT.md)** — the axioms this story needs, written up as action items
+  for RO maintainers, together with the other findings from auditing RO's temporal relations.
 
 ### US6 — Translating a mouse phenotype to a human window
 
@@ -381,7 +384,8 @@ Three pieces, in dependency order, each with a theoretical basis and a measurabl
    assertions and 3,029 ordered pairs after closure. The QC (`tests/develops_from_qc.py`) finds
    the graph acyclic and consistent with all 7 testable existence pairs. It also caught the
    `developmentally_preceded_by` placement error on first run (§2), which is itself a finding to
-   take to RO. Remaining: propose the patch upstream, and resolve the `starts_after` naming.
+   take to RO. Remaining: propose the patch upstream — drafted as action items in
+   **[RO_REPORT.md](RO_REPORT.md)** — and resolve the `starts_after` naming.
 
 2. **Measure the escalation rate *e*.** Over HsapDv + MmusDv + Uberon existence + `develops_from`.
    This single number determines whether the whole enterprise is affordable, and it is cheap to
