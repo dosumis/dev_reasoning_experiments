@@ -22,9 +22,23 @@ alignment to RO. All counts measured against the releases recorded in
 | **MP** | **36 lethality terms with explicit E-day intervals** | prose only: `"Mus: E4.5 to less than E8"` |
 | **HP** | 55 onset terms forming an interval hierarchy | 11 with numeric bounds, prose only |
 | **GO** | ~24 `happens_during`, 2 `starts_during`, 4 `ends_during` | none |
+| **dismech** | **~33,500 causal edges** over 2,480 disease pathographs; 425 `onset_category`, 685 `temporality`, 827 `progression` | `age_range` free text; `mean_age_years` on 26 |
 
 **GO is effectively empty of asserted temporal relations.** Its process `part_of` hierarchy
 carries implicit temporal containment, but nothing is stated. Do not plan around it.
+
+**[dismech](https://github.com/dosumis/dismech) is the largest untapped source.** Its 2,480
+pathographs are causal DAGs — 41,730 nodes, 43,539 edges, of which ~33,500 are causal
+(`causes` 29,343, `contributes_to` 3,235, `triggers` 376, `leads_to` 243, `predisposes_to` 230,
+`exacerbates` 102). **Causation entails temporal order**, exactly as `develops_from` does:
+if A causes B then A begins before B. That is `starts_before` (`pmoFD`) — the same relation
+RO lacks, needed for the same reason.
+
+Phenotype nodes are HP-grounded (~33% of nodes carry a CURIE); pathophysiology nodes are free
+text. `onset_category` uses the HP onset hierarchy verbatim (CONGENITAL 126, INFANTILE 98,
+CHILDHOOD 78, NEONATAL 32, YOUNG_ADULT 29, JUVENILE 23, ANTENATAL 17, ADULT 14, MIDDLE_AGE 6,
+LATE 2). **291 disorders carry both a pathograph and onset data** — the testable intersection.
+HsapDv appears only in dismech's schema, never in its data.
 
 ### The stage backbones are numerically anchored
 
@@ -88,6 +102,9 @@ appears, since X may bud from a persisting Y. The safe claim is only that Y begi
 **RO cannot express this.** It has `starts_before` (`pmoFD`, RO:0002089) but not the converse
 `starts_after` (`dfOMP`), which the 29-relation extension supplies.
 
+The same axiom shape is what dismech's ~33,500 causal edges need — `causes ⊑ starts_before` —
+so `starts_after`/`starts_before` unlocks both bodies of data.
+
 `out/ro_temporal_patch.ofn` implements it in three axioms. Measured effect:
 
 | | |
@@ -127,6 +144,41 @@ not, in fact, entail temporal precedence, because induction sits beneath it. Eit
 oversells the semantics or `developmentally_induced_by` is misplaced. Written up with the other
 RO findings and proposed changes in **[RO_REPORT.md](RO_REPORT.md)**.
 
+### Causal cycles: the same lesson, at scale
+
+dismech's causal subgraph contains **cycles in 46 of 2,480 pathographs** (168 nodes). Nearly all
+are biologically real *vicious cycles*:
+
+```
+MONDO:0001441  pica
+   Iron deficiency and CNS dopaminergic dysregulation
+     --causes--> Non-nutritive substance ingestion
+     --causes--> Gut luminal iron sequestration
+     --causes--> Iron deficiency ...
+
+MONDO:0002687  superior mesenteric artery syndrome
+   Mesenteric fat pad depletion --causes--> aortomesenteric narrowing
+     --causes--> duodenal obstruction --causes--> reduced oral intake
+     --causes--> weight loss --causes--> mesenteric fat pad depletion
+```
+
+This is exactly the reciprocal-induction problem again, and it generalises into the modelling
+principle the whole approach turns on:
+
+> **Causation is cyclic at the type level and acyclic at the token level.** "Iron deficiency
+> causes pica causes iron deficiency" means *an instance* of iron deficiency causes *a later
+> instance* of pica, which causes *a still later instance* of iron deficiency. The types repeat;
+> the occurrences are strictly ordered.
+
+Allen's calculus applies to **occurrences**, not to the disease-model types that dismech,
+Uberon and GO all assert over. Any attempt to give a type-level causal or developmental relation
+a start-order axiom will hit this, and the failure will look like an inconsistency in perfectly
+good data. Both cases found here — reciprocal induction, vicious cycles — are of this kind.
+
+Practically: a type-level graph can be given start-order semantics only where it is acyclic,
+and cycles must be recognised as loops rather than reported as errors. Distinguishing a genuine
+loop from an inverted edge is US8.
+
 ### Almost nothing to test the new relations against
 
 Only **26 of 2,019** structures in the DAG (1.3%) carry `existence_*` assertions, so just 7
@@ -147,7 +199,9 @@ live query.
 ### Two alignments simply do not exist
 
 - **HP onset ↔ HsapDv.** HPO's onset hierarchy is an interval series describing the same human
-  timeline as HsapDv, unlinked to it. Blocks US3.
+  timeline as HsapDv, unlinked to it. **Blocks US3, US9 and US10** — dismech's `onset_category`
+  uses that same HP vocabulary (425 uses), so one small alignment unblocks three stories across
+  two projects. This is the highest-leverage piece of missing curation in the whole survey.
 - **Fine-grained Carnegie ↔ Theiler.** The SSSOM bridges relate mouse and human only through
   generic stages. Numeric anchors do not help: `dpc` and `dpf` are not commensurable across
   species. Limits US6 to coarse answers.
@@ -279,6 +333,66 @@ on. The role never sees an Allen label.
 - **Status**: not started. The stage backbone is the interlingua — pseudotime does not compose
   across datasets, stage intervals do.
 
+### US8 — Telling vicious cycles from inverted causal edges ★ strongest dismech case
+
+> **As a** dismech curator reviewing disease mechanism graphs,
+> **I want** causal cycles separated into biologically real feedback loops and probable
+> modelling errors,
+> **so that** I can correct the errors and annotate the loops as loops, rather than leaving
+> 46 graphs that no temporal reasoner can consume.
+
+- **Query**: find strongly connected components in the causal subgraph; for each, test whether
+  the constituent node types can plausibly recur (a loop) or whether one edge inverts a
+  readout/cause relationship (an error).
+- **LLM layer**: *out* — proposes a classification with a rationale per cycle; the curator
+  adjudicates. Cycle detection is exact; classification is judgement, which is the right
+  division of labour.
+- **Machinery**: graph algorithms plus the type/token distinction (§2). **AIC is not needed to
+  find the cycles**, only to reason over what remains once they are resolved.
+- **Status**: 46 cycles found, unclassified. Spot-checking suggests most are real vicious
+  cycles; at least one looks like an error — `MONDO:0003672` asserts *posterior ECG injury
+  pattern* ⇄ *posterior myocardial ischaemic cell death*, but an ECG pattern is a **readout** of
+  cell death, not a cause of it. dismech has a `readout` predicate that fits.
+- **Why the role cares**: cycles block every downstream temporal use, and the fix is cheap once
+  the cases are separated.
+
+### US9 — Catching inverted causality against onset data
+
+> **As a** dismech curator,
+> **I want** causal edges flagged where the downstream node's typical onset precedes the
+> upstream node's,
+> **so that** I can find causal claims that are stated backwards.
+
+- **Query**: for each causal edge A→B, test `onset(A) starts_before onset(B)`; flag where the
+  asserted onsets make that impossible.
+- **LLM layer**: *in* — normalising `age_range` free text ("Birth to first years of life",
+  "Infancy through adulthood", 886 instances) into intervals. *out* — report generation.
+- **Machinery**: **needs AIC** — contradiction detection requires disjointness.
+- **Status**: blocked twice over. Onset is recorded **per disease, not per node**, so there is
+  nothing yet to compare edge-wise; and `onset_category` uses the HP onset hierarchy, which is
+  still unaligned to HsapDv (§2). 291 disorders have both a pathograph and onset data, so the
+  intersection exists once per-node onset does.
+
+### US10 — What to monitor for next
+
+> **As a** clinician managing a patient with disease D who has just presented with phenotype P
+> at age A,
+> **I want** the phenotypes causally downstream of P that typically appear later,
+> **so that** I can target surveillance rather than screening for everything the disease can
+> eventually cause.
+
+- **Query**: descendants of P in the causal DAG, filtered to those whose onset window starts
+  after age A, ordered by expected time of appearance.
+- **LLM layer**: *in* — free-text presentation → HP term + age. *out* — a ranked watch-list
+  with the causal path that justifies each item, which is what makes it trustworthy rather than
+  an opaque prediction.
+- **Machinery**: causal-DAG reachability + onset intervals. **No AIC needed** if onsets are
+  numerically anchored.
+- **Status**: needs per-node onset (same blocker as US9). Phenotype nodes are already
+  HP-grounded, so the output side is ready.
+- **Why the role cares**: this is the clinical-workflow story the NIH challenge's criterion 5
+  asks for, built on a causal graph rather than an association list.
+
 ---
 
 ## 4. Capability matrix
@@ -293,6 +407,9 @@ on. The role never sees an Allen label.
 | US5 | ✗ | partial | ✅ **required** | existence data: only 1.3% of the DAG is anchored |
 | US6 | partial | ✗ | ✗ | SSSOM gives gross-level alignment only |
 | US7 | ✗ | ✗ | ✅ **required** | stage metadata normalisation (LLM) |
+| US8 | ✗ | ✗ | – (graph only) | classification is judgement, not inference |
+| US9 | partial | ✗ | ✅ **required** | onset is per-disease, not per-node |
+| US10 | ✅ | ✅ | – | onset is per-disease, not per-node |
 
 **What limits US1 and US2 is neither reasoning power nor alignment** — it is the volume and
 granularity of the underlying assertions: 80 `existence_*` links, mapped at gross stage level.
@@ -300,7 +417,8 @@ Where numeric anchors exist, plain comparison suffices; the reasoning layer's jo
 improve precision (ranking by stage specificity, `contains` vs `overlaps` filtering) rather than
 to make the query possible at all.
 
-AIC genuinely earns its place in exactly three: **US5** (needs `starts_after`, absent from RO,
+AIC genuinely earns its place in exactly four: **US9** (contradiction detection over causal
+edges), **US5** (needs `starts_after`, absent from RO,
 plus composition through transitive `develops_from`), **US3** (disjointness-based contradiction
 detection), and **US7** (bounded-but-unknown endpoints from sampled presence — the only story
 where the disjunctive case is intrinsic rather than incidental).
