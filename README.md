@@ -32,6 +32,10 @@ be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows t
 vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
 the axioms that would make it computable.
 
+**[FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md)** assesses a lineage-resolved single-cell fate
+map (Colgan/Koblan et al. 2026) as a temporal KG — the best fit encountered here, because
+lineage trees are token-level and so escape the type/token problem that constrains the others.
+
 Provenance for every source ontology — version IRIs, release dates, checksums, and which
 results depend on which files — is in [sources/SOURCES.md](sources/SOURCES.md).
 

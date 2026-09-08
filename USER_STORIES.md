@@ -179,6 +179,11 @@ Practically: a type-level graph can be given start-order semantics only where it
 and cycles must be recognised as loops rather than reported as errors. Distinguishing a genuine
 loop from an inverted edge is US8.
 
+**The converse is worth stating too.** Token-level data has none of this trouble: a cell divides
+once, so a lineage tree is acyclic by construction and division gives an *exact* Allen `meets`
+rather than a disjunction. Single-cell lineage tracing is therefore the ideal input to a
+constraint network — see [FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md) and US11.
+
 ### Almost nothing to test the new relations against
 
 Only **26 of 2,019** structures in the DAG (1.3%) carry `existence_*` assertions, so just 7
@@ -400,6 +405,31 @@ on. The role never sees an Allen label.
 - **Why the role cares**: this is the clinical-workflow story the NIH challenge's criterion 5
   asks for, built on a causal graph rather than an association list.
 
+### US11 — Which fate decision does my knockout disrupt?
+
+> **As a** mouse developmental geneticist whose knockout line is embryonic lethal between E8.0
+> and E9.0,
+> **I want** the cell fate restriction events and gene program activations that fall inside that
+> window, ranked by specificity to it,
+> **so that** I can shortlist which *fate decision* is disrupted, rather than which anatomical
+> structure merely happened to be present.
+
+- **Query**: US1's interval query, run against measured fate-restriction times and gene-program
+  activation intervals instead of Uberon `existence_*` assertions.
+- **LLM layer**: *in* — as US1. *out* — names the disrupted decision and the programs, with the
+  lineage evidence behind each.
+- **Machinery**: numeric anchors for the query itself; **AIC for the imputed ancestral times**,
+  which are bounded-but-unknown and must not be collapsed to point estimates.
+- **Status**: not built. Requires the KG proposed in
+  **[FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md)** from Colgan/Koblan et al. 2026. The temporal
+  composition is already verified: the paper's six timepoints map **one-to-one onto Theiler
+  stages TS11–TS16**, and its E7.5–E10.0 window overlaps five MP lethality intervals, so it
+  drops onto the existing backbone with no alignment work.
+- **Why the role cares**: this is US1 with the resolution turned up. US1 today answers with
+  `embryo` and `conceptus` because Uberon has 80 gross-grained assertions; this would answer with
+  named fate restriction events and gene programs at half-day resolution, from measurement rather
+  than curation. **The single largest available improvement to the strongest story in the set.**
+
 ---
 
 ## 4. Capability matrix
@@ -417,6 +447,7 @@ on. The role never sees an Allen label.
 | US8 | ✗ | ✗ | – (graph only) | classification is judgement, not inference |
 | US9 | partial | ✗ | ✅ **required** | onset is per-disease, not per-node |
 | US10 | ✅ | ✅ | – | onset is per-disease, not per-node |
+| US11 | ✅ | ✅ | ✅ for imputed ancestral times | needs the fate-map KG built |
 
 **What limits US1 and US2 is neither reasoning power nor alignment** — it is the volume and
 granularity of the underlying assertions: 80 `existence_*` links, mapped at gross stage level.
