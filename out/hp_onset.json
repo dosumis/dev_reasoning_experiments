@@ -1,0 +1,632 @@
+{
+ "http://purl.obolibrary.org/obo/HP_0002197": {
+  "label": "Generalized-onset seizure",
+  "defn": "A generalized-onset seizure is a type of seizure originating at some point within, and rapidly engaging, bilaterally distributed networks. The networks may include cortical and subcortical structures but not necessarily the entire cortex.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001250"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003577": {
+  "label": "Congenital onset",
+  "defn": "A phenotypic abnormality that is present at birth.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003581": {
+  "label": "Adult onset",
+  "defn": "Onset of disease manifestations in adulthood, defined here as at the age of 16 years or later.",
+  "hsapdv": [
+   "HsapDv_0000258"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003584": {
+  "label": "Late onset",
+  "defn": "A type of adult onset with onset of symptoms after the age of 60 years.",
+  "hsapdv": [
+   "HsapDv_0000227"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003581"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003587": {
+  "label": "Insidious onset",
+  "defn": "Gradual, very slow onset of disease manifestations.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011008"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003593": {
+  "label": "Infantile onset",
+  "defn": "Onset of signs or symptoms of disease between 28 days to one year of life.",
+  "hsapdv": [
+   "HsapDv_0000261"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0410280"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003596": {
+  "label": "Middle age onset",
+  "defn": "A type of adult onset with onset of symptoms at the age of 40 to 60 years.",
+  "hsapdv": [
+   "HsapDv_0000267"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003581"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003621": {
+  "label": "Juvenile onset",
+  "defn": "Onset of signs or symptoms of disease between the age of 5 and 15 years.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0410280"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003623": {
+  "label": "Neonatal onset",
+  "defn": "Onset of signs or symptoms of disease within the first 28 days of life.",
+  "hsapdv": [
+   "HsapDv_0000262"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003674": {
+  "label": "Onset",
+  "defn": "The age group in which disease manifestations appear.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0031797"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003694": {
+  "label": "Late-onset proximal muscle weakness",
+  "defn": "Lack of strength of the proximal musculature occurring late in the clinical course.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003701"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003810": {
+  "label": "Late-onset distal muscle weakness",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002460"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0003831": {
+  "label": "Typified by age-related disease onset",
+  "defn": "Description of conditions in which age of onset is typically later in life and in which penetrance is dependent on the age of the subject.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0034335"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0004904": {
+  "label": "Maturity-onset diabetes of the young",
+  "defn": "The term Maturity-onset diabetes of the young (MODY) was initially used for patients diagnosed with fasting hyperglycemia that could be treated without insulin for more than two years, where the initial diagnosis was made at a young age (under 25 years). Thus, MODY combines characteristics of type 1 diabetes (young age at diagnosis) and type 2 diabetes (less insulin dependence than type 1 diabetes). The term MODY is now most often used to refer to a group of monogenic diseases with these characteristics. Here, the term is used to describe hyperglycemia diagnosed at a young age with no or minor insulin dependency, no evidence of insulin resistance, and lack of evidence of autoimmune destruction of the beta cells.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0000819"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0005833": {
+  "label": "obsolete Joint swelling onset late infancy",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": []
+ },
+ "http://purl.obolibrary.org/obo/HP_0006834": {
+  "label": "Developmental stagnation at onset of seizures",
+  "defn": "A cessation of the development of a child in the areas of motor skills, speech and language, cognitive skills, and social and/or emotional skills, following the onset of epilepsy.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0007281"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0006904": {
+  "label": "Late-onset spinocerebellar degeneration",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002503"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007081": {
+  "label": "obsolete Late-onset muscular dystrophy",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": []
+ },
+ "http://purl.obolibrary.org/obo/HP_0007334": {
+  "label": "Bilateral tonic-clonic seizure with focal onset",
+  "defn": "A bilateral tonic-clonic seizure with focal onset is a focal-onset seizure which progresses into a bilateral tonic-clonic phase.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002069",
+   "HP_0007359"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007359": {
+  "label": "Focal-onset seizure",
+  "defn": "A focal-onset seizure is a type of seizure originating within networks limited to one hemisphere. They may be discretely localized or more widely distributed, and may originate in subcortical structures.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001250"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007395": {
+  "label": "Postnatal-onset ichthyosiform erythroderma",
+  "defn": "A type of ichthyosiform erythroderma with postnatal onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0008064"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007573": {
+  "label": "Late onset atopic dermatitis",
+  "defn": "A form of atopic dermatitis with onset in adulthood characterized by atopic red face, chronic lichenified eczema on the trunk, subacute or psoriasiform dermatitis.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001047"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007642": {
+  "label": "Early-onset non-progressive night blindness",
+  "defn": "A usually nonprogressive (i.e., stationary) form of night blindness with early (presumed to be congenital) onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0000662"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0007830": {
+  "label": "Adult-onset night blindness",
+  "defn": "Inability to see well at night or in poor light with onset in adulthood.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0000662"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0008041": {
+  "label": "Late onset congenital glaucoma",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001087"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0008615": {
+  "label": "Adult onset sensorineural hearing impairment",
+  "defn": "The presence of sensorineural deafness with late onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0000407"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0008915": {
+  "label": "Childhood-onset truncal obesity",
+  "defn": "Truncal obesity with onset during childhood, defined as between 2 and 10 years of age.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001956"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0008922": {
+  "label": "Childhood-onset short-trunk short stature",
+  "defn": "A type of disproportionate short stature characterized by a short trunk but a average-sized limbs with onset in childhood.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003521"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011152": {
+  "label": "Early onset absence seizures",
+  "defn": "Typical absence seizures starting before the age of 4 years.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011147"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011405": {
+  "label": "Childhood onset short-limb short stature",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0008873"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011406": {
+  "label": "Infancy onset short-trunk short stature",
+  "defn": "A type of disproportionate short stature characterized by a short trunk but a average-sized limbs with onset in infancy.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003521"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011460": {
+  "label": "Embryonal onset",
+  "defn": "Onset of disease at up to 8 weeks following fertilization (corresponding to 10 weeks of gestation).",
+  "hsapdv": [
+   "HsapDv_0000002"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0030674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011461": {
+  "label": "Fetal onset",
+  "defn": "Onset prior to birth but after 8 weeks of embryonic development (corresponding to a gestational age of 10 weeks).",
+  "hsapdv": [
+   "HsapDv_0000037"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0030674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011462": {
+  "label": "Young adult onset",
+  "defn": "Onset of disease at the age of between 16 and 40 years.",
+  "hsapdv": [
+   "HsapDv_0000266"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003581"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011463": {
+  "label": "Childhood onset",
+  "defn": "Onset of disease at the age of between 1 and 5 years.",
+  "hsapdv": [
+   "HsapDv_0000265"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0410280"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0011474": {
+  "label": "Childhood onset sensorineural hearing impairment",
+  "defn": "Sensorineural hearing impairment with childhood onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0000407"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0020008": {
+  "label": "History of disease onset in winter",
+  "defn": "The initial manifestation of a disease or symptom occurring during the winter season.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0032443"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0020009": {
+  "label": "History of disease onset in summer",
+  "defn": "The initial manifestation of a disease or symptom occurring during the summer season.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0032443"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0025190": {
+  "label": "Bilateral tonic-clonic seizure with generalized onset",
+  "defn": "A bilateral tonic-clonic seizure with generalized onset is a type of bilateral tonic-clonic seizure characterized by generalized onset; these seizures rapidly engage networks in both hemispheres at the start of the seizure.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002069",
+   "HP_0032677"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0025708": {
+  "label": "Early young adult onset",
+  "defn": "Onset of disease at an age of greater than or equal to 16 to under 19 years.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011462"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0025709": {
+  "label": "Intermediate young adult onset",
+  "defn": "Onset of disease at an age of greater than or equal to 19 to under 25 years.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011462"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0025710": {
+  "label": "Late young adult onset",
+  "defn": "Onset of disease at an age of greater than or equal to 25 to under 40 years.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011462"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0030456": {
+  "label": "Abnormality of pattern onset/offset visual evoked potentials",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0030455"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0030457": {
+  "label": "Abnormal amplitude of pattern onset/offset visual evoked potentials",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0030456"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0030458": {
+  "label": "Abnormal timing of pattern onset/offset visual evoked potentials",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0030456"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0030674": {
+  "label": "Antenatal onset",
+  "defn": "Onset prior to birth.",
+  "hsapdv": [
+   "HsapDv_0000045"
+  ],
+  "prop": [
+   "RO_0002488"
+  ],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0031354": {
+  "label": "Sleep onset insomnia",
+  "defn": "Difficulty initiating sleep, that is, increased sleep onset latency, refers to the condition where it takes 30 minutes or more to fall asleep.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0100785"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0032662": {
+  "label": "Focal-onset seizure evolving into bilateral convulsive status epilepticus",
+  "defn": "A type of bilateral convulsive seizure of focal onset (which could be with awareness or impaired awareness, either motor or non- motor) that is sufficiently prolonged (or repeated without recovery) to reach the threshold for status epilepticus.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0007334",
+   "HP_0032660"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0032677": {
+  "label": "Generalized-onset motor seizure",
+  "defn": "A generalized motor seizure is a type of generalized-onset seizure with predominantly motor (involving musculature) signs. The motor event could consist of an increase (positive) or decrease (negative) in muscle contraction to produce a movement.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002197",
+   "HP_0020219"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0032842": {
+  "label": "Generalized-onset epileptic spasm",
+  "defn": "A type of epileptic spasm of generalized onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011097",
+   "HP_0032677"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0032843": {
+  "label": "Focal-onset epileptic spasm",
+  "defn": "A type of epileptic spasm of focal onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011097",
+   "HP_0011153"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0032879": {
+  "label": "Focal impaired awareness seizure with dissociation at onset",
+  "defn": "A focal cognitive epileptic seizure with dissociation at the onset of the seizure and with impairment of awareness at at some point during the seizure.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0032689",
+   "HP_0032756"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0034197": {
+  "label": "Third trimester onset",
+  "defn": "This term refers to a phenotypic feature that was first observed prior to birth during the third trimester, which is defined as 28 weeks and zero days (28+0) of gestation and beyond.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011461"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0034198": {
+  "label": "Second trimester onset",
+  "defn": "This term refers to a phenotypic feature that was first observed prior to birth during the second trimester, which comprises the range of gestational ages from 14 0/7 weeks to 27 6/7 (inclusive).",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011461"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0034199": {
+  "label": "Late first trimester onset",
+  "defn": "This term refers to a phenotypic feature that was first observed prior to birth in the first trimester during the early fetal period, which is defined as 11 0/7 to 13 6/7 weeks of gestation (inclusive).",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0011461"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0034857": {
+  "label": "Typified by highly variable age of onset",
+  "defn": "Description of conditions in which age of onset is highly variable even in family members who share the same disease-associated variant or variants.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0034335"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0040231": {
+  "label": "Abnormal onset of bleeding",
+  "defn": "",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0001892"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0040232": {
+  "label": "Delayed onset bleeding",
+  "defn": "Abnormal bleeding related to a procedure or trauma which does not start at the time of the initial insult, but after delay by at least 24 hours.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0040231"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0100000": {
+  "label": "Early onset of sexual maturation",
+  "defn": "An early onset of puberty, in this case early does not refer to precocious.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0008373"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_0410280": {
+  "label": "Pediatric onset",
+  "defn": "Onset of disease manifestations before adulthood, defined here as before the age of 16 years, but excluding neonatal or congenital onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_4000040": {
+  "label": "Puerpural onset",
+  "defn": "Onset of a phenotypic abnormality or a disease during childbirth or in the period immediately following.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_5200356": {
+  "label": "Sleep onset rapid eye movement period",
+  "defn": "Entering REM sleep immediately upon falling asleep.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0002494",
+   "HP_5200296",
+   "HP_5200298"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_6000314": {
+  "label": "Perimenopausal onset",
+  "defn": "Onset of signs or symptoms of disease during the period of a woman&apos;s life shortly before the occurrence of the menopause.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_6000315": {
+  "label": "Postmenopausal onset",
+  "defn": "Onset of signs or symptoms of disease during the period of a woman&apos;s life after the occurrence of the menopause.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0003674"
+  ]
+ },
+ "http://purl.obolibrary.org/obo/HP_6000982": {
+  "label": "Immediate detumescence of penis at time of symptom onset",
+  "defn": "Loss of erection at the time point of pain or other symptom onset.",
+  "hsapdv": [],
+  "prop": [],
+  "sup": [
+   "HP_0010461"
+  ]
+ }
+}

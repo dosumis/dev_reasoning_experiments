@@ -26,6 +26,12 @@ a missing converse relation, three axioms that would give 1,558 Uberon assertion
 semantics, a misplaced relation in the developmental branch, and two chains referencing
 obsolete properties.
 
+Two further reports: **[DISMECH_REPORT.md](DISMECH_REPORT.md)** surveys dismech's 2,480 disease
+pathographs — ~33,500 causal edges needing the same axiom, and 46 causal cycles that turn out to
+be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows that HP's onset
+vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
+the axioms that would make it computable.
+
 Provenance for every source ontology — version IRIs, release dates, checksums, and which
 results depend on which files — is in [sources/SOURCES.md](sources/SOURCES.md).
 

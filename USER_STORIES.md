@@ -198,10 +198,13 @@ live query.
 
 ### Two alignments simply do not exist
 
-- **HP onset ↔ HsapDv.** HPO's onset hierarchy is an interval series describing the same human
-  timeline as HsapDv, unlinked to it. **Blocks US3, US9 and US10** — dismech's `onset_category`
-  uses that same HP vocabulary (425 uses), so one small alignment unblocks three stories across
-  two projects. This is the highest-leverage piece of missing curation in the whole survey.
+- **HP onset ↔ HsapDv — aligned, but not axiomatised.** Ten HP onset terms carry equivalence
+  axioms against HsapDv via `existence starts during`, and following them yields a **perfect
+  interval partition of the human lifespan** (verified: seven consecutive Allen `meets`, no gaps
+  or overlaps). What is missing is not the alignment but the axioms that make it usable — no
+  disjointness between onset terms, so no contradiction is detectable; and `Juvenile onset`
+  leaves a hole in the partition. Full analysis and proposal:
+  **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)**. Blocks US3, US9, US10.
 - **Fine-grained Carnegie ↔ Theiler.** The SSSOM bridges relate mouse and human only through
   generic stages. Numeric anchors do not help: `dpc` and `dpf` are not commensurable across
   species. Limits US6 to coarse answers.
@@ -265,8 +268,10 @@ on. The role never sees an Allen label.
   LLM's job is writing the human-readable explanation attached to each flag.
 - **Machinery**: **needs AIC.** Contradiction detection requires disjointness, which is what
   forces SWRL over plain OWL (§4).
-- **Status**: blocked on HP-onset ↔ HsapDv alignment, which does not exist. HPO's onset
-  hierarchy parallels HsapDv but is unlinked to it.
+- **Status**: closer than it looks. The HP↔HsapDv alignment already exists as equivalence
+  axioms and resolves to numeric intervals; what is missing is disjointness between the onset
+  terms, without which two incompatible onsets are merely two facts. See
+  **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)**.
 
 ### US4 — Retrieving samples annotated at the wrong granularity
 
@@ -355,6 +360,7 @@ on. The role never sees an Allen label.
   cell death, not a cause of it. dismech has a `readout` predicate that fits.
 - **Why the role cares**: cycles block every downstream temporal use, and the fix is cheap once
   the cases are separated.
+- **→ [DISMECH_REPORT.md](DISMECH_REPORT.md)** — full survey, the cycles, and action items.
 
 ### US9 — Catching inverted causality against onset data
 
@@ -368,10 +374,11 @@ on. The role never sees an Allen label.
 - **LLM layer**: *in* — normalising `age_range` free text ("Birth to first years of life",
   "Infancy through adulthood", 886 instances) into intervals. *out* — report generation.
 - **Machinery**: **needs AIC** — contradiction detection requires disjointness.
-- **Status**: blocked twice over. Onset is recorded **per disease, not per node**, so there is
-  nothing yet to compare edge-wise; and `onset_category` uses the HP onset hierarchy, which is
-  still unaligned to HsapDv (§2). 291 disorders have both a pathograph and onset data, so the
-  intersection exists once per-node onset does.
+- **Status**: one real blocker, not two. Onset is recorded **per disease, not per node**, so
+  there is nothing to compare edge-wise yet; 291 disorders have both a pathograph and onset, so
+  the intersection is there once per-node onset exists. The HP↔HsapDv side is already aligned
+  ([HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)) and needs only disjointness axioms.
+  See [DISMECH_REPORT.md](DISMECH_REPORT.md) §5.
 
 ### US10 — What to monitor for next
 
