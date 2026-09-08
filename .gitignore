@@ -4,6 +4,9 @@ sources/*
 !sources/SOURCES.md
 !sources/fetch.sh
 
+# --- downloaded reference material (papers, PDFs) ---
+inputs/
+
 # --- python ---
 .venv/
 .venv-uv/
