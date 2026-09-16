@@ -1,16 +1,301 @@
-# What can we actually compute? User stories and a capability matrix
+# What can we actually compute?
 
-Which temporal reasoning is worth building depends on what is already in the ontologies. This
-document surveys that content, identifies where it falls short, and works through seven user
-stories against it — recording for each what machinery is genuinely required.
+**Eleven user stories for temporal reasoning over biomedical data, and an honest account of
+which parts of the machinery each one needs.**
 
-Companion to [README.md](README.md), which covers the Allen interval calculus itself and its
-alignment to RO. All counts measured against the releases recorded in
-[sources/SOURCES.md](sources/SOURCES.md).
+Each story names a role, a query that role would plausibly issue, and an outcome they care
+about. Every one has been worked against real ontology releases, so the "what's blocking it"
+lines are measured rather than guessed.
+
+| | |
+|---|---|
+| **§1** | **The stories** — start here |
+| **§2** | Capability matrix — what each needs, what actually blocks it |
+| §3 | What we have to work with — the temporal content in HsapDv, MmusDv, Uberon, GO, HP, MP, dismech |
+| §4 | Where it falls short — missing axioms, gross-grained bridges, the type/token trap |
+| §5–6 | Scaling, and how often full interval reasoning is really needed |
+| §7 | A proposed programme of work |
+
+New to interval reasoning? [README.md](README.md) §1 is a plain-language introduction to what
+Allen relations are and why biology needs them. This document assumes only that.
+
+All counts measured against the releases recorded in [sources/SOURCES.md](sources/SOURCES.md).
 
 ---
 
-## 1. What we have to work with
+## 1. User stories
+
+An LLM layer sits at both ends of every story: turning the natural-language ask into a formal
+interval query, and turning the returned relations back into something the role can act on.
+**The role never sees an Allen label.**
+
+| | Role | Wants | ★ |
+|---|---|---|---|
+| [US1](#us1--candidate-mechanisms-for-an-embryonic-lethal-knockout--strongest-case) | Mouse developmental geneticist | What was forming when my knockout died? | ★ |
+| [US2](#us2--focusing-surveillance-after-a-teratogen-exposure) | Teratology information specialist | Which organs were at risk during this exposure? | |
+| [US3](#us3--catching-impossible-onset-annotations) | HPO curator | Which onset annotations are impossible? | |
+| [US4](#us4--retrieving-samples-annotated-at-the-wrong-granularity) | Bioinformatician | Find samples whatever granularity they were annotated at | |
+| [US5](#us5--finding-temporally-impossible-developmental-assertions) | Uberon curator | Which `develops_from` assertions are temporally impossible? | |
+| [US6](#us6--translating-a-mouse-phenotype-to-a-human-window) | Comparative developmental biologist | What is the human equivalent of this mouse stage? | |
+| [US7](#us7--comparing-trajectories-across-atlases-with-no-shared-pseudotime) | Computational biologist | Compare trajectories across atlases with no shared pseudotime | |
+| [US8](#us8--telling-vicious-cycles-from-inverted-causal-edges--strongest-dismech-case) | dismech curator | Which causal cycles are real, and which are errors? | ★ |
+| [US9](#us9--catching-inverted-causality-against-onset-data) | dismech curator | Which causal claims run backwards in time? | |
+| [US10](#us10--what-to-monitor-for-next) | Clinician | What should I watch for next in this patient? | |
+| [US11](#us11--which-fate-decision-does-my-knockout-disrupt) | Mouse developmental geneticist | Which *fate decision* does my knockout disrupt? | |
+
+---
+
+### US1 — Candidate mechanisms for an embryonic-lethal knockout ★ strongest case
+
+> **As a** mouse developmental geneticist who has just phenotyped a knockout line as embryonic
+> lethal between E4.5 and E8,
+> **I want** the anatomical structures and processes whose existence window overlaps that
+> lethality window,
+> **so that** I can shortlist candidate mechanisms before committing to targeted histology or
+> expression work.
+
+- **Query**: `interval_overlaps([E4.5, E8])` over structure existence intervals, via the
+  Theiler backbone.
+- **LLM layer**: *in* — "my knockout dies around gastrulation" → the right MP term → its E-day
+  interval. *out* — a ranked structure list with a plain-English reason per hit ("the blastoderm
+  begins forming in the blastula stage, which falls inside your window").
+- **Machinery**: numeric anchors + `part_of` closure + SSSOM. **No AIC reasoning required.**
+- **Status**: runs end-to-end (`tests/full_chain.py`). Precision poor — see §4.
+- **Why the role cares**: MGI annotates thousands of genes with staged lethality terms. Nobody
+  can run this query today.
+
+### US2 — Focusing surveillance after a teratogen exposure
+
+> **As a** teratology information specialist advising on a pregnancy exposed to a drug during
+> weeks 6–9 post-fertilization,
+> **I want** the structures undergoing formation during that window,
+> **so that** I can focus counselling and targeted ultrasound on the organ systems actually at
+> risk, rather than reciting a generic risk list.
+
+- **Query**: same shape as US1, on the human backbone (215/255 stages anchored).
+- **LLM layer**: *in* — a free-text exposure history with dates → a `dpf` interval, handling
+  the LMP-vs-fertilization conversion silently. *out* — organ systems grouped by system, with
+  the developmental event that makes each vulnerable.
+- **Machinery**: numeric anchors alone.
+- **Status**: unblocked; not yet built. Public-health framing the NIH challenge explicitly names.
+
+### US3 — Catching impossible onset annotations
+
+> **As an** HPO curator reviewing disease–phenotype annotations before a release,
+> **I want** annotations flagged where the asserted onset window cannot overlap the existence
+> window of the affected structure,
+> **so that** I can correct curation errors rather than ship contradictions.
+
+- **Query**: for each annotation, test whether `onset ∩ existence = ∅` — i.e. whether the two
+  intervals are necessarily disjoint (`p` or `P`).
+- **LLM layer**: mostly unnecessary — this is a batch QC report, not an interactive query. The
+  LLM's job is writing the human-readable explanation attached to each flag.
+- **Machinery**: **needs AIC.** Contradiction detection requires disjointness, which is what
+  forces SWRL over plain OWL — see [README.md](README.md) §5.
+- **Status**: closer than it looks. The HP↔HsapDv alignment already exists as equivalence
+  axioms and resolves to numeric intervals; what is missing is disjointness between the onset
+  terms, without which two incompatible onsets are merely two facts. See
+  **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)**.
+
+### US4 — Retrieving samples annotated at the wrong granularity
+
+> **As a** bioinformatician analysing a single-cell atlas whose samples are stage-annotated
+> inconsistently — some to "Carnegie stage 13", some just to "embryonic stage",
+> **I want** a query for "structures developing during organogenesis" expanded to every
+> stage-annotated term whose interval falls in that window,
+> **so that** I retrieve all relevant samples regardless of the granularity each was curated at.
+
+- **Query**: interval containment plus `part_of` closure over the stage backbone.
+- **LLM layer**: *in* — free-text stage description → interval. *out* — nothing needed; the
+  result is a term list feeding a data query.
+- **Machinery**: numeric anchors + property chains. Cheapest story here.
+- **Status**: unblocked. This was the original motivating use case, and it needs the least.
+
+### US5 — Finding temporally impossible developmental assertions
+
+> **As an** Uberon curator,
+> **I want** `develops_from` assertions flagged where the two structures' existence windows make
+> the relationship temporally impossible,
+> **so that** I can fix incorrect developmental relationships at source.
+
+- **Query**: for each `X develops_from Y`, test whether the asserted existence intervals are
+  consistent with `start(Y) < start(X)`.
+- **LLM layer**: report generation only.
+- **Machinery**: **needs AIC**, and needs the `develops_from ⊑ starts_after` axiom (§4) first.
+  Also needs composition, since `develops_from` is transitive and lineage chains compound.
+- **Status**: axiom implemented (`out/ro_temporal_patch.ofn`); QC runs clean over 1,558
+  assertions — acyclic, no conflicts. But only 1.3% of the DAG has existence data to test
+  against, so the QC is currently near-vacuous. Its one real catch so far was a defect in *the
+  axiom*, not the data (§4).
+- **→ [RO_REPORT.md](RO_REPORT.md)** — the axioms this story needs, written up as action items
+  for RO maintainers, together with the other findings from auditing RO's temporal relations.
+
+### US6 — Translating a mouse phenotype to a human window
+
+> **As a** comparative developmental biologist studying a mouse mutant,
+> **I want** the human gestational window corresponding to the mouse stage at which the defect
+> arises,
+> **so that** I can judge which human congenital conditions are plausible counterparts.
+
+- **Query**: mouse stage → shared UBERON generic stage → human stage range.
+- **LLM layer**: *out* — must be explicit that the answer is coarse, or the user will over-read
+  it. This is a case where hiding complexity would be actively harmful.
+- **Machinery**: SSSOM traversal. Numeric anchors do **not** help: `dpc` and `dpf` are not
+  commensurable across species.
+- **Status**: partly solvable now, at gross granularity only (TS17 → `organogenesis stage` → all
+  human organogenesis stages). Fine-grained Carnegie↔Theiler remains uncurated.
+
+### US7 — Comparing trajectories across atlases with no shared pseudotime
+
+> **As a** computational biologist integrating two developmental single-cell atlases,
+> **I want** each dataset's cell states placed on a shared stage backbone using their
+> tissue-stage sample metadata,
+> **so that** I can compare trajectories between datasets that have no common pseudotime axis.
+
+- **Query**: project each trajectory segment's constituent samples onto stage intervals, then
+  relate segments across datasets through the backbone.
+- **LLM layer**: *in* — normalising messy free-text stage metadata ("E9.5", "8–9 pcw", "CS13",
+  blank) into stage IRIs. This is the highest-value LLM contribution in the whole set, and the
+  constraint solver acts as its guardrail by catching normalisations that produce contradictions.
+- **Machinery**: **needs AIC.** Sampled presence gives bounded-but-unknown endpoints, which is
+  exactly the disjunctive case; and cross-dataset relations must be inferred, not asserted.
+- **Status**: not started. The stage backbone is the interlingua — pseudotime does not compose
+  across datasets, stage intervals do.
+
+### US8 — Telling vicious cycles from inverted causal edges ★ strongest dismech case
+
+> **As a** dismech curator reviewing disease mechanism graphs,
+> **I want** causal cycles separated into biologically real feedback loops and probable
+> modelling errors,
+> **so that** I can correct the errors and annotate the loops as loops, rather than leaving
+> 46 graphs that no temporal reasoner can consume.
+
+- **Query**: find strongly connected components in the causal subgraph; for each, test whether
+  the constituent node types can plausibly recur (a loop) or whether one edge inverts a
+  readout/cause relationship (an error).
+- **LLM layer**: *out* — proposes a classification with a rationale per cycle; the curator
+  adjudicates. Cycle detection is exact; classification is judgement, which is the right
+  division of labour.
+- **Machinery**: graph algorithms plus the type/token distinction (§4). **AIC is not needed to
+  find the cycles**, only to reason over what remains once they are resolved.
+- **Status**: 46 cycles found, unclassified. Spot-checking suggests most are real vicious
+  cycles; at least one looks like an error — `MONDO:0003672` asserts *posterior ECG injury
+  pattern* ⇄ *posterior myocardial ischaemic cell death*, but an ECG pattern is a **readout** of
+  cell death, not a cause of it. dismech has a `readout` predicate that fits.
+- **Why the role cares**: cycles block every downstream temporal use, and the fix is cheap once
+  the cases are separated.
+- **→ [DISMECH_REPORT.md](DISMECH_REPORT.md)** — full survey, the cycles, and action items.
+
+### US9 — Catching inverted causality against onset data
+
+> **As a** dismech curator,
+> **I want** causal edges flagged where the downstream node's typical onset precedes the
+> upstream node's,
+> **so that** I can find causal claims that are stated backwards.
+
+- **Query**: for each causal edge A→B, test `onset(A) starts_before onset(B)`; flag where the
+  asserted onsets make that impossible.
+- **LLM layer**: *in* — normalising `age_range` free text ("Birth to first years of life",
+  "Infancy through adulthood", 886 instances) into intervals. *out* — report generation.
+- **Machinery**: **needs AIC** — contradiction detection requires disjointness.
+- **Status**: one real blocker, not two. Onset is recorded **per disease, not per node**, so
+  there is nothing to compare edge-wise yet; 291 disorders have both a pathograph and onset, so
+  the intersection is there once per-node onset exists. The HP↔HsapDv side is already aligned
+  ([HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)) and needs only disjointness axioms.
+  See [DISMECH_REPORT.md](DISMECH_REPORT.md) §5.
+
+### US10 — What to monitor for next
+
+> **As a** clinician managing a patient with disease D who has just presented with phenotype P
+> at age A,
+> **I want** the phenotypes causally downstream of P that typically appear later,
+> **so that** I can target surveillance rather than screening for everything the disease can
+> eventually cause.
+
+- **Query**: descendants of P in the causal DAG, filtered to those whose onset window starts
+  after age A, ordered by expected time of appearance.
+- **LLM layer**: *in* — free-text presentation → HP term + age. *out* — a ranked watch-list
+  with the causal path that justifies each item, which is what makes it trustworthy rather than
+  an opaque prediction.
+- **Machinery**: causal-DAG reachability + onset intervals. **No AIC needed** if onsets are
+  numerically anchored.
+- **Status**: needs per-node onset (same blocker as US9). Phenotype nodes are already
+  HP-grounded, so the output side is ready.
+- **Why the role cares**: this is the clinical-workflow story the NIH challenge's criterion 5
+  asks for, built on a causal graph rather than an association list.
+
+### US11 — Which fate decision does my knockout disrupt?
+
+> **As a** mouse developmental geneticist whose knockout line is embryonic lethal between E8.0
+> and E9.0,
+> **I want** the cell fate restriction events and gene program activations that fall inside that
+> window, ranked by specificity to it,
+> **so that** I can shortlist which *fate decision* is disrupted, rather than which anatomical
+> structure merely happened to be present.
+
+- **Query**: US1's interval query, run against measured fate-restriction times and gene-program
+  activation intervals instead of Uberon `existence_*` assertions.
+- **LLM layer**: *in* — as US1. *out* — names the disrupted decision and the programs, with the
+  lineage evidence behind each.
+- **Machinery**: numeric anchors for the query itself; **AIC for the imputed ancestral times**,
+  which are bounded-but-unknown and must not be collapsed to point estimates.
+- **Status**: not built. Requires the KG proposed in
+  **[FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md)** from Colgan/Koblan et al. 2026. The temporal
+  composition is already verified: the paper's six timepoints map **one-to-one onto Theiler
+  stages TS11–TS16**, and its E7.5–E10.0 window overlaps five MP lethality intervals, so it
+  drops onto the existing backbone with no alignment work.
+- **Why the role cares**: this is US1 with the resolution turned up. US1 today answers with
+  `embryo` and `conceptus` because Uberon has 80 gross-grained assertions; this would answer with
+  named fate restriction events and gene programs at half-day resolution, from measurement rather
+  than curation. **The single largest available improvement to the strongest story in the set.**
+
+---
+
+## 2. Capability matrix
+
+| Story | Numeric anchors alone | + property chains (OWL EL, relation-graph) | + full AIC (SWRL/RL) | Real blocker |
+|---|---|---|---|---|
+| US1 hop 1 | ✅ **done** | – | – | – |
+| US1 hop 2 | ✅ **done** | ✅ | – | precision (gross mappings, 80 assertions) |
+| US2 | ✅ | ✅ | – | – (SSSOM covers HsapDv too) |
+| US3 | partial | ✗ | ✅ **required** (disjointness) | HP↔HsapDv alignment |
+| US4 | ✅ | ✅ | – | – |
+| US5 | ✗ | partial | ✅ **required** | existence data: only 1.3% of the DAG is anchored |
+| US6 | partial | ✗ | ✗ | SSSOM gives gross-level alignment only |
+| US7 | ✗ | ✗ | ✅ **required** | stage metadata normalisation (LLM) |
+| US8 | ✗ | ✗ | – (graph only) | classification is judgement, not inference |
+| US9 | partial | ✗ | ✅ **required** | onset is per-disease, not per-node |
+| US10 | ✅ | ✅ | – | onset is per-disease, not per-node |
+| US11 | ✅ | ✅ | ✅ for imputed ancestral times | needs the fate-map KG built |
+
+**What limits US1 and US2 is neither reasoning power nor alignment** — it is the volume and
+granularity of the underlying assertions: 80 `existence_*` links, mapped at gross stage level.
+Where numeric anchors exist, plain comparison suffices; the reasoning layer's job there is to
+improve precision (ranking by stage specificity, `contains` vs `overlaps` filtering) rather than
+to make the query possible at all.
+
+**Full interval reasoning earns its place in five of the eleven:**
+
+- **US3** — disjointness-based contradiction detection over onset annotations
+- **US5** — needs `starts_after` (absent from RO) plus composition through transitive `develops_from`
+- **US7** — bounded-but-unknown endpoints from sampled presence; the disjunctive case is
+  intrinsic here rather than incidental
+- **US9** — contradiction detection over causal edges
+- **US11** — in part: the imputed ancestral times are bounded-but-unknown and must not be
+  collapsed to point estimates
+
+**Note the pattern.** Those five are all **curation-, QC- or integration-facing**, addressed to
+ontology and data professionals. The four that need only numeric comparison — US1, US2, US4,
+US10 — are the ones addressed to bench and clinical users.
+
+That split matters for sequencing. The stories with the most compelling end users need the least
+machinery; the machinery is justified by the infrastructure stories. Both are worth building, but
+they are worth building *for different audiences*, and a demo aimed at the wrong one will
+underwhelm.
+
+---
+
+## 3. What we have to work with
 
 ### Content by ontology
 
@@ -46,7 +331,7 @@ Both DV ontologies carry machine-readable endpoint annotations — `start_dpf`/`
 `start_dpc`, `start_dpb`/`end_dpb`, `start_wpb`/`end_wpb`, `start_mpb`/`end_mpb`,
 `start_ypb`/`end_ypb`. This is the single most consequential fact in this document: **where both
 endpoints are known, the Allen relation between two intervals is determined by comparing four
-numbers.** No qualitative reasoning is needed at all (§6).
+numbers.** No qualitative reasoning is needed at all — see §6.
 
 The reference frame is encoded in the property name — `dpf` days post fertilization, `dpc` post
 coitum, `dpb`/`wpb`/`mpb`/`ypb` post birth. Converting between frames needs one constant per
@@ -81,7 +366,7 @@ MP lethality (E-days) ──► Theiler stage ──► generic MmusDv stage ─
 
 ---
 
-## 2. Where it falls short
+## 4. Where it falls short
 
 ### Developmental relations have no temporal semantics
 
@@ -217,257 +502,6 @@ live query.
 ---
 
 
-## 3. User stories
-
-Each story names a role, a query that role would plausibly issue, and an outcome that role
-plausibly cares about. An LLM layer sits at both ends: turning the natural-language ask into a
-formal interval query, and turning the returned relations back into something the role can act
-on. The role never sees an Allen label.
-
----
-
-### US1 — Candidate mechanisms for an embryonic-lethal knockout ★ strongest case
-
-> **As a** mouse developmental geneticist who has just phenotyped a knockout line as embryonic
-> lethal between E4.5 and E8,
-> **I want** the anatomical structures and processes whose existence window overlaps that
-> lethality window,
-> **so that** I can shortlist candidate mechanisms before committing to targeted histology or
-> expression work.
-
-- **Query**: `interval_overlaps([E4.5, E8])` over structure existence intervals, via the
-  Theiler backbone.
-- **LLM layer**: *in* — "my knockout dies around gastrulation" → the right MP term → its E-day
-  interval. *out* — a ranked structure list with a plain-English reason per hit ("the blastoderm
-  begins forming in the blastula stage, which falls inside your window").
-- **Machinery**: numeric anchors + `part_of` closure + SSSOM. **No AIC reasoning required.**
-- **Status**: runs end-to-end (`tests/full_chain.py`). Precision poor — see §2.
-- **Why the role cares**: MGI annotates thousands of genes with staged lethality terms. Nobody
-  can run this query today.
-
-### US2 — Focusing surveillance after a teratogen exposure
-
-> **As a** teratology information specialist advising on a pregnancy exposed to a drug during
-> weeks 6–9 post-fertilization,
-> **I want** the structures undergoing formation during that window,
-> **so that** I can focus counselling and targeted ultrasound on the organ systems actually at
-> risk, rather than reciting a generic risk list.
-
-- **Query**: same shape as US1, on the human backbone (215/255 stages anchored).
-- **LLM layer**: *in* — a free-text exposure history with dates → a `dpf` interval, handling
-  the LMP-vs-fertilization conversion silently. *out* — organ systems grouped by system, with
-  the developmental event that makes each vulnerable.
-- **Machinery**: numeric anchors alone.
-- **Status**: unblocked; not yet built. Public-health framing the NIH challenge explicitly names.
-
-### US3 — Catching impossible onset annotations
-
-> **As an** HPO curator reviewing disease–phenotype annotations before a release,
-> **I want** annotations flagged where the asserted onset window cannot overlap the existence
-> window of the affected structure,
-> **so that** I can correct curation errors rather than ship contradictions.
-
-- **Query**: for each annotation, test whether `onset ∩ existence = ∅` — i.e. whether the two
-  intervals are necessarily disjoint (`p` or `P`).
-- **LLM layer**: mostly unnecessary — this is a batch QC report, not an interactive query. The
-  LLM's job is writing the human-readable explanation attached to each flag.
-- **Machinery**: **needs AIC.** Contradiction detection requires disjointness, which is what
-  forces SWRL over plain OWL (§4).
-- **Status**: closer than it looks. The HP↔HsapDv alignment already exists as equivalence
-  axioms and resolves to numeric intervals; what is missing is disjointness between the onset
-  terms, without which two incompatible onsets are merely two facts. See
-  **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)**.
-
-### US4 — Retrieving samples annotated at the wrong granularity
-
-> **As a** bioinformatician analysing a single-cell atlas whose samples are stage-annotated
-> inconsistently — some to "Carnegie stage 13", some just to "embryonic stage",
-> **I want** a query for "structures developing during organogenesis" expanded to every
-> stage-annotated term whose interval falls in that window,
-> **so that** I retrieve all relevant samples regardless of the granularity each was curated at.
-
-- **Query**: interval containment plus `part_of` closure over the stage backbone.
-- **LLM layer**: *in* — free-text stage description → interval. *out* — nothing needed; the
-  result is a term list feeding a data query.
-- **Machinery**: numeric anchors + property chains. Cheapest story here.
-- **Status**: unblocked. This was the original motivating use case, and it needs the least.
-
-### US5 — Finding temporally impossible developmental assertions
-
-> **As an** Uberon curator,
-> **I want** `develops_from` assertions flagged where the two structures' existence windows make
-> the relationship temporally impossible,
-> **so that** I can fix incorrect developmental relationships at source.
-
-- **Query**: for each `X develops_from Y`, test whether the asserted existence intervals are
-  consistent with `start(Y) < start(X)`.
-- **LLM layer**: report generation only.
-- **Machinery**: **needs AIC**, and needs the `develops_from ⊑ starts_after` axiom (§2) first.
-  Also needs composition, since `develops_from` is transitive and lineage chains compound.
-- **Status**: axiom implemented (`out/ro_temporal_patch.ofn`); QC runs clean over 1,558
-  assertions — acyclic, no conflicts. But only 1.3% of the DAG has existence data to test
-  against, so the QC is currently near-vacuous. Its one real catch so far was a defect in *the
-  axiom*, not the data (§2).
-- **→ [RO_REPORT.md](RO_REPORT.md)** — the axioms this story needs, written up as action items
-  for RO maintainers, together with the other findings from auditing RO's temporal relations.
-
-### US6 — Translating a mouse phenotype to a human window
-
-> **As a** comparative developmental biologist studying a mouse mutant,
-> **I want** the human gestational window corresponding to the mouse stage at which the defect
-> arises,
-> **so that** I can judge which human congenital conditions are plausible counterparts.
-
-- **Query**: mouse stage → shared UBERON generic stage → human stage range.
-- **LLM layer**: *out* — must be explicit that the answer is coarse, or the user will over-read
-  it. This is a case where hiding complexity would be actively harmful.
-- **Machinery**: SSSOM traversal. Numeric anchors do **not** help: `dpc` and `dpf` are not
-  commensurable across species.
-- **Status**: partly solvable now, at gross granularity only (TS17 → `organogenesis stage` → all
-  human organogenesis stages). Fine-grained Carnegie↔Theiler remains uncurated.
-
-### US7 — Comparing trajectories across atlases with no shared pseudotime
-
-> **As a** computational biologist integrating two developmental single-cell atlases,
-> **I want** each dataset's cell states placed on a shared stage backbone using their
-> tissue-stage sample metadata,
-> **so that** I can compare trajectories between datasets that have no common pseudotime axis.
-
-- **Query**: project each trajectory segment's constituent samples onto stage intervals, then
-  relate segments across datasets through the backbone.
-- **LLM layer**: *in* — normalising messy free-text stage metadata ("E9.5", "8–9 pcw", "CS13",
-  blank) into stage IRIs. This is the highest-value LLM contribution in the whole set, and the
-  constraint solver acts as its guardrail by catching normalisations that produce contradictions.
-- **Machinery**: **needs AIC.** Sampled presence gives bounded-but-unknown endpoints, which is
-  exactly the disjunctive case; and cross-dataset relations must be inferred, not asserted.
-- **Status**: not started. The stage backbone is the interlingua — pseudotime does not compose
-  across datasets, stage intervals do.
-
-### US8 — Telling vicious cycles from inverted causal edges ★ strongest dismech case
-
-> **As a** dismech curator reviewing disease mechanism graphs,
-> **I want** causal cycles separated into biologically real feedback loops and probable
-> modelling errors,
-> **so that** I can correct the errors and annotate the loops as loops, rather than leaving
-> 46 graphs that no temporal reasoner can consume.
-
-- **Query**: find strongly connected components in the causal subgraph; for each, test whether
-  the constituent node types can plausibly recur (a loop) or whether one edge inverts a
-  readout/cause relationship (an error).
-- **LLM layer**: *out* — proposes a classification with a rationale per cycle; the curator
-  adjudicates. Cycle detection is exact; classification is judgement, which is the right
-  division of labour.
-- **Machinery**: graph algorithms plus the type/token distinction (§2). **AIC is not needed to
-  find the cycles**, only to reason over what remains once they are resolved.
-- **Status**: 46 cycles found, unclassified. Spot-checking suggests most are real vicious
-  cycles; at least one looks like an error — `MONDO:0003672` asserts *posterior ECG injury
-  pattern* ⇄ *posterior myocardial ischaemic cell death*, but an ECG pattern is a **readout** of
-  cell death, not a cause of it. dismech has a `readout` predicate that fits.
-- **Why the role cares**: cycles block every downstream temporal use, and the fix is cheap once
-  the cases are separated.
-- **→ [DISMECH_REPORT.md](DISMECH_REPORT.md)** — full survey, the cycles, and action items.
-
-### US9 — Catching inverted causality against onset data
-
-> **As a** dismech curator,
-> **I want** causal edges flagged where the downstream node's typical onset precedes the
-> upstream node's,
-> **so that** I can find causal claims that are stated backwards.
-
-- **Query**: for each causal edge A→B, test `onset(A) starts_before onset(B)`; flag where the
-  asserted onsets make that impossible.
-- **LLM layer**: *in* — normalising `age_range` free text ("Birth to first years of life",
-  "Infancy through adulthood", 886 instances) into intervals. *out* — report generation.
-- **Machinery**: **needs AIC** — contradiction detection requires disjointness.
-- **Status**: one real blocker, not two. Onset is recorded **per disease, not per node**, so
-  there is nothing to compare edge-wise yet; 291 disorders have both a pathograph and onset, so
-  the intersection is there once per-node onset exists. The HP↔HsapDv side is already aligned
-  ([HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)) and needs only disjointness axioms.
-  See [DISMECH_REPORT.md](DISMECH_REPORT.md) §5.
-
-### US10 — What to monitor for next
-
-> **As a** clinician managing a patient with disease D who has just presented with phenotype P
-> at age A,
-> **I want** the phenotypes causally downstream of P that typically appear later,
-> **so that** I can target surveillance rather than screening for everything the disease can
-> eventually cause.
-
-- **Query**: descendants of P in the causal DAG, filtered to those whose onset window starts
-  after age A, ordered by expected time of appearance.
-- **LLM layer**: *in* — free-text presentation → HP term + age. *out* — a ranked watch-list
-  with the causal path that justifies each item, which is what makes it trustworthy rather than
-  an opaque prediction.
-- **Machinery**: causal-DAG reachability + onset intervals. **No AIC needed** if onsets are
-  numerically anchored.
-- **Status**: needs per-node onset (same blocker as US9). Phenotype nodes are already
-  HP-grounded, so the output side is ready.
-- **Why the role cares**: this is the clinical-workflow story the NIH challenge's criterion 5
-  asks for, built on a causal graph rather than an association list.
-
-### US11 — Which fate decision does my knockout disrupt?
-
-> **As a** mouse developmental geneticist whose knockout line is embryonic lethal between E8.0
-> and E9.0,
-> **I want** the cell fate restriction events and gene program activations that fall inside that
-> window, ranked by specificity to it,
-> **so that** I can shortlist which *fate decision* is disrupted, rather than which anatomical
-> structure merely happened to be present.
-
-- **Query**: US1's interval query, run against measured fate-restriction times and gene-program
-  activation intervals instead of Uberon `existence_*` assertions.
-- **LLM layer**: *in* — as US1. *out* — names the disrupted decision and the programs, with the
-  lineage evidence behind each.
-- **Machinery**: numeric anchors for the query itself; **AIC for the imputed ancestral times**,
-  which are bounded-but-unknown and must not be collapsed to point estimates.
-- **Status**: not built. Requires the KG proposed in
-  **[FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md)** from Colgan/Koblan et al. 2026. The temporal
-  composition is already verified: the paper's six timepoints map **one-to-one onto Theiler
-  stages TS11–TS16**, and its E7.5–E10.0 window overlaps five MP lethality intervals, so it
-  drops onto the existing backbone with no alignment work.
-- **Why the role cares**: this is US1 with the resolution turned up. US1 today answers with
-  `embryo` and `conceptus` because Uberon has 80 gross-grained assertions; this would answer with
-  named fate restriction events and gene programs at half-day resolution, from measurement rather
-  than curation. **The single largest available improvement to the strongest story in the set.**
-
----
-
-## 4. Capability matrix
-
-| Story | Numeric anchors alone | + property chains (OWL EL, relation-graph) | + full AIC (SWRL/RL) | Real blocker |
-|---|---|---|---|---|
-| US1 hop 1 | ✅ **done** | – | – | – |
-| US1 hop 2 | ✅ **done** | ✅ | – | precision (gross mappings, 80 assertions) |
-| US2 | ✅ | ✅ | – | – (SSSOM covers HsapDv too) |
-| US3 | partial | ✗ | ✅ **required** (disjointness) | HP↔HsapDv alignment |
-| US4 | ✅ | ✅ | – | – |
-| US5 | ✗ | partial | ✅ **required** | existence data: only 1.3% of the DAG is anchored |
-| US6 | partial | ✗ | ✗ | SSSOM gives gross-level alignment only |
-| US7 | ✗ | ✗ | ✅ **required** | stage metadata normalisation (LLM) |
-| US8 | ✗ | ✗ | – (graph only) | classification is judgement, not inference |
-| US9 | partial | ✗ | ✅ **required** | onset is per-disease, not per-node |
-| US10 | ✅ | ✅ | – | onset is per-disease, not per-node |
-| US11 | ✅ | ✅ | ✅ for imputed ancestral times | needs the fate-map KG built |
-
-**What limits US1 and US2 is neither reasoning power nor alignment** — it is the volume and
-granularity of the underlying assertions: 80 `existence_*` links, mapped at gross stage level.
-Where numeric anchors exist, plain comparison suffices; the reasoning layer's job there is to
-improve precision (ranking by stage specificity, `contains` vs `overlaps` filtering) rather than
-to make the query possible at all.
-
-AIC genuinely earns its place in exactly four: **US9** (contradiction detection over causal
-edges), **US5** (needs `starts_after`, absent from RO,
-plus composition through transitive `develops_from`), **US3** (disjointness-based contradiction
-detection), and **US7** (bounded-but-unknown endpoints from sampled presence — the only story
-where the disjunctive case is intrinsic rather than incidental).
-
-Note the pattern: the three AIC-requiring stories are all **curation-, QC- or integration-facing**,
-addressed to ontology and data professionals. The three that need only numeric comparison
-(US1, US2, US4) are the ones addressed to bench and clinical users. That split is worth keeping
-in view when deciding what to build first and who to demo it to.
-
----
-
 ## 5. Scaling
 
 | Approach | Practical scale | Complexity | Gives |
@@ -539,7 +573,7 @@ Three pieces, in dependency order, each with a theoretical basis and a measurabl
    `out/ro_temporal_patch.ofn`, three axioms, giving temporal semantics to 1,558 Uberon
    assertions and 3,029 ordered pairs after closure. The QC (`tests/develops_from_qc.py`) finds
    the graph acyclic and consistent with all 7 testable existence pairs. It also caught the
-   `developmentally_preceded_by` placement error on first run (§2), which is itself a finding to
+   `developmentally_preceded_by` placement error on first run (§4), which is itself a finding to
    take to RO. Remaining: propose the patch upstream — drafted as action items in
    **[RO_REPORT.md](RO_REPORT.md)** — and resolve the `starts_after` naming.
 
@@ -553,6 +587,6 @@ Three pieces, in dependency order, each with a theoretical basis and a measurabl
    path-consistency step to the *e* fraction. Novel, well-founded, and exactly the kind of
    engine work relation-graph is positioned for.
 
-The missing alignments in §2 — HP-onset ↔ HsapDv, and fine-grained Carnegie ↔ Theiler — should be
+The missing alignments in §4 — HP-onset ↔ HsapDv, and fine-grained Carnegie ↔ Theiler — should be
 raised with the HPO and MmusDv maintainers independently. They are small pieces of curation, and
 they block more than this project.

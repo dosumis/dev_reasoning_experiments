@@ -10,16 +10,18 @@ against interval semantics rather than copied from a published table.
 
 > ### 📄 [USER_STORIES.md](USER_STORIES.md) — what this is *for*
 >
-> A survey of the temporal content actually present in HsapDv, MmusDv, Uberon, GO, HP and MP;
-> where it falls short; and seven user stories worked against it — each recording what
-> machinery it genuinely requires. Read that first if you want to know which parts of this
-> infrastructure earn their keep.
+> **Eleven user stories**, each with a named role and a query that role would actually issue,
+> worked against real data to see what machinery each genuinely requires — followed by a survey
+> of the temporal content present in HsapDv, MmusDv, Uberon, GO, HP, MP and dismech, and where
+> it falls short. Read that first if you want to know which parts of this infrastructure earn
+> their keep.
 >
 > Headline findings: **where stage endpoints are numerically anchored, no qualitative reasoning
-> is needed at all** — the Allen relation follows from comparing four numbers. AIC is
-> irreplaceable in three of the seven stories, all curation- or integration-facing. And three
-> axioms turning on `starts_after` — a relation current RO cannot express, but the extension
-> below supplies — give **1,558 Uberon assertions** temporal semantics they currently lack.
+> is needed at all** — the Allen relation follows from comparing four numbers. Full interval
+> reasoning is required by five of the eleven stories, all curation-, QC- or
+> integration-facing. And three axioms turning on `starts_after` — a relation current RO cannot
+> express, but the extension below supplies — give **1,558 Uberon assertions** temporal
+> semantics they currently lack.
 
 **[RO_REPORT.md](RO_REPORT.md)** collects the findings that are actionable for RO maintainers:
 a missing converse relation, three axioms that would give 1,558 Uberon assertions temporal
@@ -41,7 +43,112 @@ results depend on which files — is in [sources/SOURCES.md](sources/SOURCES.md)
 
 ---
 
-## 1. The 13 Allen relations
+## 1. Why temporal reasoning, and why intervals
+
+*Skip to §2 if you already know Allen's interval calculus.*
+
+### The problem
+
+Biological knowledge bases are good at recording **what relates to what** and poor at recording
+**when**. Uberon knows the metanephros develops from the metanephric mesenchyme; it does not know
+that this constrains when each exists. HPO knows a phenotype has "infantile onset"; nothing in
+the ontology relates that to "childhood onset" beyond both being kinds of onset. A disease
+mechanism graph knows A causes B, which certainly implies A began before B, but no reasoner can
+use that.
+
+The information is nearly always *there* — in a stage name, an onset category, a causal edge —
+but stored in a form that inference cannot touch. Making it computable is what this repo is
+about.
+
+### Two vocabularies for time: points and intervals
+
+**Points** are instants: conception, birth, the moment a cell divides. Two points stand in one
+of three relations — earlier, later, or simultaneous (`<`, `>`, `=`). This is **point algebra**,
+and it is about as simple as a formalism gets.
+
+**Intervals** have extent: the embryonic stage, the window during which the neural tube closes,
+the period a patient was on a drug. Most biological entities are intervals, not points. A
+developmental stage lasts days; a disease episode lasts months; a structure exists from its
+first appearance until it involutes or transforms.
+
+Intervals need a richer vocabulary, because "before" and "after" no longer cover the cases. Two
+intervals can overlap partially. One can sit entirely inside the other. They can share a start,
+or an end, or abut exactly with no gap.
+
+### Allen's thirteen
+
+Every interval has a start and an end. Comparing two intervals means comparing four pairs of
+endpoints, and only **thirteen** combinations are internally consistent. James Allen enumerated
+them in 1983:
+
+```
+     before    meets    overlaps   finished-by  contains   starts    equals
+       AAA      AAA       AAA        AAAAAAA    AAAAAAA     AAA      AAAAA
+          BBB      BBB      BBB          BBB      BBB       BBBBB    BBBBB
+```
+
+plus the six converses (after, met-by, overlapped-by, finishes, during, started-by). `equals` is
+its own converse. §2 draws all thirteen.
+
+That is the whole of Allen's interval calculus: thirteen relations, jointly exhaustive and
+mutually exclusive. Any two intervals stand in exactly one.
+
+### Partial knowledge is the normal case
+
+In practice you rarely know *which* of the thirteen holds. What you know is that it is one of
+several. "The heart begins forming during organogenesis" pins down where the heart's start lies
+but says nothing about its end — so the relation between "heart existence" and "organogenesis"
+is one of `during`, `finishes`, or `overlapped-by`, and you do not yet know which.
+
+A set of possible relations like this is called a **label**, written here as a string: `dfO`.
+Labels are how the calculus represents incomplete knowledge, and they are what makes it useful
+for biology, where almost everything is incompletely known.
+
+This is not a workaround. It is the point. A formalism that forced you to commit to one of
+thirteen relations would be unusable on real curated data.
+
+### Reasoning means composition
+
+Knowing `A before B` and `B before C` gives you `A before C` for free. That is **composition**,
+and it is where inference comes from: relations you never asserted, derived from ones you did.
+
+The catch is that composition usually produces a *set* rather than a single relation. `A during
+B` composed with `B overlaps C` yields three possibilities, not one. Reasoning therefore means
+propagating sets and narrowing them as evidence accumulates — which is why the machinery is more
+than a lookup table, and why (as §5 shows at length) OWL alone cannot do it.
+
+### Where this bites in biology
+
+| Question | What it needs |
+|---|---|
+| A knockout is lethal E8–E9. What was forming then? | interval overlap against stage windows |
+| Exposure at weeks 6–9. Which organs were at risk? | interval overlap, human backbone |
+| This annotation says congenital onset for a structure that appears in adolescence | contradiction detection |
+| X develops from Y, but X exists before Y does | ordering constraint + consistency check |
+| Find samples annotated to *any* stage inside organogenesis | containment across granularities |
+| Does this causal chain run backwards in time? | ordering over a causal graph |
+| Two atlases, no shared pseudotime — can I compare their trajectories? | project both onto a common interval backbone |
+
+These are the user stories in [USER_STORIES.md](USER_STORIES.md), each worked against real data
+to see what it actually requires.
+
+### When you do *not* need any of this
+
+Worth saying early, because it shapes everything below. **If both intervals have known numeric
+endpoints, the Allen relation follows from comparing four numbers.** No calculus, no reasoner,
+no ontology.
+
+215 of HsapDv's 255 stages carry machine-readable numeric bounds. For those, qualitative
+reasoning buys nothing. The apparatus earns its place only where endpoints are genuinely
+unknown or only partially constrained — anatomical existence windows, sampled presence in an
+atlas, disease progression, imputed ancestral times.
+
+Several user stories turn out to need no temporal reasoning at all once the numbers are
+followed. That is a result, not a disappointment.
+
+---
+
+## 2. The 13 Allen relations
 
 Every pair of proper intervals stands in exactly one of thirteen relations. Reading
 `X R Y`, with `X` drawn above `Y`:
@@ -95,7 +202,7 @@ Labels are how partial knowledge is represented.
 
 ---
 
-## 2. Composition
+## 3. Composition
 
 If `X R₁ Y` and `Y R₂ Z`, then `X (R₁ ∘ R₂) Z`. Composition is generally **disjunctive**:
 
@@ -120,7 +227,7 @@ Result-size distribution: `{1: 97, 3: 42, 5: 24, 9: 3, 13: 3}`
 
 ---
 
-## 3. The 29-relation subalgebra
+## 4. The 29-relation subalgebra
 
 > **Prior art.** This set is **not novel** — it is the published result of Batsakis,
 > Petrakis, Tachmazidis & Antoniou, *Temporal Representation and Reasoning in OWL 2*,
@@ -128,7 +235,7 @@ Result-size distribution: `{1: 97, 3: 42, 5: 24, 9: 3, 13: 3}`
 > reports 983 OWL axioms + SWRL rules to implement it. Code:
 > [github.com/sbatsakis/TemporalRepresentations](https://github.com/sbatsakis/TemporalRepresentations).
 > The computation below independently reproduces and verifies it. What appears to be new
-> here is the mechanical audit of RO's existing temporal axioms (§4) and the RO alignment.
+> here is the mechanical audit of RO's existing temporal axioms (§5) and the RO alignment.
 >
 > Note also that 29 is the **minimal** tractable set containing the basic relations. The
 > *maximal* one is ORD-Horn (868 relations, Nebel & Bürckert), impractical to implement
@@ -153,7 +260,7 @@ vocabulary of 29 named relations is closed under every operation the reasoner pe
 
 Every one of the 29 is exactly characterised by a conjunction of endpoint constraints,
 which is what makes the whole thing implementable — and, as it turns out, is already RO's
-implicit naming principle (§5).
+implicit naming principle (§6).
 
 ```
   13 atoms
@@ -166,7 +273,7 @@ implicit naming principle (§5).
 
 ---
 
-## 4. What OWL can and cannot do
+## 5. What OWL can and cannot do
 
 This is the boundary that determines the architecture, and it is about **operations, not
 vocabulary size**:
@@ -291,7 +398,7 @@ including the four non-obvious negatives.
 
 ---
 
-## 5. Naming
+## 6. Naming
 
 The hard part. Allen's own names are wrong for biology, and RO's existing names encode a
 decade of curator judgement that shouldn't be discarded.
@@ -338,7 +445,7 @@ end at the same time" are different claims that English collapses.
 
 ---
 
-## 6. Test cases from real data
+## 7. Test cases from real data
 
 `tests/uberon_cases.py` runs against Uberon's 80 `existence_*` assertions linking
 anatomical structures to life-cycle stages.
@@ -368,7 +475,7 @@ shared stage, with nothing asserted between them.
 
 ---
 
-## 7. Layout
+## 8. Layout
 
 ```
 sources/     owl-time.ttl, ro.owl, uberon.owl, hsapdv.owl, mmusdv.owl
@@ -407,14 +514,14 @@ the separate functional-syntax file for logical axioms.
 
 ---
 
-## 8. Status and open questions
+## 9. Status and open questions
 
 Validated against HsapDv: the RO→Allen mapping holds on **263/263 asserted relations**
 (122 `part_of` containments, 141 `immediately_preceded_by` exact meetings), zero violations.
 
 Open:
 
-- The four naming collisions in §5.
+- The four naming collisions in §6.
 - IRI allocation — `AIC:000000n` is a placeholder pending RO ID range assignment.
 - `starts_during o obsolete preceded_by -> starts_before` in current RO references a
   **deprecated** property. Probably a casualty of an obsoletion that missed the chain;
@@ -432,13 +539,13 @@ Open:
 
 ---
 
-## 9. References
+## 10. References
 
 1. Allen, J.F. (1983). Maintaining Knowledge about Temporal Intervals. *CACM* 26(11):832–843.
    The composition table is Fig. 4.
 2. Batsakis, S., Petrakis, E.G.M., Tachmazidis, I., Antoniou, G. (2016). Temporal
    Representation and Reasoning in OWL 2. *Semantic Web Journal*. — derives the same 29
-   relations; 983 axioms/rules; the scaling measurements quoted in §4.
+   relations; 983 axioms/rules; the scaling measurements quoted in §5.
    Code: <https://github.com/sbatsakis/TemporalRepresentations>
 3. Nebel, B., Bürckert, H.-J. (1995). Reasoning about Temporal Relations: A Maximal
    Tractable Subclass of Allen's Interval Algebra. *JACM* 42(1). — ORD-Horn, 868 relations.
@@ -448,4 +555,4 @@ Open:
 5. Motik, B., Sattler, U., Studer, R. (2005). Query Answering for OWL-DL with Rules.
    *J. Web Semantics* 3(1). — DL-safe rules.
 6. W3C OWL-Time: <https://www.w3.org/TR/owl-time/> — note it declares no property chains,
-   for the reasons in §4.
+   for the reasons in §5.
