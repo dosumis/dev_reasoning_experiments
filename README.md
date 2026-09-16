@@ -164,7 +164,7 @@ Every pair of proper intervals stands in exactly one of thirteen relations. Read
                                       YYYYY
 
   F   X finished-by Y              XXXXXXXXX                s(X)<s(Y), e(X)=e(Y)
-                                       YYYY
+                                        YYYY
 
   D   X contains Y                 XXXXXXXXX                s(X)<s(Y), e(Y)<e(X)
                                      YYYY
