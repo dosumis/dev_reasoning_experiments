@@ -21,6 +21,7 @@ This file records exactly which releases the results in [../README.md](../README
 | `life-stages-full.owl` | `obo/life-stages/releases/2025-01-23/life-stages-full.owl` | 2025-01-23 | 3,140,364 | `c6fa9cd539f6347e` |
 | `life-stages.sssom.tsv` | `developmental-stage-ontologies@master:src/mappings/` | — | 29,051 | `251ecdbc15a9acf4` |
 | `make-bridge-axioms.pl` | `developmental-stage-ontologies@master:src/util/` | — | 1,164 | `3407712adc4cb08c` |
+| `ehdaa2.owl` | `obo/ehdaa2/releases/2024-01-11/ehdaa2.owl` | 2024-01-11 | 4,607,538 | `8cd86994ebc2de31` |
 | `owl-time.ttl` | `http://www.w3.org/2006/time#2016` (W3C REC 2017-10-19) | 2016 | 101,486 | `251bd6970b0d7a5e` |
 
 `uberon.owl` here is **uberon-base**, not full Uberon.
@@ -114,6 +115,8 @@ is unavailable, download it manually in a browser from
 | Uberon existence cases (`tests/uberon_cases.py`) | `uberon.owl` |
 | Mouse lethality chain (`tests/full_chain.py`) | `mp.owl`, `mmusdv.owl`, `uberon.owl`, `life-stages.sssom.tsv` |
 | Escalation rate (`tests/escalation_rate.py`) | `hsapdv.owl`, `uberon.owl` |
+| EHDAA2 consistency (`tests/ehdaa2_consistency.py`) | `ehdaa2.owl`, `hsapdv.owl` |
+| DV self-check (`tests/dv_selfcheck.py`) | `hsapdv.owl`, `mmusdv.owl` |
 
 `go.owl` and `hp.owl` were used only for the survey in `USER_STORIES.md` §1 and are not needed
 to reproduce any computed result. They are the two largest files after `mp.owl`; skip them with

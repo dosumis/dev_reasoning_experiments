@@ -307,6 +307,7 @@ underwhelm.
 | **MP** | **36 lethality terms with explicit E-day intervals** | prose only: `"Mus: E4.5 to less than E8"` |
 | **HP** | 55 onset terms forming an interval hierarchy | 11 with numeric bounds, prose only |
 | **GO** | ~24 `happens_during`, 2 `starts_during`, 4 `ends_during` | none |
+| **EHDAA2** | **3,503 anatomy→Carnegie-stage assertions** (2,445 starts_at, 1,058 ends_at); 2,125 `develops_from` | via HsapDv Carnegie `start_dpf` |
 | **dismech** | **~33,500 causal edges** over 2,480 disease pathographs; 425 `onset_category`, 685 `temporality`, 827 `progression` | `age_range` free text; `mean_age_years` on 26 |
 
 **GO is effectively empty of asserted temporal relations.** Its process `part_of` hierarchy
@@ -468,6 +469,16 @@ loop from an inverted edge is US8.
 once, so a lineage tree is acyclic by construction and division gives an *exact* Allen `meets`
 rather than a disjunction. Single-cell lineage tracing is therefore the ideal input to a
 constraint network — see [FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md) and US11.
+
+### EHDAA2 has 44× more stage anchoring than Uberon
+
+Uberon's 80 `existence_*` assertions are the bottleneck for US1/US2 precision. EHDAA2 carries
+**3,503** at Carnegie-stage granularity, and Uberon xrefs reach **1,361 of its 2,456 live
+classes (55%)**. Routing through those xrefs is the most direct available fix.
+
+Its assertions use RO:0002496/RO:0002497 — *one-sided* bounds — so as asserted they cannot
+contradict anything; read with the intended two-sided relations, 50 of 2,125 `develops_from`
+edges conflict. Full analysis: **[EHDAA2_REPORT.md](EHDAA2_REPORT.md)**.
 
 ### Almost nothing to test the new relations against
 

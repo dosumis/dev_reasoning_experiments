@@ -19,6 +19,7 @@ hsapdv.owl	http://purl.obolibrary.org/obo/hsapdv.owl	bc310742b68d398f
 mmusdv.owl	http://purl.obolibrary.org/obo/mmusdv.owl	1b2db363f8fe6644
 uberon.owl	http://purl.obolibrary.org/obo/uberon/uberon-base.owl	50aae4e64fdf97ef
 mp.owl	http://purl.obolibrary.org/obo/mp.owl	583b0b28a731f0a9
+ehdaa2.owl	http://purl.obolibrary.org/obo/ehdaa2.owl	8cd86994ebc2de31
 life-stages-full.owl	https://raw.githubusercontent.com/obophenotype/developmental-stage-ontologies/master/life-stages-full.owl	c6fa9cd539f6347e
 life-stages.sssom.tsv	https://raw.githubusercontent.com/obophenotype/developmental-stage-ontologies/master/src/mappings/life-stages.sssom.tsv	251ecdbc15a9acf4
 make-bridge-axioms.pl	https://raw.githubusercontent.com/obophenotype/developmental-stage-ontologies/master/src/util/make-bridge-axioms.pl	3407712adc4cb08c
