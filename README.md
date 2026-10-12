@@ -88,7 +88,7 @@ them in 1983:
 
 ```
      before    meets    overlaps   finished-by  contains   starts    equals
-       AAA      AAA       AAA        AAAAAAA    AAAAAAA     AAA      AAAAA
+     AAA        AAA       AAA        AAAAAAA    AAAAAAA     AAA      AAAAA
           BBB      BBB      BBB          BBB      BBB       BBBBB    BBBBB
 ```
 
