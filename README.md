@@ -34,6 +34,12 @@ be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows t
 vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
 the axioms that would make it computable.
 
+**[IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md)** proposes representing countable
+anatomical parts as individuals of an idealised organism, and shows that conclusions reached at
+instance level can be **promoted back to sound class-level axioms** — including exact relations
+that are not otherwise assertable. EHDAA2 already individuates 19% of its terms; all five of its
+indexed `develops_from` families promote soundly.
+
 **[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)** proposes timing relations for
 developmental transitions — two new object properties and four axioms, splitting `develops_from`
 into the case where the precursor ceases and the case where it persists. Written alongside

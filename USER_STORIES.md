@@ -129,6 +129,10 @@ interval query, and turning the returned relations back into something the role 
   axiom*, not the data (§4).
 - **→ [RO_REPORT.md](RO_REPORT.md)** — the axioms this story needs, written up as action items
   for RO maintainers, together with the other findings from auditing RO's temporal relations.
+- **→ [IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md)** — the deeper fix. Class-level
+  assertions are irreducibly lossy where instances differ (EHDAA2's `somite` spans five Carnegie
+  stages), so this is the story that gains most from instance-level representation plus
+  promotion back to class level.
 
 ### US6 — Translating a mouse phenotype to a human window
 

@@ -61,6 +61,12 @@ Every violation found below is invisible under the literal reading. Switching to
 RO:0002492 would make 3,503 assertions genuinely constraining at a stroke, and is the single
 highest-value change available here.
 
+> **Partial correction.** For an indexed *family* whose members start at different stages, a
+> one-sided bound is the correct class-level summary — `starts_during some CS09` would be false
+> of somite 39. But that covers at most **17 of 65 families**; the other 48 have all members at
+> one stage, and 2,095 of the 2,445 assertions are singletons where the one-sided predicate is
+> simply weak. See [IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md) §5.
+
 *(Caveat: an earlier version of this test reported the 50 under both readings. That was a bug —
 it computed the two-sided upper bound and never used it. The distinction above is the whole
 point of the section, so it is worth stating that it was nearly missed.)*
@@ -133,6 +139,9 @@ Type-level relations cannot carry start-order semantics where the type recurs.
 The fix here is representational, not a correction: either the later waves need their own terms
 (`liver-derived blood cell`), or the relation should be `develops_in` — which EHDAA2 already
 uses, 33 times.
+
+All five of EHDAA2's indexed `develops_from` families are 100% index-matched and complete, so
+they promote soundly to class level — see [IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md) §4.
 
 **The somite cases in (a) are a different problem with a known shape.** Myotome and dermatome
 delaminate from a dermomyotome that persists — the precursor does not cease. Tested directly,

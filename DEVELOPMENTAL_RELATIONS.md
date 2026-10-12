@@ -194,7 +194,19 @@ human-only, so it is largely insulated — but the same caveat applies to any Ub
 
 ---
 
-## 9. How the two repos divide
+## 9. Relation to the idealised-individual proposal
+
+[IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md) attacks the same lossiness from the other
+end: rather than finding the tightest *class-level* relation, represent countable parts as
+individuals, assert exact relations between them, and promote back.
+
+The two interlock. The subproperties here are what an instance-level assertion would *use* —
+`myotome-08 immediately_preceded_by dermomyotome-08` needs the transformation relation to carry
+Allen `M` before the assertion means anything. And promotion is what returns the result to
+Uberon as an ordinary class axiom. Neither requires the other, but together they give exact
+class-level relations that are not otherwise assertable.
+
+## 10. How the two repos divide
 
 | | |
 |---|---|
