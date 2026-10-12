@@ -40,7 +40,9 @@ instance level can be **promoted back to sound class-level axioms** — includin
 that are not otherwise assertable. Worked on the pharyngeal arch series using curated existence
 axioms: `pharyngeal arch artery ⊑ starts some pharyngeal arch` (Allen `s`) and
 `pharyngeal arch ⊑ ends_with some pharyngeal arch` (Allen `Fef` — all arches end together, their
-onsets stagger). Neither is statable today.
+onsets stagger). Neither is statable today. And for the 520 **singleton** structures — liver,
+ureteric bud, hepatic diverticulum — composition along `develops_from` chains derives 1,512
+relations from 481 asserted, **80% of them exact**, with no new machinery at all.
 
 **[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)** proposes timing relations for
 developmental transitions — two new object properties and four axioms, splitting `develops_from`

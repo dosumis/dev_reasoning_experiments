@@ -10,7 +10,8 @@ currently be asserted at all.
 
 Measured against EHDAA2 2024-01-11, HsapDv 2025-01-23, and the curated axiom table in
 [`Uberon_HDCA_stage_axioms`][repo]. Reproduce with `tests/individuation.py` (§3, §4, §6),
-`tests/pharyngeal_arches.py` (§5) and `tests/ehdaa2_consistency.py` (§10).
+`tests/pharyngeal_arches.py` (§5), `tests/singleton_chains.py` (§6) and
+`tests/ehdaa2_consistency.py` (§11).
 
 [repo]: https://github.com/dosumis/Uberon_HDCA_stage_axioms
 
@@ -228,7 +229,77 @@ class axioms that Uberon cannot currently express.
 
 ---
 
-## 6. A correction this forces to EHDAA2_REPORT §2
+## 6. The singleton chains — available immediately
+
+The arch series above needs index-matching and a family declaration. **A large part of the gain
+needs neither**, because most developmentally interesting structures occur once per organism:
+liver, notochord, ureteric bud, heart tube, hepatic diverticulum.
+
+For those, the "family" has exactly one member, so the all-some witness is automatic and
+promotion is trivially sound. No tagging, no index matching, no idealised-individual bookkeeping.
+
+In EHDAA2, restricted to singleton terms with **both** endpoints bounded:
+
+| | |
+|---|---|
+| structures | **520** |
+| `develops_from` edges | 481 |
+
+### Two chains
+
+```
+ureteric bud                                        liver
+  zygote                   [ 0.0,  2.5)               inner cell mass        [ 4.5,  7.0)
+  morula               M   [ 2.5,  4.5)               epiblast           M   [ 7.0, 13.0)
+  inner cell mass      M   [ 4.5,  7.0)               definitive endoderm M  [13.0, 15.0)
+  epiblast             M   [ 7.0, 13.0)               endoderm           S   [13.0, 26.0)
+  mesoderm             M   [13.0, 31.0)               early foregut end. d   [19.0, 22.0)
+  intermediate mesoderm d  [19.0, 28.0)               foregut-midgut j.  S   [19.0, 23.0)
+  nephric cord         O   [22.0, 31.0)               hepatic plate      f   [22.0, 23.0)
+  nephric duct         O   [23.0, 37.0)               hepatic diverticulum M [23.0, 26.0)
+  ureteric bud         d   [28.0, 35.0)               liver              M   [26.0,   ?  )
+```
+
+Every step carries an **exact** relation. `hepatic plate` **meets** `hepatic diverticulum`
+**meets** `liver` is three consecutive singletons — a textbook transformation chain, and
+precisely the case `immediate transformation of ⊑ immediately_preceded_by`
+([DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md) §4) is for.
+
+### What composition derives
+
+Composing along the chains over the whole singleton graph:
+
+| | |
+|---|---|
+| pairs related after closure | 1,993 |
+| of which asserted | 481 |
+| **derived** | **1,512 — 3.1× the asserted** |
+| of those derived, **exact** (a singleton label, not a disjunction) | **1,216 (80%)** |
+| soundness — composed label contains the true relation | **1,993 / 1,993** |
+
+So four out of five derived relations are exact. Composition does not degrade into
+uninformative disjunctions along these chains, because the asserted steps are themselves mostly
+singletons: `M`, `d`, `s`, `f`, `e` compose tightly, and only the genuinely ambiguous steps
+widen.
+
+Worked end to end: `ureteric bud` versus `zygote`, composed through all eight steps, gives
+**`P`** — a singleton — and the directly computed relation is `P`. Complete, not merely sound.
+
+### The honest qualification
+
+**The singleton case does not actually need the idealised-individual framing.** It needs two
+things: the `develops_from` subproperties carrying Allen axioms, and endpoints on both
+structures. `liver ⊑ immediately_preceded_by some hepatic diverticulum` is true of the world,
+not of an idealisation, and would be sound to assert today if the vocabulary existed.
+
+That makes it the **cheapest available win and the one to attempt first** — 520 structures and
+1,512 derivable relations in EHDAA2 alone, independent of whether the metamodelling proposal
+goes anywhere. The idealisation earns its keep on the families, where the all-some witness has
+to be supplied by index-matching rather than coming for free.
+
+---
+
+## 7. A correction this forces to EHDAA2_REPORT §2
 
 [EHDAA2_REPORT.md](EHDAA2_REPORT.md) §2 criticises EHDAA2's blanket use of the one-sided
 RO:0002496 / RO:0002497. The envelope case above partly vindicates it: for a *family*,
@@ -252,7 +323,7 @@ One-sided is easier, not necessary.
 
 ---
 
-## 7. Scope: what becomes an individual
+## 8. Scope: what becomes an individual
 
 | | |
 |---|---|
@@ -269,7 +340,7 @@ different model.
 
 ---
 
-## 8. Where the reasoning happens: outside OWL
+## 9. Where the reasoning happens: outside OWL
 
 Individuals *inside* OWL buy little. Punning keeps the class and individual views semantically
 separate, so no inference flows between them; ABox reasoning does not scale in EL, where the
@@ -296,7 +367,7 @@ layer one as ordinary all-some class axioms.
 
 ---
 
-## 9. Implementation
+## 10. Implementation
 
 [`Uberon_HDCA_stage_axioms`][repo] already has the generation pattern: `expand.ru` names the
 left-hand side of a GCI so that relation-graph has something to attach an edge to, run as a
@@ -314,7 +385,7 @@ families, 65 counting ordinals and laterality.
 
 ---
 
-## 10. Caveats
+## 11. Caveats
 
 **The timing vocabulary has to be fine enough to exploit the individuation.** This is the
 sharpest limit. Across all 148 per-somite `develops_from` pairs with both start stages known:
@@ -352,19 +423,27 @@ class churn. An ongoing commitment, not a one-off.
 
 ---
 
-## 11. A proposed trial
+## 12. A proposed trial
 
 [`Uberon_HDCA_stage_axioms`][repo], on an experimental branch, is the natural test-bed — the
 generation machinery is there and the taxon-scoping problem is already solved properly.
 
-Smallest experiment that would settle whether this is worth pursuing:
+Two experiments, in order of cost.
 
-1. Generate individuals for the five indexed `develops_from` families (156 members).
-2. Assert instance-level timing, **using somite count as the clock** rather than Carnegie stages.
-3. Run the promotion rule and emit the class-level axioms.
-4. Compare against what EHDAA2 asserts today: does promotion yield anything that is both new and
-   exact?
+**First, the singletons (§6) — no new machinery.** 520 structures, 481 asserted edges, 1,512
+derivable relations of which 80% are exact. Needs only the `develops_from` subproperties with
+Allen axioms and the endpoints both already present. Emit the composed relations, check them
+against the directly computed ones, and promote. If this does not produce useful axioms, nothing
+further will.
 
-Step 4 is the test. If promotion returns only the one-sided bounds already present, the
-individuation has bought localisation and nothing more — useful, but not worth the machinery. If
-it returns exact all-some relations, it has produced axioms Uberon cannot currently state at all.
+**Then the families (§5) — the machinery test.**
+
+1. Generate individuals for the indexed families, starting with the pharyngeal arch series,
+   where both endpoints are curated and the gain is already visible.
+2. Run the promotion rule and emit the class-level axioms.
+3. Compare against what Uberon asserts today: does promotion yield anything both new and exact?
+
+Step 3 is the test. The arch series says it should — `pharyngeal arch artery ⊑ starts some
+pharyngeal arch` and `pharyngeal arch ⊑ ends_with some pharyngeal arch` are neither of them
+statable now. For the somite series, use **somite count as the clock** rather than Carnegie
+stages (§11), or the result will be 119 pairs of "same stage" and nothing learned.
