@@ -134,6 +134,13 @@ The fix here is representational, not a correction: either the later waves need 
 (`liver-derived blood cell`), or the relation should be `develops_in` — which EHDAA2 already
 uses, 33 times.
 
+**The somite cases in (a) are a different problem with a known shape.** Myotome and dermatome
+delaminate from a dermomyotome that persists — the precursor does not cease. Tested directly,
+**417 of 1,538 (27.1%)** of EHDAA2's `develops_from` assertions are of this kind. That is the
+`differentiation` category of [`end-bound-convention.md`](https://github.com/dosumis/Uberon_HDCA_stage_axioms/blob/evidence-pipeline/docs/end-bound-convention.md)
+and the missing `⊑ starts_during` subproperty of
+**[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)**.
+
 ### (c) Individually plausible errors
 
 ```

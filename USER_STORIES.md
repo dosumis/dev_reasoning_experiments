@@ -470,6 +470,19 @@ once, so a lineage tree is acyclic by construction and division gives an *exact*
 rather than a disjunction. Single-cell lineage tracing is therefore the ideal input to a
 constraint network — see [FATE_MAP_PROPOSAL.md](FATE_MAP_PROPOSAL.md) and US11.
 
+### Existence bounds need taxon scoping — a correctness caveat on all of this
+
+`heart tube SubClassOf existence_starts_during some 'Carnegie stage 09'` is an all-some claim,
+and false as soon as a second species is in scope: Carnegie stages are human. The sound form is
+a taxon-scoped GCI, `(heart tube and in_taxon some Homo sapiens) SubClassOf …`.
+
+**Every existence assertion reasoned over in this repo is species-neutral and inherits that
+unsoundness**, US6 and the SSSOM chain especially. The
+[Uberon_HDCA_stage_axioms](https://github.com/dosumis/Uberon_HDCA_stage_axioms) repo handles it
+properly, including the non-obvious consequence that a GCI has no named subject and so
+materialises as nothing at all under relation-graph. See
+[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md) §9.
+
 ### EHDAA2 has 44× more stage anchoring than Uberon
 
 Uberon's 80 `existence_*` assertions are the bottleneck for US1/US2 precision. EHDAA2 carries

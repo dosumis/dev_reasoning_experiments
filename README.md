@@ -34,6 +34,12 @@ be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows t
 vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
 the axioms that would make it computable.
 
+**[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)** proposes timing relations for
+developmental transitions — two new object properties and four axioms, splitting `develops_from`
+into the case where the precursor ceases and the case where it persists. Written alongside
+[dosumis/Uberon_HDCA_stage_axioms](https://github.com/dosumis/Uberon_HDCA_stage_axioms), which
+reaches the same distinction from the curation side and is the delivery vehicle for it.
+
 **[EHDAA2_REPORT.md](EHDAA2_REPORT.md)** tests EHDAA2's 3,503 anatomy↔Carnegie-stage assertions
 for consistency — it comes out clean (acyclic, containment holds), but the relation it uses makes
 every assertion one-sided and therefore unable to contradict anything; plus four defects in the
@@ -361,6 +367,13 @@ SWRL sits in the worst spot — slower than a dedicated solver, far less scalabl
 OWL axioms. **Datalog engines (RDFox, Soufflé)** occupy the same expressivity class as
 DL-safe rules but are engineered for materialisation at scale, and are the obvious
 substitute.
+
+**A working demonstration of exactly this boundary**: [`monotonicity.rq`](https://github.com/dosumis/Uberon_HDCA_stage_axioms/blob/evidence-pipeline/sparql/checks/monotonicity.rq)
+in the [Uberon_HDCA_stage_axioms](https://github.com/dosumis/Uberon_HDCA_stage_axioms) repo
+checks that a structure does not start before the thing it develops from — as a SPARQL query,
+because, in its own words, "EL has no arithmetic over stages, so no reasoner will catch this".
+That repo is the practical counterpart to this one; see
+[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md) for how the two divide.
 
 **Where none of this is needed:** for intervals with known numeric endpoints, all relations
 between them are computed directly from the endpoints, guaranteed consistent, no reasoning

@@ -87,6 +87,15 @@ The 7 relations are `develops from` (1,331 assertions), `has developmental contr
 (95), `immediate transformation of` (71), `transformation of` (47), `developmentally replaces`
 (8), `develops from part of` (5), `directly develops from` (1).
 
+> **Refinement.** `starts_after` is the right axiom for the *parent*, but it is too weak for the
+> subproperties, and RO's own definitions say so. `immediate transformation of` is defined as
+> "immediately succeeds y temporally at a time boundary t" — Allen `M`, a singleton — and could
+> carry `⊑ immediately_preceded_by`. The split is exact: `dfOMP = PM ⊎ dfO`.
+> See **[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)**, which also proposes the one
+> missing relation for the persisting-precursor case, and which pairs with
+> [`end-bound-convention.md`](https://github.com/dosumis/Uberon_HDCA_stage_axioms/blob/evidence-pipeline/docs/end-bound-convention.md) in the
+> [Uberon_HDCA_stage_axioms](https://github.com/dosumis/Uberon_HDCA_stage_axioms) repo.
+
 ---
 
 ## 3. `developmentally_preceded_by` does not entail precedence
