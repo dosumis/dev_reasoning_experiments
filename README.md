@@ -37,8 +37,10 @@ the axioms that would make it computable.
 **[IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md)** proposes representing countable
 anatomical parts as individuals of an idealised organism, and shows that conclusions reached at
 instance level can be **promoted back to sound class-level axioms** — including exact relations
-that are not otherwise assertable. EHDAA2 already individuates 19% of its terms; all five of its
-indexed `develops_from` families promote soundly.
+that are not otherwise assertable. Worked on the pharyngeal arch series using curated existence
+axioms: `pharyngeal arch artery ⊑ starts some pharyngeal arch` (Allen `s`) and
+`pharyngeal arch ⊑ ends_with some pharyngeal arch` (Allen `Fef` — all arches end together, their
+onsets stagger). Neither is statable today.
 
 **[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md)** proposes timing relations for
 developmental transitions — two new object properties and four axioms, splitting `develops_from`

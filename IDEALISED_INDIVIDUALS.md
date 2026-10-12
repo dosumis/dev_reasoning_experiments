@@ -8,9 +8,11 @@ The payoff is not the representation itself. It is that **conclusions reached at
 can be promoted back to sound class-level axioms**, including exact relations that cannot
 currently be asserted at all.
 
-Measured against EHDAA2 2024-01-11 and HsapDv 2025-01-23. Reproduce with
-`tests/individuation.py`; the per-somite offsets in §9 come from
-`tests/ehdaa2_consistency.py`.
+Measured against EHDAA2 2024-01-11, HsapDv 2025-01-23, and the curated axiom table in
+[`Uberon_HDCA_stage_axioms`][repo]. Reproduce with `tests/individuation.py` (§3, §4, §6),
+`tests/pharyngeal_arches.py` (§5) and `tests/ehdaa2_consistency.py` (§10).
+
+[repo]: https://github.com/dosumis/Uberon_HDCA_stage_axioms
 
 ---
 
@@ -30,35 +32,28 @@ fall here: cells are not countable per organism, so `CL` linkage stays as it is.
 
 ---
 
-## 2. Two problems this addresses
-
-### (a) The type/token problem
-
-Three independent instances in this project, all of the same shape — a type-level relation that
-is cyclic or temporally contradictory because the type recurs while the tokens do not:
-
-| | |
-|---|---|
-| Uberon | `metanephric mesenchyme` ⇄ `ureteric bud`, reciprocal induction ([RO_REPORT.md](RO_REPORT.md) §3) |
-| dismech | 46 pathographs with causal cycles ([DISMECH_REPORT.md](DISMECH_REPORT.md) §3) |
-| EHDAA2 | `blood` starts CS06a yet `develops_from` spleen (CS13) ([EHDAA2_REPORT.md](EHDAA2_REPORT.md) §4b) |
-
-Individuals force the disambiguation at assertion time instead of producing contradictions at
-reasoning time. There is one `blood-of-the-idealised-embryo`, and the question "which blood?"
-has to be answered before the assertion can be written.
-
-### (b) Class-level assertions are irreducibly lossy
+## 2. The problem: class-level assertions are irreducibly lossy
 
 A class axiom must hold of every instance, so where instances differ it can only state what they
-have in common. Measured in EHDAA2:
+have in common. The information in the instances is not merely unrecorded — it is **unstatable**
+at class level, and no amount of care recovers it.
+
+Measured in EHDAA2, the start stages spanned by a single class:
 
 | family | start stages spanned |
 |---|---|
 | `somite` | CS09 – CS13 (5 stages) |
 | `dermomyotome`, `sclerotome`, `dermatome`, `myotome` | CS10 – CS13 (4 stages) |
 
-"Somite starts during X" is unstatable as a point claim. The instances carry information the
-class cannot represent, and no amount of care at class level recovers it.
+"Somite starts during X" cannot be said as a point claim. §5 shows the same thing on curated
+data with *both* endpoints, where the loss is sharper still.
+
+A secondary motivation is the type/token problem — type-level relations that go cyclic or
+contradictory because the type recurs while its tokens do not. Individuation forces the
+disambiguation at assertion time. But the clear cases there are collective masses and
+signalling relations that sit outside the countable core this proposal addresses, and some are
+better fixed by restructuring RO (see [RO_REPORT.md](RO_REPORT.md) §3). It is a reason to
+expect this to help, not the argument for it.
 
 ---
 
@@ -115,29 +110,35 @@ promote soundly.
 
 ### Exact relations survive promotion
 
-This is the part worth the effort. Suppose instance-level evidence establishes
+This is the part worth the effort.
+
+**The assertion is a developmental relation, not a bare Allen one.** An OPA between individuals
+uses the BFO/RO relation that fits the biology; the Allen relation follows as an *entailment*
+from the subproperty axioms in
+[DEVELOPMENTAL_RELATIONS.md](DEVELOPMENTAL_RELATIONS.md) §4:
 
 ```
-myotome-08  metBy  dermomyotome-08          Allen M — a singleton
+asserted   myotome-08  immediate_transformation_of  dermomyotome-08
+entails    myotome-08  immediately_preceded_by      dermomyotome-08     Allen M, a singleton
 ```
+
+Nothing new is asserted about time. The timing is what the developmental relation *means*, made
+computable.
 
 At class level `myotome M dermomyotome` is plainly **false**: somite 8's myotome does not meet
 somite 26's dermomyotome. But the all-some form
 
 ```
-myotome ⊑ metBy some dermomyotome
+myotome ⊑ immediate_transformation_of some dermomyotome
+myotome ⊑ immediately_preceded_by      some dermomyotome
 ```
 
 **is true**, because each myotome is met by *its own* dermomyotome. Index-matching supplies the
 per-instance witness that the existential needs.
 
-So promotion does not merely recover the weak class-level claim. It can yield **exact class-level
-relations that are not otherwise assertable** — a 1-of-13 relation where the current
-representation forces a 5-of-13 disjunction or a one-sided bound.
-
-(To be clear about what is and is not shown: the *structural* precondition is measured — all
-five families are complete and index-matched. Whether EHDAA2's current data supports `metBy`
-specifically is a separate question, and at Carnegie-stage granularity it does not — see §9.)
+So promotion does not merely recover the weak class-level claim. It can yield **exact
+class-level relations that are not otherwise assertable** — a 1-of-13 relation where the current
+representation forces a disjunction.
 
 ### What does not promote
 
@@ -148,7 +149,86 @@ specifically is a separate question, and at Carnegie-stage granularity it does n
 
 ---
 
-## 5. A correction this forces to EHDAA2_REPORT §2
+## 5. Worked example: the pharyngeal arch series
+
+The clearest demonstration comes from curated data in
+[`Uberon_HDCA_stage_axioms`][repo] — `src/axioms.tsv`, sourced from O'Rahilly & Müller — where
+both endpoints are stated against HsapDv Carnegie stages.
+
+### The existence axioms
+
+```
+pharyngeal arch 1          starts_during CS10   ends_during CS17     [22.0, 44.0) dpf
+pharyngeal arch 2          starts_during CS10   ends_during CS17     [22.0, 44.0)
+pharyngeal arch 3          starts_during CS11   ends_during CS17     [23.0, 44.0)
+pharyngeal arch 4          starts_during CS12   ends_during CS17     [26.0, 44.0)
+pharyngeal arch 6          starts_during CS12   ends_during CS17     [26.0, 44.0)
+
+pharyngeal arch artery 1   starts_during CS10   ends_during CS12     [22.0, 28.0)
+pharyngeal arch artery 2   starts_during CS10   ends_during CS13     [22.0, 31.0)
+```
+
+Nothing here is new curation. These are the existence axioms as written, resolved through the
+Carnegie backbone's numeric bounds.
+
+### What falls out at instance level
+
+Each artery is `part_of` its own arch. `part_of` alone entails only temporal containment — the
+label `dfse`, four possibilities. But with both endpoints known, the relation is **exact**:
+
+```
+artery 1  vs  arch 1   ->  s      (starts: same onset, artery ends first)
+artery 2  vs  arch 2   ->  s
+```
+
+And the arches against each other:
+
+```
+       arch1 arch2 arch3 arch4 arch6
+arch1    e     e     F     F     F
+arch2    e     e     F     F     F
+arch3    f     f     e     F     F
+arch4    f     f     f     e     e
+arch6    f     f     f     e     e
+```
+
+Three relations, `{F, e, f}` — which is the label **`Fef`**, one of the 29
+([README.md](README.md) §4), and it means exactly *"ends with"*. **All pharyngeal arches end at
+the same time; their onsets stagger.** That is a real, non-obvious fact about the series,
+derivable only from the instances.
+
+### Why class level cannot say it
+
+Cross-index, the artery relation is different:
+
+```
+artery 1  vs  arch 3   ->  o
+artery 1  vs  arch 4   ->  o
+artery 2  vs  arch 4   ->  o
+```
+
+So `pharyngeal arch artery` stands in `{s, o}` to `pharyngeal arch` taken as classes. A
+class-level relation would have to be that disjunction — or, as EHDAA2 does, a one-sided bound
+that constrains almost nothing.
+
+### What promotion returns
+
+```
+pharyngeal arch artery  ⊑  part_of some pharyngeal arch        ← already assertable
+pharyngeal arch artery  ⊑  starts  some pharyngeal arch        ← NEW, exact, Allen s
+pharyngeal arch         ⊑  ends_with some pharyngeal arch      ← NEW, exact, Allen Fef
+```
+
+The second and third are sound by the §4 rule — every artery starts *its own* arch, every arch
+ends with *some* arch — and neither is statable today. The first is what Uberon already has.
+
+**This is the whole proposal in one case**: existence axioms against a stage ontology, resolved
+to numeric intervals, read at instance level to give exact Allen relations, promoted back as
+class axioms that Uberon cannot currently express.
+
+---
+
+## 6. A correction this forces to EHDAA2_REPORT §2
 
 [EHDAA2_REPORT.md](EHDAA2_REPORT.md) §2 criticises EHDAA2's blanket use of the one-sided
 RO:0002496 / RO:0002497. The envelope case above partly vindicates it: for a *family*,
@@ -172,7 +252,7 @@ One-sided is easier, not necessary.
 
 ---
 
-## 6. Scope: what becomes an individual
+## 7. Scope: what becomes an individual
 
 | | |
 |---|---|
@@ -189,7 +269,7 @@ different model.
 
 ---
 
-## 7. Where the reasoning happens: outside OWL
+## 8. Where the reasoning happens: outside OWL
 
 Individuals *inside* OWL buy little. Punning keeps the class and individual views semantically
 separate, so no inference flows between them; ABox reasoning does not scale in EL, where the
@@ -216,7 +296,7 @@ layer one as ordinary all-some class axioms.
 
 ---
 
-## 8. Implementation
+## 9. Implementation
 
 [`Uberon_HDCA_stage_axioms`][repo] already has the generation pattern: `expand.ru` names the
 left-hand side of a GCI so that relation-graph has something to attach an edge to, run as a
@@ -232,11 +312,9 @@ directly; for Uberon's class-level assertions the family correspondence has to b
 That is a **small tagging surface** — one declaration per family pair, not per member. 23 indexed
 families, 65 counting ordinals and laterality.
 
-[repo]: https://github.com/dosumis/Uberon_HDCA_stage_axioms
-
 ---
 
-## 9. Caveats
+## 10. Caveats
 
 **The timing vocabulary has to be fine enough to exploit the individuation.** This is the
 sharpest limit. Across all 148 per-somite `develops_from` pairs with both start stages known:
@@ -274,7 +352,7 @@ class churn. An ongoing commitment, not a one-off.
 
 ---
 
-## 10. A proposed trial
+## 11. A proposed trial
 
 [`Uberon_HDCA_stage_axioms`][repo], on an experimental branch, is the natural test-bed — the
 generation machinery is there and the taxon-scoping problem is already solved properly.
