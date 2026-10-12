@@ -17,6 +17,7 @@ scripts named at the end.
 | **2** | Bridge developmental relations to the temporal hierarchy | 3 axioms | **1,558 Uberon assertions** gain temporal semantics |
 | **3** | Decide whether `developmentally_induced_by` belongs under `developmentally_preceded_by` | discussion | Semantics of a widely-used branch |
 | **4** | Repair 2 property chains referencing obsolete properties | 2 edits | Correctness |
+| **4b** | Declare missing inverses: `starts_before`, `ends_after`, `transformation of`, `immediate transformation of`, `existence starts during`, `existence ends during` | 6 axioms | Makes developmental chains traversable in both directions |
 | **5** | *(Optional, larger)* Add relations for the exact results of temporal composition | 21 terms | Removes information loss in 4 of 6 temporal chains |
 
 Items 1, 2 and 4 are small and independent. Item 3 is a modelling question. Item 5 is a
@@ -41,6 +42,19 @@ of "X arises from Y" (§2). Without it that axiom cannot be written at all.
 
 **Proposed**: add `starts after`, inverse of `starts before`, defined as
 `X starts after Y iff start(X) > start(Y)`.
+
+**The same gap affects five more relations.** RO declares inverses for the core temporal
+properties — `immediately_preceded_by`/`immediately_precedes`, `preceded_by`/`precedes`,
+`starts_during`/`during_which_starts`, `ends_during`/`during_which_ends` — but **not** for
+`ends after` (RO:0002086), `transformation of` (RO:0002494), `immediate transformation of`
+(RO:0002495), `existence starts during` (RO:0002488) or `existence ends during` (RO:0002492).
+
+This matters more than it looks. A class axiom `A ⊑ ∃R.B` does **not** entail `B ⊑ ∃R⁻.A` — every
+liver is immediately preceded by some hepatic diverticulum, but it does not follow that every
+hepatic diverticulum is followed by a liver. So at class level both directions must be asserted
+separately; at individual level a declared inverse gives the reverse for free. Without the
+inverses, developmental chains are walkable in one direction only. See
+[IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md) §6.
 
 *Naming note.* We reached this via a systematic treatment of the 29 Allen relations closed under
 composition, converse and intersection, and found that RO's existing compound names already

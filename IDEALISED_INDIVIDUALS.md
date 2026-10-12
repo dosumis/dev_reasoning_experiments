@@ -294,17 +294,82 @@ not of an idealisation, and would be sound to assert today if the vocabulary exi
 
 That makes it the **cheapest available win and the one to attempt first** — 520 structures and
 1,512 derivable relations in EHDAA2 alone, independent of whether the metamodelling proposal
-goes anywhere. The idealisation earns its keep on the families, where the all-some witness has
-to be supplied by index-matching rather than coming for free.
+goes anywhere.
+
+### But individuals still buy something here: the chain becomes traversable
+
+Promotion yields all-some axioms, and those are **one-directional**. This is a property of the
+quantifier, not an oversight:
+
+```
+A ⊑ ∃R.B        does NOT entail        B ⊑ ∃R⁻.A
+```
+
+Countermodel: `A = {a}`, `B = {b, b′}`, `R = {(a,b)}`. Every A has an R-successor in B, but `b′`
+has no R⁻-successor in A. Concretely: every liver is immediately preceded by some hepatic
+diverticulum, but it does **not** follow that every hepatic diverticulum is immediately followed
+by a liver — one might fail to form one.
+
+So at class level the two directions are **independent claims and both must be asserted**. An
+eight-edge chain needs sixteen axioms to be walkable in both directions, and each reverse axiom
+is a separate thing to get right.
+
+At individual level, with the inverse declared, one assertion gives both:
+
+```
+immediately_preceded_by(liver, hepatic-diverticulum)
+   ⊨  immediately_precedes(hepatic-diverticulum, liver)
+```
+
+Eight OPAs, sixteen directions, no extra claims. **Querying "what does the hepatic diverticulum
+become?" works without anyone having asserted the reverse.**
+
+RO already declares the inverses this needs — `immediately_preceded_by`/`immediately_precedes`,
+`preceded_by`/`precedes`, `starts_during`/`during_which_starts`,
+`ends_during`/`during_which_ends`, `develops_from`/`develops_into`. It does **not** declare them
+for `starts_before`, `ends_after`, the two transformation relations, or
+`existence_starts_during`/`existence_ends_during`. Those gaps matter for exactly this reason and
+belong on the list in [RO_REPORT.md](RO_REPORT.md).
+
+### And the graph becomes homogeneous
+
+The second advantage is uniformity with the stage series, which is already individual-shaped —
+`Carnegie stage 09` is one thing, not a population.
+
+Today a stage link mixes levels: `heart tube ⊑ ∃ existence_starts_during . CS09` relates two
+*classes* through an existential. With structures as individuals it is a plain edge,
+`starts_during(heart-tube, CS-09)`, of the same kind as `starts_during(heart-tube, foregut)`.
+Structure-to-stage and structure-to-structure stop being different sorts of assertion, and the
+whole thing is one graph a constraint solver can consume directly — which it has to be anyway,
+since path consistency operates over nodes and edges and classes are neither.
+
+So: the singleton case does not *need* individuation to produce sound axioms, but it needs it to
+be **queryable in both directions and uniform with the stage backbone**. The idealisation earns
+its keep separately on the families, where the all-some witness has to be supplied by
+index-matching rather than coming for free.
 
 ---
 
 ## 7. A correction this forces to EHDAA2_REPORT §2
 
 [EHDAA2_REPORT.md](EHDAA2_REPORT.md) §2 criticises EHDAA2's blanket use of the one-sided
-RO:0002496 / RO:0002497. The envelope case above partly vindicates it: for a *family*,
-`existence_starts_during_or_after CS09` is the correct class-level summary, because a two-sided
-`starts_during some CS09` would be false of somite 39.
+RO:0002496 / RO:0002497. The envelope case above partly vindicates it, and the reason is clearest
+written with the quantifiers made explicit. A class axiom is universally quantified over
+instances, so for the 39 somites:
+
+```
+somite ⊑ ∃ starts_during . CS09
+   "EVERY somite starts during CS09"                    FALSE — somite 39 starts at CS13
+
+somite ⊑ ∃ starts_during_or_after . CS09
+   "EVERY somite starts during or after CS09"           TRUE — but constrains almost nothing
+
+somite ⊑ ∃ starts_during . (CS09 ⊔ CS10 ⊔ CS11 ⊔ CS12 ⊔ CS13)
+   "EVERY somite starts during one of these"            TRUE and exact
+```
+
+**The universal over instances is what forces the weakening**, not the predicate. The one-sided
+relation is one way to survive it; a disjunctive filler is another, and keeps both bounds.
 
 But the carve-out is small:
 
