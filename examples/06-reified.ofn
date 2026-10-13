@@ -1,0 +1,21 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/reified>
+  # ONE new relation: continuant -> its temporal region.  Nothing in BFO or RO provides it.
+  Declaration(ObjectProperty(:has_temporal_extent))
+  ObjectPropertyDomain(:has_temporal_extent obo:BFO_0000002)   # continuant
+  ObjectPropertyRange(:has_temporal_extent  obo:BFO_0000008)   # temporal region (an OCCURRENT)
+
+  Declaration(NamedIndividual(:liver))                Declaration(NamedIndividual(:te_liver))
+  Declaration(NamedIndividual(:hepatic_diverticulum)) Declaration(NamedIndividual(:te_hd))
+
+  ClassAssertion(obo:BFO_0000004 :liver)                      # independent continuant
+  ClassAssertion(obo:BFO_0000004 :hepatic_diverticulum)
+  ClassAssertion(obo:BFO_0000008 :te_liver)                   # temporal region
+  ClassAssertion(obo:BFO_0000008 :te_hd)
+
+  ObjectPropertyAssertion(:has_temporal_extent :liver :te_liver)
+  ObjectPropertyAssertion(:has_temporal_extent :hepatic_diverticulum :te_hd)
+
+  # Allen between TEMPORAL REGIONS -- both occurrents, so BFO's own relation is legal
+  ObjectPropertyAssertion(obo:BFO_0000062 :te_liver :te_hd)   # preceded by
+)

@@ -9,6 +9,14 @@ scripts named at the end.
 
 ---
 
+> ## ⚠ Correction in progress
+>
+> Items 1–2 propose subsuming developmental relations under temporal ones. Those relate
+> **occurrents**; `develops_from` and its kin relate **continuants**, and BFO declares the two
+> disjoint — so the axioms as written are unsatisfiable. See
+> [examples/](examples/) 01, 02 and 07. The *gaps* reported here are real; the proposed fix needs
+> restating via a reified temporal extent.
+
 ## Action items
 
 | # | Item | Effort | Impact |

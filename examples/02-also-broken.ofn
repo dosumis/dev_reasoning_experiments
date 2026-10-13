@@ -1,0 +1,22 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/still-broken>
+  Declaration(Class(obo:BFO_0000004)) Declaration(Class(obo:BFO_0000003))
+  DisjointClasses(obo:BFO_0000004 obo:BFO_0000003)
+
+  # the REAL RO picture: existence_* inherits range=occurrent from its parent
+  Declaration(ObjectProperty(obo:RO_0002581))   # relation between physical entity and a process or stage
+  ObjectPropertyDomain(obo:RO_0002581 obo:BFO_0000004)
+  ObjectPropertyRange(obo:RO_0002581 obo:BFO_0000003)
+
+  Declaration(ObjectProperty(obo:RO_0002583))   # existence starts at end of
+  SubObjectPropertyOf(obo:RO_0002583 obo:RO_0002581)
+
+  Declaration(ObjectProperty(obo:RO_0002495))   # immediate transformation of
+  ObjectPropertyDomain(obo:RO_0002495 obo:BFO_0000004)
+  ObjectPropertyRange(obo:RO_0002495 obo:BFO_0000004)
+
+  SubObjectPropertyOf(obo:RO_0002495 obo:RO_0002583)      # my "fix"
+
+  Declaration(Class(:Liver))
+  SubClassOf(:Liver ObjectSomeValuesFrom(obo:RO_0002495 owl:Thing))
+)

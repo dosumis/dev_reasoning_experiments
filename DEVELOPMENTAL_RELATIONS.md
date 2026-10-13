@@ -14,6 +14,19 @@ This document supplies the formal justification and the measurement.
 
 ---
 
+> ## ⚠ Correction in progress
+>
+> The axioms proposed in §4 subsume continuant relations under BFO's **occurrent** temporal
+> relations. BFO declares continuant and occurrent disjoint, so as written they make every
+> structure involved **unsatisfiable** — verified in [examples/01-broken.ofn](examples/01-broken.ofn).
+>
+> The `existence_*` family does not rescue it either: it inherits `range = occurrent` from
+> RO:0002581 ([examples/02-also-broken.ofn](examples/02-also-broken.ofn)).
+>
+> The route that does work is reifying the temporal extent —
+> [examples/07-reified-class.ofn](examples/07-reified-class.ofn), in OWL 2 EL. This document
+> has not yet been rewritten around it.
+
 ## 1. The problem
 
 `develops_from` has no path to the temporal relation hierarchy

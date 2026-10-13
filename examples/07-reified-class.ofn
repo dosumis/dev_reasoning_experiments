@@ -1,0 +1,22 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/reified-class>
+  Declaration(ObjectProperty(:has_temporal_extent))
+  Declaration(ObjectProperty(:extent_of))
+  Declaration(ObjectProperty(obo:BFO_0000062))       # preceded by -- occurrent/occurrent
+  Declaration(ObjectProperty(:starts_after_c))       # continuant-level shorthand
+
+  # bridge the levels: continuant -> its extent -> (temporal) -> extent -> continuant
+  SubObjectPropertyOf(ObjectPropertyChain(:has_temporal_extent obo:BFO_0000062 :extent_of)
+                      :starts_after_c)
+
+  Declaration(Class(:Liver)) Declaration(Class(:HepaticDiverticulum))
+  Declaration(Class(:TE_Liver)) Declaration(Class(:TE_HD))
+
+  SubClassOf(:Liver              ObjectSomeValuesFrom(:has_temporal_extent :TE_Liver))
+  SubClassOf(:HepaticDiverticulum ObjectSomeValuesFrom(:has_temporal_extent :TE_HD))
+  SubClassOf(:TE_Liver           ObjectSomeValuesFrom(obo:BFO_0000062 :TE_HD))
+  SubClassOf(:TE_HD              ObjectSomeValuesFrom(:extent_of :HepaticDiverticulum))
+
+  Declaration(Class(:StartsAfterHD))
+  EquivalentClasses(:StartsAfterHD ObjectSomeValuesFrom(:starts_after_c :HepaticDiverticulum))
+)
