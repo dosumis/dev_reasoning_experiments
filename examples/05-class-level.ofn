@@ -1,0 +1,21 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/class-level>
+  Declaration(ObjectProperty(obo:RO_0002583))        # existence starts at end of -- Allen M
+  Declaration(ObjectProperty(:starts_strictly_after))                          # -- Allen P
+  SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002583 obo:RO_0002583) :starts_strictly_after)
+  # one table entry is one hop. P o M = P gets you the rest of the closure:
+  SubObjectPropertyOf(ObjectPropertyChain(:starts_strictly_after obo:RO_0002583) :starts_strictly_after)
+
+  Declaration(Class(:HepaticPlate)) Declaration(Class(:HepaticDiverticulum))
+  Declaration(Class(:Liver)) Declaration(Class(:GallBladder))
+
+  # CLASS-level, all-some -- exactly how Uberon states things
+  SubClassOf(:HepaticDiverticulum ObjectSomeValuesFrom(obo:RO_0002583 :HepaticPlate))
+  SubClassOf(:Liver              ObjectSomeValuesFrom(obo:RO_0002583 :HepaticDiverticulum))
+  SubClassOf(:GallBladder        ObjectSomeValuesFrom(obo:RO_0002583 :Liver))
+
+  # the query: "things that start strictly after a hepatic plate"
+  Declaration(Class(:StartsAfterHepaticPlate))
+  EquivalentClasses(:StartsAfterHepaticPlate
+     ObjectSomeValuesFrom(:starts_strictly_after :HepaticPlate))
+)

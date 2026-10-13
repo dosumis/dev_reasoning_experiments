@@ -1,0 +1,20 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/fixed>
+  Declaration(Class(obo:BFO_0000004)) Declaration(Class(obo:BFO_0000003))
+  DisjointClasses(obo:BFO_0000004 obo:BFO_0000003)
+
+  # the continuant-side temporal relation: "iff alpha(x) = omega(y)"  -- Allen M
+  Declaration(ObjectProperty(obo:RO_0002583))    # existence starts at end of
+  ObjectPropertyDomain(obo:RO_0002583 obo:BFO_0000004)
+  ObjectPropertyRange(obo:RO_0002583 obo:BFO_0000004)
+
+  Declaration(ObjectProperty(obo:RO_0002495))    # immediate transformation of
+  ObjectPropertyDomain(obo:RO_0002495 obo:BFO_0000004)
+  ObjectPropertyRange(obo:RO_0002495 obo:BFO_0000004)
+
+  # THE FIX: subsume under the continuant-side relation, not the occurrent one
+  SubObjectPropertyOf(obo:RO_0002495 obo:RO_0002583)
+
+  Declaration(NamedIndividual(:liver)) Declaration(NamedIndividual(:hepatic_diverticulum))
+  ObjectPropertyAssertion(obo:RO_0002495 :liver :hepatic_diverticulum)
+)

@@ -1,0 +1,47 @@
+Prefix(:=<http://ex.org/chain#>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://ex.org/chain>
+
+Declaration(ObjectProperty(<http://ex.org/starts_strictly_after>))
+Declaration(ObjectProperty(obo:RO_0002583))
+Declaration(NamedIndividual(<http://ex.org/gall_bladder>))
+Declaration(NamedIndividual(<http://ex.org/hepatic_diverticulum>))
+Declaration(NamedIndividual(<http://ex.org/hepatic_plate>))
+Declaration(NamedIndividual(<http://ex.org/liver>))
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://ex.org/starts_strictly_after> (<http://ex.org/starts_strictly_after>)
+
+TransitiveObjectProperty(<http://ex.org/starts_strictly_after>)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://ex.org/gall_bladder> (<http://ex.org/gall_bladder>)
+
+ObjectPropertyAssertion(<http://ex.org/starts_strictly_after> <http://ex.org/gall_bladder> <http://ex.org/hepatic_diverticulum>)
+ObjectPropertyAssertion(obo:RO_0002583 <http://ex.org/gall_bladder> <http://ex.org/liver>)
+
+# Individual: <http://ex.org/hepatic_diverticulum> (<http://ex.org/hepatic_diverticulum>)
+
+ObjectPropertyAssertion(obo:RO_0002583 <http://ex.org/hepatic_diverticulum> <http://ex.org/hepatic_plate>)
+
+# Individual: <http://ex.org/liver> (<http://ex.org/liver>)
+
+ObjectPropertyAssertion(<http://ex.org/starts_strictly_after> <http://ex.org/liver> <http://ex.org/hepatic_plate>)
+ObjectPropertyAssertion(obo:RO_0002583 <http://ex.org/liver> <http://ex.org/hepatic_diverticulum>)
+
+
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002583 obo:RO_0002583) <http://ex.org/starts_strictly_after>)
+)

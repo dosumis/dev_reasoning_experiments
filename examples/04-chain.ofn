@@ -1,0 +1,20 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/chain>
+  Declaration(ObjectProperty(obo:RO_0002583))   # existence starts at end of   -- Allen M
+  Declaration(ObjectProperty(:starts_strictly_after))                      # -- Allen P
+
+  # THE TEMPORAL INFERENCE:  M o M = P
+  # if x starts when y ends, and y starts when z ends, then x starts strictly after z ends
+  SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002583 obo:RO_0002583) :starts_strictly_after)
+  TransitiveObjectProperty(:starts_strictly_after)
+
+  Declaration(NamedIndividual(:hepatic_plate))
+  Declaration(NamedIndividual(:hepatic_diverticulum))
+  Declaration(NamedIndividual(:liver))
+  Declaration(NamedIndividual(:gall_bladder))
+
+  # the real EHDAA2 chain:  hepatic plate -> hepatic diverticulum -> liver
+  ObjectPropertyAssertion(obo:RO_0002583 :hepatic_diverticulum :hepatic_plate)
+  ObjectPropertyAssertion(obo:RO_0002583 :liver :hepatic_diverticulum)
+  ObjectPropertyAssertion(obo:RO_0002583 :gall_bladder :liver)
+)

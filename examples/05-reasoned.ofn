@@ -1,0 +1,50 @@
+Prefix(:=<http://ex.org/class-level#>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://ex.org/class-level>
+
+Declaration(Class(<http://ex.org/GallBladder>))
+Declaration(Class(<http://ex.org/HepaticDiverticulum>))
+Declaration(Class(<http://ex.org/HepaticPlate>))
+Declaration(Class(<http://ex.org/Liver>))
+Declaration(Class(<http://ex.org/StartsAfterHepaticPlate>))
+Declaration(ObjectProperty(<http://ex.org/starts_strictly_after>))
+Declaration(ObjectProperty(obo:RO_0002583))
+
+############################
+#   Classes
+############################
+
+# Class: <http://ex.org/GallBladder> (<http://ex.org/GallBladder>)
+
+SubClassOf(<http://ex.org/GallBladder> owl:Thing)
+SubClassOf(<http://ex.org/GallBladder> ObjectSomeValuesFrom(obo:RO_0002583 <http://ex.org/Liver>))
+
+# Class: <http://ex.org/HepaticDiverticulum> (<http://ex.org/HepaticDiverticulum>)
+
+SubClassOf(<http://ex.org/HepaticDiverticulum> owl:Thing)
+SubClassOf(<http://ex.org/HepaticDiverticulum> ObjectSomeValuesFrom(obo:RO_0002583 <http://ex.org/HepaticPlate>))
+
+# Class: <http://ex.org/HepaticPlate> (<http://ex.org/HepaticPlate>)
+
+SubClassOf(<http://ex.org/HepaticPlate> owl:Thing)
+
+# Class: <http://ex.org/Liver> (<http://ex.org/Liver>)
+
+SubClassOf(<http://ex.org/Liver> <http://ex.org/StartsAfterHepaticPlate>)
+SubClassOf(<http://ex.org/Liver> ObjectSomeValuesFrom(obo:RO_0002583 <http://ex.org/HepaticDiverticulum>))
+
+# Class: <http://ex.org/StartsAfterHepaticPlate> (<http://ex.org/StartsAfterHepaticPlate>)
+
+EquivalentClasses(<http://ex.org/StartsAfterHepaticPlate> ObjectSomeValuesFrom(<http://ex.org/starts_strictly_after> <http://ex.org/HepaticPlate>))
+SubClassOf(<http://ex.org/StartsAfterHepaticPlate> owl:Thing)
+
+
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002583 obo:RO_0002583) <http://ex.org/starts_strictly_after>)
+)

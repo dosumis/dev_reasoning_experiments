@@ -1,0 +1,21 @@
+Prefix(:=<http://ex.org/>) Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Ontology(<http://ex.org/broken>
+  # BFO: continuants and occurrents are disjoint
+  Declaration(Class(obo:BFO_0000004))  # independent continuant
+  Declaration(Class(obo:BFO_0000003))  # occurrent
+  DisjointClasses(obo:BFO_0000004 obo:BFO_0000003)
+
+  Declaration(ObjectProperty(obo:BFO_0000062))   # preceded by  -- domain/range OCCURRENT
+  ObjectPropertyDomain(obo:BFO_0000062 obo:BFO_0000003)
+  ObjectPropertyRange(obo:BFO_0000062 obo:BFO_0000003)
+
+  Declaration(ObjectProperty(obo:RO_0002495))    # immediate transformation of -- CONTINUANTS
+  ObjectPropertyDomain(obo:RO_0002495 obo:BFO_0000004)
+  ObjectPropertyRange(obo:RO_0002495 obo:BFO_0000004)
+
+  # THE PROPOSAL AS I FIRST WROTE IT
+  SubObjectPropertyOf(obo:RO_0002495 obo:BFO_0000062)
+
+  Declaration(Class(:Liver))
+  SubClassOf(:Liver ObjectSomeValuesFrom(obo:RO_0002495 owl:Thing))
+)

@@ -1,0 +1,19 @@
+Prefix(:=<http://ex.org/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Ontology(<http://ex.org/gate>
+  Declaration(ObjectProperty(:isHuman)) Declaration(ObjectProperty(:develops_from))
+  Declaration(ObjectProperty(:starts_after)) Declaration(ObjectProperty(:human_starts_after))
+  Declaration(Class(:HumanScoped)) Declaration(Class(:Liver)) Declaration(Class(:HepaticDiverticulum))
+  Declaration(NamedIndividual(:liver_h)) Declaration(NamedIndividual(:hd_h))
+  Declaration(NamedIndividual(:liver_m)) Declaration(NamedIndividual(:hd_m))
+
+  # the Self marker
+  SubClassOf(:HumanScoped ObjectHasSelf(:isHuman))
+
+  # gated chain: only fires when the SUBJECT is human-scoped
+  SubObjectPropertyOf(ObjectPropertyChain(:isHuman :develops_from) :human_starts_after)
+
+  ClassAssertion(:HumanScoped :liver_h)
+  ObjectPropertyAssertion(:develops_from :liver_h :hd_h)
+  ObjectPropertyAssertion(:develops_from :liver_m :hd_m)   # mouse: NOT human-scoped
+)

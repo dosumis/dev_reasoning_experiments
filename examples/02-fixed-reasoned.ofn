@@ -1,0 +1,58 @@
+Prefix(:=<http://ex.org/fixed#>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://ex.org/fixed>
+
+Declaration(Class(obo:BFO_0000003))
+Declaration(Class(obo:BFO_0000004))
+Declaration(ObjectProperty(obo:RO_0002495))
+Declaration(ObjectProperty(obo:RO_0002583))
+Declaration(NamedIndividual(<http://ex.org/hepatic_diverticulum>))
+Declaration(NamedIndividual(<http://ex.org/liver>))
+############################
+#   Object Properties
+############################
+
+# Object Property: obo:RO_0002495 (obo:RO_0002495)
+
+SubObjectPropertyOf(obo:RO_0002495 obo:RO_0002583)
+ObjectPropertyDomain(obo:RO_0002495 obo:BFO_0000004)
+ObjectPropertyRange(obo:RO_0002495 obo:BFO_0000004)
+
+# Object Property: obo:RO_0002583 (obo:RO_0002583)
+
+ObjectPropertyDomain(obo:RO_0002583 obo:BFO_0000004)
+ObjectPropertyRange(obo:RO_0002583 obo:BFO_0000004)
+
+
+############################
+#   Classes
+############################
+
+# Class: obo:BFO_0000003 (obo:BFO_0000003)
+
+DisjointClasses(obo:BFO_0000003 obo:BFO_0000004)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://ex.org/hepatic_diverticulum> (<http://ex.org/hepatic_diverticulum>)
+
+ClassAssertion(obo:BFO_0000004 <http://ex.org/hepatic_diverticulum>)
+
+# Individual: <http://ex.org/liver> (<http://ex.org/liver>)
+
+ClassAssertion(obo:BFO_0000004 <http://ex.org/liver>)
+ObjectPropertyAssertion(obo:RO_0002495 <http://ex.org/liver> <http://ex.org/hepatic_diverticulum>)
+ObjectPropertyAssertion(obo:RO_0002583 <http://ex.org/liver> <http://ex.org/hepatic_diverticulum>)
+
+
+)

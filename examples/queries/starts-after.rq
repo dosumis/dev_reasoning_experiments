@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://ex.org/>
+SELECT ?structure WHERE {
+  ?structure rdfs:subClassOf ex:StartsAfterHepaticPlate .
+  FILTER(STRSTARTS(STR(?structure), "http://ex.org/"))
+}
