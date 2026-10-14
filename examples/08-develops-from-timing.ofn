@@ -1,0 +1,58 @@
+Prefix(:=<http://purl.obolibrary.org/obo/scratch/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Ontology(<http://purl.obolibrary.org/obo/scratch/develops-from-timing>
+
+#### three families, each internally type-consistent ####
+# C:C  continuant-to-continuant timing
+Declaration(ObjectProperty(:exists_after))
+Declaration(ObjectProperty(:exists_immediately_after))
+TransitiveObjectProperty(:exists_after)
+SubObjectPropertyOf(:exists_immediately_after :exists_after)
+
+# O:O  occurrent-to-occurrent timing (the stage series)
+Declaration(ObjectProperty(:preceded_by))
+Declaration(ObjectProperty(:immediately_preceded_by))
+TransitiveObjectProperty(:preceded_by)
+SubObjectPropertyOf(:immediately_preceded_by :preceded_by)
+
+# C:O  the existing bridge
+Declaration(ObjectProperty(:existence_starts_during))
+Declaration(ObjectProperty(:existence_starts_during_or_after))
+SubObjectPropertyOf(:existence_starts_during :existence_starts_during_or_after)
+
+#### developmental relations carry C:C timing as a superproperty ####
+Declaration(ObjectProperty(:develops_from))
+Declaration(ObjectProperty(:develops_directly_from))
+Declaration(ObjectProperty(:transformation_of))
+TransitiveObjectProperty(:develops_from)
+SubObjectPropertyOf(:develops_directly_from :develops_from)
+SubObjectPropertyOf(:transformation_of :develops_directly_from)
+SubObjectPropertyOf(:transformation_of :exists_immediately_after)
+
+#### THE CHAINS -- type arithmetic works out, no reification needed ####
+# C:C o C:O -> C:O   if x is after y, and y starts during S, then x starts during-or-after S
+SubObjectPropertyOf(ObjectPropertyChain(:exists_after :existence_starts_during)
+                    :existence_starts_during_or_after)
+# C:O o O:O -> C:O   if x starts during S, and S is preceded by T, then x starts after T
+SubObjectPropertyOf(ObjectPropertyChain(:existence_starts_during :preceded_by)
+                    :existence_starts_during_or_after)
+
+#### data ####
+Declaration(Class(:CS11)) Declaration(Class(:CS12)) Declaration(Class(:CS13))
+Declaration(Class(:liver)) Declaration(Class(:liver_bud)) Declaration(Class(:liver_diverticulum))
+SubClassOf(:CS12 ObjectSomeValuesFrom(:immediately_preceded_by :CS11))
+SubClassOf(:CS13 ObjectSomeValuesFrom(:immediately_preceded_by :CS12))
+SubClassOf(:liver_diverticulum ObjectSomeValuesFrom(:existence_starts_during :CS11))
+SubClassOf(:liver_bud ObjectSomeValuesFrom(:existence_starts_during :CS13))
+SubClassOf(:liver_bud ObjectSomeValuesFrom(:transformation_of :liver_diverticulum))
+SubClassOf(:liver     ObjectSomeValuesFrom(:transformation_of :liver_bud))
+
+#### queries ####
+Declaration(Class(:StartsDuringOrAfterCS11))
+EquivalentClasses(:StartsDuringOrAfterCS11
+  ObjectSomeValuesFrom(:existence_starts_during_or_after :CS11))
+Declaration(Class(:AfterLiverDiverticulum))
+EquivalentClasses(:AfterLiverDiverticulum
+  ObjectSomeValuesFrom(:exists_after :liver_diverticulum))
+)

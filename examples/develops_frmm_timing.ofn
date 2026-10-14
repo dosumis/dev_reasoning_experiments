@@ -1,0 +1,94 @@
+Prefix(:=<http://www.semanticweb.org/do12/ontologies/2026/9/untitled-ontology-31/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/do12/ontologies/2026/9/untitled-ontology-31>
+
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/CS11>))
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/CS12>))
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/CS13>))
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/liver>))
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/liver_bud>))
+Declaration(Class(<http://purl.obolibrary.org/obo/scratch/liver_diverticulum>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/develops_directly_from>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/develops_from>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/existence_ends_during>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/existence_overlaps>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/existence_starts_during>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/exists_after>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/exists_immediately_after>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/immediately_preceded_by>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/preceded_by>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/scratch/transformation_of>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/develops_directly_from> (<http://purl.obolibrary.org/obo/scratch/develops_directly_from>)
+
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/develops_directly_from> <http://purl.obolibrary.org/obo/scratch/develops_from>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/develops_from> (<http://purl.obolibrary.org/obo/scratch/develops_from>)
+
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/scratch/develops_from>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/existence_overlaps> (<http://purl.obolibrary.org/obo/scratch/existence_overlaps>)
+
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/existence_overlaps> owl:topObjectProperty)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/exists_after> (<http://purl.obolibrary.org/obo/scratch/exists_after>)
+
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/scratch/exists_after>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/exists_immediately_after> (<http://purl.obolibrary.org/obo/scratch/exists_immediately_after>)
+
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/exists_immediately_after> <http://purl.obolibrary.org/obo/scratch/exists_after>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/immediately_preceded_by> (<http://purl.obolibrary.org/obo/scratch/immediately_preceded_by>)
+
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/immediately_preceded_by> <http://purl.obolibrary.org/obo/scratch/preceded_by>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/preceded_by> (<http://purl.obolibrary.org/obo/scratch/preceded_by>)
+
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/scratch/preceded_by>)
+
+# Object Property: <http://purl.obolibrary.org/obo/scratch/transformation_of> (<http://purl.obolibrary.org/obo/scratch/transformation_of>)
+
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/scratch/transformation_of> "x transformation_of y iff x directly_develops_from y and end(y) = start(x)")
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/transformation_of> <http://purl.obolibrary.org/obo/scratch/develops_directly_from>)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/scratch/transformation_of> <http://purl.obolibrary.org/obo/scratch/exists_immediately_after>)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/scratch/CS12> (<http://purl.obolibrary.org/obo/scratch/CS12>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/CS12> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/immediately_preceded_by> <http://purl.obolibrary.org/obo/scratch/CS11>))
+
+# Class: <http://purl.obolibrary.org/obo/scratch/CS13> (<http://purl.obolibrary.org/obo/scratch/CS13>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/CS13> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/immediately_preceded_by> <http://purl.obolibrary.org/obo/scratch/CS12>))
+
+# Class: <http://purl.obolibrary.org/obo/scratch/liver> (<http://purl.obolibrary.org/obo/scratch/liver>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/liver> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/transformation_of> <http://purl.obolibrary.org/obo/scratch/liver_bud>))
+
+# Class: <http://purl.obolibrary.org/obo/scratch/liver_bud> (<http://purl.obolibrary.org/obo/scratch/liver_bud>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/liver_bud> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/existence_starts_during> <http://purl.obolibrary.org/obo/scratch/CS13>))
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/liver_bud> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/transformation_of> <http://purl.obolibrary.org/obo/scratch/liver_diverticulum>))
+
+# Class: <http://purl.obolibrary.org/obo/scratch/liver_diverticulum> (<http://purl.obolibrary.org/obo/scratch/liver_diverticulum>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/scratch/liver_diverticulum> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/scratch/existence_starts_during> <http://purl.obolibrary.org/obo/scratch/CS11>))
+
+
+)

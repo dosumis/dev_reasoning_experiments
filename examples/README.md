@@ -104,7 +104,73 @@ rather than a few hand-picked chains.
 
 ---
 
-## 06-reified.ofn / 07-reified-class.ofn — the route that actually works
+## 08-develops-from-timing.ofn — **the right answer**
+
+Due to DOS. No reification, no new primitive, no category error: keep **three families, each
+internally type-consistent**, and let property chains do the crossing.
+
+```
+C:C   exists_after, exists_immediately_after              continuant → continuant
+O:O   preceded_by, immediately_preceded_by                occurrent  → occurrent   (the stage series)
+C:O   existence_starts_during, ..._during_or_after        continuant → occurrent   (already in RO)
+```
+
+A developmental relation carries the **C:C** timing relation as a superproperty — both sides
+continuant, so nothing breaks:
+
+```
+transformation_of  ⊑  develops_directly_from
+transformation_of  ⊑  exists_immediately_after
+```
+
+Then two chains, whose type arithmetic works out on its own:
+
+```
+exists_after            ∘ existence_starts_during  ⊑  existence_starts_during_or_after
+   C:C                      C:O                   =   C:O
+
+existence_starts_during ∘ preceded_by              ⊑  existence_starts_during_or_after
+   C:O                      O:O                   =   C:O
+```
+
+### What it derives
+
+Asserted about `liver`: **only** `liver transformation_of liver_bud`. Nothing about stages.
+
+ELK derives `liver ⊑ existence_starts_during_or_after some CS11`, via:
+
+```
+liver              ⊑ transformation_of some liver_bud
+  transformation_of ⊑ exists_immediately_after ⊑ exists_after  (transitive)
+liver_bud          ⊑ transformation_of some liver_diverticulum
+liver_diverticulum ⊑ existence_starts_during some CS11
+exists_after ∘ existence_starts_during ⊑ existence_starts_during_or_after
+```
+
+The timing reaches `liver` from a stage anchor **two developmental steps away**.
+
+It also derives the general fact `AfterLiverDiverticulum ⊑ StartsDuringOrAfterCS11` — anything
+existing after the liver diverticulum starts during or after CS11.
+
+**In OWL 2 EL.** Ablation confirms both chains do distinct work: drop the C:C one and `liver`
+stops classifying; `liver_bud` still reaches CS11 through the C:O ∘ O:O route.
+
+### Why this beats everything above
+
+| | |
+|---|---|
+| 01 | subsume C:C under O:O → unsatisfiable |
+| 02 | subsume C:C under the C:O family → unsatisfiable (inherited range) |
+| 06/07 | reify the temporal extent → works, but needs a new primitive relation |
+| **08** | **three typed families + chains → works, needs no new primitive** |
+
+The mistake in 01/02 was trying to make one relation span both categories. The mistake in 06/07
+was reaching for a new entity to span them. Neither is necessary: keep the families separate and
+let composition cross between them.
+
+---
+
+## 06-reified.ofn / 07-reified-class.ofn — a workable but heavier alternative
 
 Relate each continuant to its **temporal region**, and do the temporal reasoning there.
 `temporal region ⊑ occurrent` in BFO, so BFO's own `preceded_by` applies between regions with
@@ -138,6 +204,10 @@ directly instead keeps it in EL with the same entailment. Confirmed identical un
 Neither BFO nor RO provides a continuant→temporal-region relation — checked both; zero
 properties with a temporal-region range. So this needs **one genuinely new property**, plus its
 converse asserted rather than declared, plus the bridging chain per temporal relation wanted.
+
+**Superseded by 08**, which needs no new primitive. Kept because the reification is a real option
+if you ever want Allen relations stated directly between temporal regions rather than carried as
+superproperties of developmental relations.
 
 ---
 

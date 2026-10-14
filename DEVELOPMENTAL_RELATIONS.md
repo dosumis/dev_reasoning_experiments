@@ -23,9 +23,19 @@ This document supplies the formal justification and the measurement.
 > The `existence_*` family does not rescue it either: it inherits `range = occurrent` from
 > RO:0002581 ([examples/02-also-broken.ofn](examples/02-also-broken.ofn)).
 >
-> The route that does work is reifying the temporal extent —
-> [examples/07-reified-class.ofn](examples/07-reified-class.ofn), in OWL 2 EL. This document
-> has not yet been rewritten around it.
+> The route that works keeps **three typed families** — C:C timing, O:O timing, and RO's
+> existing C:O `existence_*` bridge — with developmental relations carrying the **C:C** relation
+> as a superproperty, and property chains crossing between families:
+>
+> ```
+> transformation_of       ⊑ exists_immediately_after                    (both C:C)
+> exists_after ∘ existence_starts_during ⊑ existence_starts_during_or_after
+> existence_starts_during ∘ preceded_by  ⊑ existence_starts_during_or_after
+> ```
+>
+> No new primitive, no reification, OWL 2 EL. See
+> [examples/08-develops-from-timing.ofn](examples/08-develops-from-timing.ofn). This document has
+> not yet been rewritten around it.
 
 ## 1. The problem
 

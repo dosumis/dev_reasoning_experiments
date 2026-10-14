@@ -14,8 +14,10 @@ scripts named at the end.
 > Items 1–2 propose subsuming developmental relations under temporal ones. Those relate
 > **occurrents**; `develops_from` and its kin relate **continuants**, and BFO declares the two
 > disjoint — so the axioms as written are unsatisfiable. See
-> [examples/](examples/) 01, 02 and 07. The *gaps* reported here are real; the proposed fix needs
-> restating via a reified temporal extent.
+> [examples/](examples/) 01 and 02. The *gaps* reported here are real; the fix is to have
+> developmental relations carry a **continuant-to-continuant** timing relation as a superproperty,
+> and cross to the stage series by property chain — see
+> [examples/08-develops-from-timing.ofn](examples/08-develops-from-timing.ofn).
 
 ## Action items
 
