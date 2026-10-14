@@ -1,0 +1,56 @@
+// Allen interval reasoning in Datalog. Compare: 638 OWL property chains, 132 of which
+// are rejected by OWL 2's regularity condition. Here the whole composition table is DATA.
+
+.decl comp(R1:symbol, R2:symbol, R3:symbol)      // the 169-entry table, loaded as facts
+.input comp
+
+.decl rel(X:symbol, Y:symbol, R:symbol)          // asserted + derived interval relations
+.input rel
+.output rel
+
+// COMPOSITION -- the entire reasoner, in one rule
+rel(X, Z, R3) :- rel(X, Y, R1), rel(Y, Z, R2), comp(R1, R2, R3).
+
+// CONVERSE
+.decl conv(R:symbol, Ri:symbol)
+.input conv
+rel(Y, X, Ri) :- rel(X, Y, R), conv(R, Ri).
+
+//--------------------------------------------------------------------------------
+// NARROWING -- what OWL cannot do at all (no object-property intersection).
+// Monotonic encoding: derive what is IMPOSSIBLE, then read off what survives.
+.decl impossible(X:symbol, Y:symbol, R:symbol)
+.decl allen(R:symbol)
+.input allen
+
+// R is impossible between X and Z if some path X->Y->Z cannot produce it
+impossible(X, Z, R) :- rel(X,Y,_), rel(Y,Z,_), allen(R),
+                       !pathAllows(X, Y, Z, R).
+.decl pathAllows(X:symbol, Y:symbol, Z:symbol, R:symbol)
+pathAllows(X,Y,Z,R) :- rel(X,Y,R1), rel(Y,Z,R2), comp(R1,R2,R).
+
+.decl possible(X:symbol, Y:symbol, R:symbol)
+.output possible
+possible(X,Y,R) :- rel(X,Y,R), !impossible(X,Y,R).
+
+//--------------------------------------------------------------------------------
+// INCONSISTENCY -- the empty label. Not expressible in OWL without disjointness,
+// which is itself banned on transitive properties.
+.decl inconsistent(X:symbol, Y:symbol)
+.output inconsistent
+inconsistent(X,Y) :- rel(X,Y,_), !anyPossible(X,Y).
+.decl anyPossible(X:symbol, Y:symbol)
+anyPossible(X,Y) :- possible(X,Y,_).
+
+//--------------------------------------------------------------------------------
+// CLOSED-WORLD PROMOTION -- "does EVERY member of this class satisfy P?"
+// The thing DL needs nominals and 10s for; here it is one negated subgoal.
+.decl member(C:symbol, I:symbol)
+.input member
+.decl counterexample(C:symbol, S:symbol)
+counterexample(C,S) :- member(C,I), stage(S), !rel(I,S,"sdoa").
+.decl stage(S:symbol)
+.input stage
+.decl promote(C:symbol, S:symbol)
+.output promote
+promote(C,S) :- stage(S), member(C,_), !counterexample(C,S).

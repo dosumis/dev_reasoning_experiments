@@ -34,6 +34,12 @@ be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows t
 vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
 the axioms that would make it computable.
 
+**[REASONING_STACK.md](REASONING_STACK.md)** measures which engine should run what. ELK does
+**not** materialise ABox property chains (3 facts vs HermiT's 9) — the limitation is ELK, not the
+EL profile; Whelk does, but is 45× slower than HermiT at 5,000 individuals. The ABox layer is
+RL-clean while the class-level one cannot be (RL bans `∃R.C` in superclass position). And the
+whole 842-chain composition table becomes **one Datalog rule** with no regularity wall.
+
 **[IDEALISED_INDIVIDUALS.md](IDEALISED_INDIVIDUALS.md)** proposes representing countable
 anatomical parts as individuals of an idealised organism, and shows that conclusions reached at
 instance level can be **promoted back to sound class-level axioms** — including exact relations
