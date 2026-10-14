@@ -221,3 +221,79 @@ superproperties of developmental relations.
   ([../README.md](../README.md) §5).
 
 Those remain the constraint solver's job.
+
+---
+
+## 09-error-checking.ofn — catching errors as OWL inconsistencies
+
+### What you cannot do
+
+Property-level constraints all require a **simple** property, and transitivity makes a property
+non-simple. All three are rejected from OWL 2 DL:
+
+```
+DisjointObjectProperties(exists_after exists_before)   REJECTED  "non-simple property in an axiom"
+AsymmetricObjectProperty(exists_after)                 REJECTED  "non-simple property in asymmetric..."
+IrreflexiveObjectProperty(exists_after)                REJECTED  "non-simple property in irreflexive..."
+```
+
+So you cannot say "nothing exists both before and after the same thing" directly.
+
+### What you can do
+
+Move the constraint to **classes**, where there is no simplicity requirement:
+
+```
+During_CS11    ≡ ∃ existence_starts_during          . CS11
+AtOrAfter_CS13 ≡ ∃ existence_starts_during_or_after . CS13
+DisjointClasses( During_CS11, AtOrAfter_CS13 )
+```
+
+Combined with the §08 chains, this catches a product asserted to start before its own precursor:
+
+```
+bad_product ⊑ ∃transformation_of some precursor      ⊑ exists_after
+precursor   ⊑ ∃existence_starts_during some CS13
+  → chain → bad_product ⊑ ∃existence_starts_during_or_after some CS13   ⊑ AtOrAfter_CS13
+bad_product ⊑ ∃existence_starts_during some CS11                        ⊑ During_CS11
+  → DisjointClasses → ⊥
+```
+
+```
+unsatisfiable: bad_product
+```
+
+**Caught by ELK, in OWL 2 EL.** This is the `monotonicity.rq` check done declaratively, as
+classification rather than a query.
+
+### It generates, and it is small
+
+`src/gen_stage_disjointness.py` emits the module for a real stage series. For the 23 Carnegie
+stages:
+
+| | |
+|---|---|
+| defined classes | 46 (two per stage) |
+| disjointness axioms | **253** (one per ordered pair) |
+| profile | OWL 2 **EL** |
+| ELK reasoning time | 0.6 s |
+
+C(N,2) growth, so a 50-stage series would be ~1,200 axioms — still trivial.
+
+### A second, narrower check
+
+A *functional* relation to the finest-granularity stage, plus pairwise-disjoint stages, catches
+double assignment:
+
+```
+FunctionalObjectProperty(starts_at_carnegie_stage)
+DisjointClasses(CS11 CS12 CS13)
+LiverBud ⊑ ∃starts_at_carnegie_stage.CS11  and  ⊑ ∃starts_at_carnegie_stage.CS13   →  ⊥
+```
+
+Works, and a property may be functional while appearing in a chain **body** — only the chain
+*head* becomes non-simple. But `FunctionalObjectProperty` is **not in EL**, so this one needs
+HermiT. Fine for a QC pass, which is a separate build step from materialisation.
+
+Note functionality is only true at a single granularity: a structure starts during CS11 *and*
+during the embryonic stage, which are not disjoint. Reserve it for one designated stage series.

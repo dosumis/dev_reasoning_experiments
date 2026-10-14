@@ -1,0 +1,30 @@
+Prefix(:=<http://purl.obolibrary.org/obo/scratch/>)
+Ontology(<http://purl.obolibrary.org/obo/scratch/error-checking>
+  Declaration(ObjectProperty(:exists_after)) Declaration(ObjectProperty(:exists_immediately_after))
+  Declaration(ObjectProperty(:existence_starts_during))
+  Declaration(ObjectProperty(:existence_starts_during_or_after))
+  Declaration(ObjectProperty(:transformation_of)) Declaration(ObjectProperty(:develops_from))
+  TransitiveObjectProperty(:exists_after)
+  SubObjectPropertyOf(:exists_immediately_after :exists_after)
+  SubObjectPropertyOf(:transformation_of :develops_from)
+  SubObjectPropertyOf(:transformation_of :exists_immediately_after)
+  SubObjectPropertyOf(:existence_starts_during :existence_starts_during_or_after)
+  SubObjectPropertyOf(ObjectPropertyChain(:exists_after :existence_starts_during)
+                      :existence_starts_during_or_after)
+
+  Declaration(Class(:CS11)) Declaration(Class(:CS12)) Declaration(Class(:CS13))
+  DisjointClasses(:CS11 :CS12 :CS13)
+
+  # GENERATED per ordered stage pair: you cannot start DURING an earlier stage
+  # and also start DURING-OR-AFTER a later one.
+  Declaration(Class(:StartsDuring_CS11))        Declaration(Class(:StartsAtOrAfter_CS13))
+  EquivalentClasses(:StartsDuring_CS11    ObjectSomeValuesFrom(:existence_starts_during :CS11))
+  EquivalentClasses(:StartsAtOrAfter_CS13 ObjectSomeValuesFrom(:existence_starts_during_or_after :CS13))
+  DisjointClasses(:StartsDuring_CS11 :StartsAtOrAfter_CS13)
+
+  # THE ERROR: a product asserted to start before its own precursor
+  Declaration(Class(:bad_product)) Declaration(Class(:precursor))
+  SubClassOf(:precursor   ObjectSomeValuesFrom(:existence_starts_during :CS13))
+  SubClassOf(:bad_product ObjectSomeValuesFrom(:existence_starts_during :CS11))
+  SubClassOf(:bad_product ObjectSomeValuesFrom(:transformation_of :precursor))
+)
