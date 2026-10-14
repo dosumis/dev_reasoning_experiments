@@ -1,5 +1,19 @@
 # Toy examples: bridging continuants to temporal relations
 
+> **Read 08 first** if you want the answer. 01 and 02 record *failed* attempts and are kept
+> because they prove why the obvious routes do not work. [archive/](archive/) holds a route that
+> works but costs more than it needs to.
+>
+> | | |
+> |---|---|
+> | **08** | **the design that works** — three typed families + property chains |
+> | 08a | DOS's original, before the chains were added |
+> | 09 | error checking via class-level disjointness |
+> | 10–12 | the same with individuals; 12 adds closed-world promotion |
+> | 01, 02 | why subsuming continuant relations under occurrent ones fails |
+> | 03 | `ObjectHasSelf` as a class gate — orthogonal capability |
+> | 04, 05 | composition, and why the whole table matters |
+
 Seven small runnable ontologies working through one problem — **`develops_from` relates
 continuants, Allen relations relate occurrents, and BFO declares the two disjoint.**
 
@@ -170,7 +184,9 @@ let composition cross between them.
 
 ---
 
-## 06-reified.ofn / 07-reified-class.ofn — a workable but heavier alternative
+## archive/06-reified.ofn, archive/07-reified-class.ofn — a workable but heavier alternative
+
+*Moved to [archive/](archive/) — superseded by 08.*
 
 Relate each continuant to its **temporal region**, and do the temporal reasoning there.
 `temporal region ⊑ occurrent` in BFO, so BFO's own `preceded_by` applies between regions with

@@ -4,6 +4,10 @@ Infrastructure for temporal reasoning over developmental stages, anatomical exis
 windows, and process timing — grounded in Allen's Interval Calculus (AIC) and aligned
 with the OBO Relation Ontology.
 
+> **This repo moves fast.** Several directions were explored and abandoned; a few conclusions
+> have been superseded without every cross-reference being chased down, and some context behind
+> the questions is not written down. Measurements are reproducible; narrative is provisional.
+
 Everything here is **derived and machine-verified**, never transcribed. The composition
 table is computed by enumerating endpoint orderings; the converse function is checked
 against interval semantics rather than copied from a published table.
@@ -33,6 +37,11 @@ pathographs — ~33,500 causal edges needing the same axiom, and 46 causal cycle
 be real vicious cycles. **[HP_ONSET_PROPOSAL.md](HP_ONSET_PROPOSAL.md)** shows that HP's onset
 vocabulary already resolves to a perfect interval partition of the human lifespan, and proposes
 the axioms that would make it computable.
+
+**[TOOLING.md](TOOLING.md)** — which library to generate OWL with. Measured: `owlready2`
+silently serialises a string where a class belongs; `py-horned-owl` rejects it at construction
+and parses Uberon 11× faster than rdflib. Also why an agent layer over a Lisp DSL would solve
+the wrong half of the problem.
 
 **[REASONING_STACK.md](REASONING_STACK.md)** measures which engine should run what. ELK does
 **not** materialise ABox property chains (3 facts vs HermiT's 9) — the limitation is ELK, not the

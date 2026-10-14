@@ -14,6 +14,8 @@ __pycache__/
 *.pyc
 
 # --- derived / cache ---
+examples/*-reasoned.*
+examples/*.reasoned.owl
 src/allen_table.json
 allen_table.json
 
