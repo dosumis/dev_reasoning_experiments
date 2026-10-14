@@ -1,0 +1,32 @@
+Prefix(:=<http://purl.obolibrary.org/obo/scratch/>)
+Ontology(<http://purl.obolibrary.org/obo/scratch/closed-somites>
+  Declaration(ObjectProperty(:existence_starts_during))
+  Declaration(ObjectProperty(:existence_starts_during_or_after))
+  Declaration(ObjectProperty(:preceded_by))
+  TransitiveObjectProperty(:preceded_by)
+  SubObjectPropertyOf(:existence_starts_during :existence_starts_during_or_after)
+  SubObjectPropertyOf(ObjectPropertyChain(:existence_starts_during :preceded_by)
+                      :existence_starts_during_or_after)
+
+  Declaration(NamedIndividual(:CS09)) Declaration(NamedIndividual(:CS10)) Declaration(NamedIndividual(:CS11))
+  ObjectPropertyAssertion(:preceded_by :CS10 :CS09)
+  ObjectPropertyAssertion(:preceded_by :CS11 :CS10)
+
+  Declaration(NamedIndividual(:somite_01)) Declaration(NamedIndividual(:somite_02))
+  Declaration(NamedIndividual(:somite_03))
+  DifferentIndividuals(:somite_01 :somite_02 :somite_03)
+
+  # each somite has its OWN timing -- the thing a class cannot represent
+  ObjectPropertyAssertion(:existence_starts_during :somite_01 :CS09)
+  ObjectPropertyAssertion(:existence_starts_during :somite_02 :CS10)
+  ObjectPropertyAssertion(:existence_starts_during :somite_03 :CS11)
+
+  # CLOSE the class: these are ALL the somites
+  Declaration(Class(:Somite))
+  EquivalentClasses(:Somite ObjectOneOf(:somite_01 :somite_02 :somite_03))
+
+  # the promotion candidate, stated as a query class
+  Declaration(Class(:StartsAtOrAfterCS09))
+  EquivalentClasses(:StartsAtOrAfterCS09
+     ObjectSomeValuesFrom(:existence_starts_during_or_after ObjectOneOf(:CS09)))
+)

@@ -1,0 +1,42 @@
+Prefix(:=<http://purl.obolibrary.org/obo/scratch/>)
+Ontology(<http://purl.obolibrary.org/obo/scratch/individual-errors>
+  Declaration(ObjectProperty(:exists_after)) Declaration(ObjectProperty(:exists_immediately_after))
+  Declaration(ObjectProperty(:preceded_by))  Declaration(ObjectProperty(:immediately_preceded_by))
+  Declaration(ObjectProperty(:existence_starts_during))
+  Declaration(ObjectProperty(:existence_starts_during_or_after))
+  Declaration(ObjectProperty(:transformation_of)) Declaration(ObjectProperty(:develops_from))
+  TransitiveObjectProperty(:exists_after) TransitiveObjectProperty(:preceded_by)
+  SubObjectPropertyOf(:exists_immediately_after :exists_after)
+  SubObjectPropertyOf(:immediately_preceded_by :preceded_by)
+  SubObjectPropertyOf(:transformation_of :develops_from)
+  SubObjectPropertyOf(:transformation_of :exists_immediately_after)
+  SubObjectPropertyOf(:existence_starts_during :existence_starts_during_or_after)
+  SubObjectPropertyOf(ObjectPropertyChain(:exists_after :existence_starts_during)
+                      :existence_starts_during_or_after)
+  SubObjectPropertyOf(ObjectPropertyChain(:existence_starts_during :preceded_by)
+                      :existence_starts_during_or_after)
+
+  # STAGES as individuals (occurrents)
+  Declaration(NamedIndividual(:CS11)) Declaration(NamedIndividual(:CS12)) Declaration(NamedIndividual(:CS13))
+  ObjectPropertyAssertion(:immediately_preceded_by :CS12 :CS11)
+  ObjectPropertyAssertion(:immediately_preceded_by :CS13 :CS12)
+
+  # class-level disjointness still does the error checking, over individuals
+  Declaration(Class(:During_CS11)) Declaration(Class(:AtOrAfter_CS13))
+  EquivalentClasses(:During_CS11    ObjectSomeValuesFrom(:existence_starts_during ObjectOneOf(:CS11)))
+  EquivalentClasses(:AtOrAfter_CS13 ObjectSomeValuesFrom(:existence_starts_during_or_after ObjectOneOf(:CS13)))
+  DisjointClasses(:During_CS11 :AtOrAfter_CS13)
+
+  # STRUCTURES as individuals (continuants)
+  Declaration(NamedIndividual(:liver)) Declaration(NamedIndividual(:liver_bud))
+  Declaration(NamedIndividual(:liver_diverticulum))
+  ObjectPropertyAssertion(:existence_starts_during :liver_diverticulum :CS11)
+  ObjectPropertyAssertion(:existence_starts_during :liver_bud :CS13)
+  ObjectPropertyAssertion(:transformation_of :liver_bud :liver_diverticulum)
+  ObjectPropertyAssertion(:transformation_of :liver :liver_bud)
+
+  # THE ERROR
+  Declaration(NamedIndividual(:bad_product))
+  ObjectPropertyAssertion(:existence_starts_during :bad_product :CS11)
+  ObjectPropertyAssertion(:transformation_of :bad_product :liver_bud)
+)

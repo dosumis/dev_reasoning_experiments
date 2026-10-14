@@ -297,3 +297,86 @@ HermiT. Fine for a QC pass, which is a separate build step from materialisation.
 
 Note functionality is only true at a single granularity: a structure starts during CS11 *and*
 during the embryonic stage, which are not disjoint. Reserve it for one designated stage series.
+
+---
+
+## 10 / 11 / 12 — the idealised-individual versions
+
+### 10-individuals.ofn — same design, stages *and* structures as individuals
+
+Identical property hierarchy and chains to 08; `CS11`…`CS13` and `liver`…`liver_diverticulum`
+become `NamedIndividual`s and the assertions become OPAs. **In OWL 2 EL.**
+
+It derives *more* than the class version:
+
+```
+liver_bud  existence_starts_during_or_after  CS11, CS12, CS13
+liver      existence_starts_during_or_after  CS11,       CS13
+liver      exists_after                      liver_bud, liver_diverticulum
+```
+
+Individuals let the `C:O ∘ O:O` chain walk the whole stage series, so `liver_bud` reaches every
+earlier stage rather than only the ones a class axiom happened to mention.
+
+**A gap this exposes**: `liver` misses CS12. The chain starts from `existence_starts_during`
+(strict), so *derived* `..._during_or_after` facts do not feed back into it. Adding
+`existence_starts_during_or_after ∘ preceded_by ⊑ existence_starts_during_or_after` closes it —
+another instance of needing the composition table rather than a few chains.
+
+### 11-individual-errors.ofn — error checking degrades
+
+Same disjointness as 09, over individuals. The error is caught, but:
+
+```
+09 (classes)      unsatisfiable: bad_product        ← named, localised, other reasoning continues
+11 (individuals)  The ontology is inconsistent      ← global, nothing else can be inferred
+```
+
+**This is a real regression.** An unsatisfiable class names the culprit and leaves the rest of
+the ontology usable; an inconsistent ABox stops everything and needs explanation tooling to find
+the cause. Keep the error checking at class level even when the inference runs over individuals.
+
+### 12-closed-somites.ofn — closed sets, and promotion as *entailment*
+
+The point of the idealisation is that the instance set is **complete**. Say so with an
+enumerated class:
+
+```
+Somite ≡ ObjectOneOf( somite_01 somite_02 somite_03 )
+DifferentIndividuals( somite_01 somite_02 somite_03 )
+
+somite_01 existence_starts_during CS09
+somite_02 existence_starts_during CS10
+somite_03 existence_starts_during CS11
+```
+
+Each somite carries its own timing — the thing a class axiom cannot represent. Then ask whether
+a class-level axiom holds of all of them:
+
+```
+StartsAtOrAfterCS09 ≡ ∃ existence_starts_during_or_after . {CS09}
+
+HermiT:   Somite ⊑ StartsAtOrAfterCS09      ENTAILED ✓
+```
+
+**This is the promotion rule of [IDEALISED_INDIVIDUALS.md](../IDEALISED_INDIVIDUALS.md) §4 done as
+entailment** rather than by enumerating in code. The reasoner checks the universal for you,
+because `ObjectOneOf` tells it the membership is closed.
+
+**Negative control**: move `somite_01` to CS08 and the promotion is correctly **withheld**. The
+closed class blocks an unjustified generalisation rather than rubber-stamping it.
+
+### The cost of closing
+
+| | |
+|---|---|
+| OWL 2 DL | ✓ |
+| OWL 2 EL | ✗ — *"Use of ObjectOneOf with multiple individuals"* |
+| 39 somites × 23 stages, HermiT | **0.57 s** |
+
+So closed-world promotion is a **DL-only, HermiT-only** step. It will not run in ELK and
+relation-graph will not materialise it. That is tolerable — it is a build-time check that emits
+axioms, not something in the query path — but it means the pipeline has two reasoner passes:
+ELK for materialisation, HermiT for promotion and QC.
+
+Scale is not the problem. `ObjectOneOf` over 39 individuals costs nothing.
